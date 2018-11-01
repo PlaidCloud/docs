@@ -1,0 +1,333 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
+Workflows
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+.. sidebar:: Workflow Operations
+
+   .. contents::
+      :local:
+
+   .. toctree::
+      :maxdepth: 1
+      :includehidden:
+      :glob:
+
+      allocations/index
+      document_management/index
+      export/index
+      import/index
+      notifications/index
+      other/index
+      remote/index
+      report/index
+      sap_integration/index
+      sap_pcm_integration/index
+      table_operations/index
+      user_defined/index
+      workflow_control/index
+      common/index
+      expressions/index
+
+Building a Workflow
+=========================
+
+Many available transforms are available for use in a workflow. The output of a workflow step can be a source dependent table, source independent table, file, notification, or remote system action if using PlaidLink. The output is determined by the tranform type.
+
+
+Viewing Workflows
+-----------------
+
+Workflows are **Project** specific.  From the top menu in the **Analyze** menu click on the **Workflows** menu item.
+This will open the **Workflows** table showing the list of workflows for the selected project at the top of the table.
+To see workflows in other projects you have access to, simply select the project in the selectbox and the list of
+workflows will update.
+
+The list of projects is determined by your access security for each of the projects and your Viewing Role within the
+project (i.e. Architect, Manager, or Explorer).  If you are expecting to see a project and it is not present then it
+could be that you have not been granted access to the project by one of the project owners.  If you are expecting to
+see certain workflows within the project and you are not an Architect on the project, then they might be hidden to your
+viewing role.
+
+
+The status of the workflow will be displayed if it is running, has a warning or error, or completed normally.  The
+creation and update dates are also shown along with who created or updated the workflow.  In addition, the total size
+of the workflow is also displayed which includes all of the workflow specific tables.
+
+.. todo:: Add screenshots to illustrate the process
+
+Creating
+-----------
+
+Once you navigate to the **Workflows** table and select the project in which you would like to create a new workflow,
+click on the **New Workflow** button.  This will open a form where you can enter in the details of the workflow
+including the name and memo.
+
+In addition, you can set a remediation workflow to run if the workflow ends in an error.  A remediation workflow does
+not need to be set but can be useful for sending notifications or to trigger other processes that may automatically
+remediate failures.
+
+Once the form is complete, click on the **Create** button and the new workflow will be added to the project.
+
+.. todo:: Add screenshots to illustrate the process
+
+
+Managing Errors
+-----------------
+
+If a workflow experiences an error during processing, an error indicator is displayed on both the workflow and the step
+that had the error.  PlaidCloud provides an ability to retry a failed step multiple times.  This is often useful if the
+step is accessing remote systems or data that may not be highly available or intermittently fail for unknown reasons.
+The retry capability can be set to retry many times as well as add a delay between retries from seconds to hours.
+
+If no retry is selected or the maximum number of retries is exceeded, then the step will be marked as an error.
+PlaidCloud provides three levels of error handling in that case:
+
+  - Stop the workflow when an error occurs
+  - Mark the step as an error but keep processing the workflow
+  - Mark the step as an error and trigger a remediation workflow process instead of continuing the current workflow
+
+  .. todo:: Add screenshot
+
+Stop the Workflow
+~~~~~~~~~~~~~~~~~
+
+Stopping the workflow when a step errors is the most common approach since workflows generally should run without
+errors.  This will stop the workflow and present the error indicator on both the step and the workflow.  The error will
+also be displayed in the activity monitor but no further action is taken.
+
+Keep Processing
+~~~~~~~~~~~~~~~
+
+Each step can be set to continue on error in the step form.  If this checkbox is enabled then any errors will be marked
+for the step but the workflow will treat the error as a completion of the step and continue on.  This is often useful if
+there are steps that perform tasks that can error when there is missing data but are harmless to the overall processes.
+
+Since the workflow is continuing on error under this scenario the workflow will not display an error indicator and
+continue to show a running indicator.
+
+Trigger Remediation Workflow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With the ability to set a remediation workflow as part of the workflow setup, a workflow error will immediately stop
+the processing of the current workflow and start processing the remediation workflow.  Note that if a step is marked to
+continue on error that a failure will not trigger the remediation workflow.  Only steps that fail that would also cause
+the entire workflow to stop will trigger the remediation process.
+
+A remediation workflow may be useful for simply notifying people that a failure has occurred or it can perform other
+complex processing to attempt an automatic correction of any underlying reasons the original workflow failed.
+
+.. todo:: Add screenshots to illustrate the process
+
+Creating an Archive
+-------------------
+
+It may be useful to retain a point-in-time archive of a workflow so that all the steps and configurations can be
+restored to their original state.  This may be useful for compliance reasons or during times of significant change
+where it would be ideal to have known revert points.
+
+To create an archive, right click on the workflow row in the **Workflows** table.  Select the **Export Workflow** menu
+item from the context menu.  This will open a form where you can choose the items to archive and the destination for
+the resulting archive file.  The options for archiving are:
+
+  - Dimensions and Entity Structure
+  - User Defined Transforms
+  - Variables
+  - Functions
+  - Workflow Steps
+
+When all the settings are completed, click on the **Archive** button and the archiving process will be initiated.
+Depending on the size of the workflow this may take several minutes so the process runs in the background and a
+progress bar displays progress.
+
+.. todo:: Add screenshots to illustrate the process
+
+Restoring an Archive
+--------------------
+
+Restoring an archive provides the ability to load an entire archive back into the project or selected portions of an
+archive.  For example, an archive may be used to load just the User Defined Functions and skip the recreation of all
+the workflow steps.  This flexibility is often useful to allow restoring portions for reference or to act as a backup process.
+
+To restore and archive, select **Import Archive** from the top menu of the **Workflows** table.  This will open an
+import setup form where you can select the archive and the items to import.  Click the **Import** button to initiate
+the import process which will run in the background.  The import process may take several minutes depending on the size
+of the workflow.  A progress bar will be displayed to indicate progress towards completion.
+
+.. todo:: Add screenshots to illustrate the process
+
+Viewing the Workflow Log
+------------------------
+
+As things happen within a workflow, such as steps running or warnings occurring, those events are logged to the workflow
+log.  This log is viewable from the **Workflow Options** menu in the top right of the workflow table.  The workflow log
+is also present in the project log in case you would like to see a more comprehensive view of logs across multiple workflows.
+
+The log viewer allows for sorting and filtering the log as well as viewing the details of a particular log entry.
+
+.. todo:: Add screenshots to illustrate the process
+
+Clearing the Workflow Log
+-------------------------
+
+Clearing the workflow log may be desirable from time to time.  From the log viewer, select the **Clear Log** button.
+This will clear the workflow log which will also remove the log entries from the project level log too.
+
+.. todo:: Add screenshots to illustrate the process
+
+Viewing the Workflow Report
+---------------------------
+
+Maintaining detailed documentation to support both statutory and management requirements is challenging when the
+projects and workflows may be dynamic.  To help solve this problem, PlaidCloud provides a Workflow level report that
+provides detailed documentation of workflows, workflow steps, user defined functions, and variables.
+
+The report is generated on-demand and reflects the current state of the workflow.  To download the report click on
+the Report icon in the **Workflows** hierarchy.
+
+.. todo:: Add screenshots to illustrate the process
+
+Managing Workflow Variables
+---------------------------
+
+PlaidCloud allows variables at both the project scope and workflow scope.  This allows for setting project wide
+variables or being able to pass information easily between workflows.  The variables and values are viewed by clicking
+on the variables icon in the **Workflows** hierarchy.
+
+From the variables table you can view the variables, the current values, and edit the values.  You can also add new
+variables or delete existing ones.
+
+.. todo:: Add screenshots to illustrate the process
+
+Duplicating a Workflow
+----------------------
+
+It may be useful to copy a workflow when planning to make major changes or to replicate the process with different
+options.  Duplicating an entire workflow is very easy in PlaidCloud.  Simply select the workflows you would like to
+duplicate in the **Workflows** table of a selected project and click the **Duplicate Selected Workflows** button at
+the top of the table.  This will copy the workflows and append the word *Copy* to the name.
+
+Once the duplication process is complete, the workflow is fully functional.  Copied workflows are completely separate
+from the original and can be modified without impacting the original workflow.
+
+.. todo:: Add screenshots to illustrate the process
+
+Setting Parallelism
+--------------------
+
+Workflows in PlaidCloud can be executed as a combination of serial steps and parallel operations.  To set a group of
+steps to run in parallel, place the steps in a group within the workflow hierarchy.  Right click on the group folder
+and select the **Execute in Parallel** option.  This will allow all the steps in the group to trigger simultaneously
+and execute in parallel.  Once all steps in the group complete, the next set step in the workflow after the group will activate.
+
+.. todo:: Add screenshots to illustrate the process
+
+Running One Step
+----------------------
+
+During initial workflow development, testing, or troubleshooting it is often quite useful to run steps individually.
+To run a single step in isolation, right click on the step and select **Run Step** from the context menu.
+
+.. todo:: Add screenshots to illustrate the process
+
+Running Multiple Steps
+------------------------------------
+
+While running individual steps is useful, it also may be useful to run subsets of an entire workflow for development,
+testing, or troubleshooting.  To run a subset of steps, select all the steps you would like to run and select
+**Run Selected** from the **Actions** menu at the top of the workflow steps hierarchy.  This will trigger a normal
+workflow processing but start the workflow at the beginning of the selected steps and stop once the last selected
+step is complete.
+
+.. todo:: Add screenshots to illustrate the process
+
+Running and Entire Workflow
+---------------------------
+
+You can trigger a full workflow run by either clicking on the run icon from the **Workflows** table or by selecting
+**Run All** from the **Actions** menu within a specific workflow.
+
+You can also click on the **Toggle Start/Stop** button at the top of the workflow table.  This toggle button will
+stop a running workflow or start a workflow.
+
+.. todo:: Add screenshots to illustrate the process
+
+Setting the Workflow to Skip Steps
+----------------------------------
+
+Steps in the workflow can be set to skip during the workflow run.  This may be useful if there are debugging steps or
+old steps that you are not prepared to completely remove from the workflow yet.
+
+To set this option, click on the step edit option, the pencil icon in the workflow table, to open the edit form.
+Uncheck the enabled checkbox.  After saving the updated step it will no longer run as part of the workflow but can
+still be run using the single step run process.
+
+Steps that have been set to disabled will have a disabled indicator in the workflow steps hierarchy table.
+
+.. todo:: Add screenshots to illustrate the process
+
+Changing the Order of Steps
+---------------------------------------
+
+There are two ways to update the order of steps in the workflow.  The first way is to use the up and down arrows present
+in the **Workflows** table to move the step up or down.  The second way is to use the **Step Move** option which allows
+you to move the step much easier if a large changes are necessary.  The step move option allows you to move the step to
+the top, bottom, or after a specific step in one operation.
+
+.. todo:: Add screenshots to illustrate the process
+
+Setting Steps to Continue on Error
+----------------------------------
+
+Workflow steps can be set to continue processing even when there is an error.  This might be useful in workflow start-up
+conditions or where data may be available intermittently.  If the step errors, it will be recorded as an error but the
+workflow will continue to process.
+
+To set this option, click on the step edit option, the pencil icon in the workflow table, to open the edit form.  Check
+the checkbox for **Continue On Error**.  After saving the updated step, any errors with the step will not cause the
+workflow to stop.
+
+Steps that have been set to continue on error will have a special indicator in the workflow steps hierarchy table.
+
+.. todo:: Add screenshots to illustrate the process
+
+Copy Steps
+----------------------
+
+It is often very useful to copy steps instead of starting from scratch each time.  PlaidCloud allows copying steps
+within workflows as well as between workflows, even in other projects.  You can select multiple steps to copy at once.
+Select the workflow steps within the hierarchy and click the **Copy Selected Steps** button at the top of the table.
+
+This will place the selected steps in the clipboard and allow pasting within the current workflow or another one.
+
+.. todo:: Add screenshots to illustrate the process
+
+Paste Steps
+----------------------
+
+After selecting steps to copy and placing them on the clipboard, you can paste those steps into the same workflow or
+another workflow, even in another project.  There are two options when pasting the steps into the workflow:
+
+  - Append to the end of the workflow
+  - Insert after last selected row
+
+The append option will simply append the steps to the end of the selected workflow.  The insert option will insert the
+copied steps after the selected row.  Note, that if multiple steps have been copied to the clipboard from multiple areas
+in a workflow, that pasting them will paste them in order but will not have any nested hierarchy information from when
+they were copied.  The pasting will be a flat list of steps to insert only.  This might be unexpected but it is safer
+than creating all of the directory structure in the target workflow that existed in the source workflow.
+
+.. todo:: Add screenshots to illustrate the process
+
+Run Dependency Audit
+----------------------
+
+The **Workflow Dependency Audit** is a very helpful tool to understand data and workflow dependencies in complex
+interconnected workflows.  Over time, as workflow processes become more complex, it may become challenging to ensure
+all dependencies are in the correct order.  When data already exists in tables, steps will run and appear correct in
+many cases but may actually have a dependency issue if the data is populated out of order.
+
+This tool will provide a dependency audit and identify issues with data dependency relationships.
+
+.. todo:: Add screenshots to illustrate the process

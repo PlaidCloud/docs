@@ -1,0 +1,15 @@
+@import url("theme.css"); /*make sure to sync this with the base theme's css filename */
+
+.strike {
+    text-decoration: line-through;
+}
+
+.wy-side-nav-search img {
+	display:block;
+	margin:auto auto .809em auto;
+	height:45px;
+	width:45px;
+	background-color:#293F10;
+	padding:5px;
+	border-radius:100%
+}

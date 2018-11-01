@@ -1,0 +1,8 @@
+[31mc:\Users\Michael Rea\src\plaid_site\plaid_site\sphinx\source\index.rst:30: WARNING: toctree contains reference to nonexisting document u'plaidcloud/getting_started/index'
+[39;49;00m[31mc:\Users\Michael Rea\src\plaid_site\plaid_site\sphinx\source\index.rst:30: WARNING: toctree contains reference to nonexisting document u'plaidcloud/standard_transforms/index'
+[39;49;00m[31mc:\Users\Michael Rea\src\plaid_site\plaid_site\sphinx\source\index.rst:30: WARNING: toctree contains reference to nonexisting document u'plaidcloud/how_to/index'
+[39;49;00m[31mc:\Users\Michael Rea\src\plaid_site\plaid_site\sphinx\source\plaidlink\getting_started\index.rst:7: WARNING: toctree glob pattern u'*' didn't match any documents
+[39;49;00m[31mc:\Users\Michael Rea\src\plaid_site\plaid_site\sphinx\source\plaidlink\how_to\index.rst:7: WARNING: toctree glob pattern u'*' didn't match any documents
+[39;49;00m[31mc:\Users\Michael Rea\src\plaid_site\plaid_site\sphinx\source\plaidxl\getting_started\index.rst:7: WARNING: toctree glob pattern u'*' didn't match any documents
+[39;49;00m[31mc:\Users\Michael Rea\src\plaid_site\plaid_site\sphinx\source\plaidxl\how_to\index.rst:7: WARNING: toctree glob pattern u'*' didn't match any documents
+[39;49;00m
