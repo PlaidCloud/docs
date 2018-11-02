@@ -17,6 +17,18 @@ podTemplate(label: 'io',
 
     container('docker') {
       docker.withRegistry('', 'kkapper') {
+        
+          stage('Checkout Plaid') {
+          checkout([$class: 'GitSCM', 
+          branches: [[name: '*/master']],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [
+               [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'home/']]]
+                ],
+          submoduleCfg: [],
+          url: 'git@github.com:PlaidCloud/plaid.git']]])
+          }
+
         stage('Build Image') {
           scm_map = checkout scm
           image = docker.build("${plaid_image}:latest", "--pull .")
@@ -36,7 +48,6 @@ podTemplate(label: 'io',
         }
       }
     }
-    
 
     // Only deploy if we are building from master.
     if (scm_map.GIT_BRANCH == 'master') {
