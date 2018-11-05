@@ -18,12 +18,14 @@ podTemplate(label: 'io',
     container('docker') {
       docker.withRegistry('', 'gbates101') {
         
-          stage('Checkout Plaid') {
-          checkout scm: [$class: 'GitSCM', source: 'https://github.com/PlaidCloud/plaid.git', clean: true, credentialsId: 'kellen_github'], poll: false
-          }
 
         stage('Build Image') {
           scm_map = checkout scm
+
+          stage('Checkout Plaid') {
+            checkout([$class: 'GitSCM', source: 'https://github.com/PlaidCloud/docs.git', credentialsId: "kellen_github"])
+          }
+          
           image = docker.build("${plaid_image}:latest", "--pull .")
         }
 
