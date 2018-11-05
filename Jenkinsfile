@@ -24,7 +24,7 @@ podTemplate(label: 'io',
           }
 
           dir('src') {
-            git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-github'
+            git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-machine-user'
           }
           
           image = docker.build("${plaid_image}:latest", "--pull -f docs/Dockerfile .")
