@@ -27,11 +27,12 @@ podTemplate(label: 'io',
             git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-machine-user'
           }
           
+          sh "ls"
           image = docker.build("${plaid_image}:latest", "--pull -f docs/Dockerfile .")
         }
 
         stage('Remove plaid repository from container') {
-          
+
         }
 
         stage('Publish to DockerHub') {
