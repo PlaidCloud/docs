@@ -16,7 +16,7 @@ podTemplate(label: 'io',
   node(label: 'io') {
 
     container('docker') {
-      docker.withRegistry('', 'gbates') {
+      docker.withRegistry('', 'gbates101') {
         
           stage('Checkout Plaid') {
           checkout([$class: 'GitSCM', 
