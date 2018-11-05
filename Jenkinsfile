@@ -17,7 +17,6 @@ podTemplate(label: 'io',
 
     container('docker') {
       docker.withRegistry('', 'gbates101') {
-        
 
         stage('Build Image') {
           scm_map = checkout scm
