@@ -12,8 +12,8 @@ __author__ = "Kellen Kapper"
 __copyright__ = "© Copyright 2018, Tartan Solutions, Inc"
 __credits__ = ["Kellen Kapper", "Garrett Bates", "Paul Morel"]
 __license__ = "Proprietary"
-__maintainer__ = "Garrett Bates"
-__email__ = "garrett.bates@tartansolutions.com"
+__maintainer__ = "Kellen Kapper"
+__email__ = "kellen.kapper@tartansolutions.com"
 
 root = os.path.dirname(__file__)
 
