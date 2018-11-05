@@ -7,7 +7,7 @@ COPY src /src
 RUN pip install -r /docs/requirements.txt \
 # Build our documentation
 && echo "I AM LOST" \
-&& pwd \
+&& ls \
 && mkdir /www \ 
 && sphinx-build -c /src/sphinx/conf.py /src /www
 
