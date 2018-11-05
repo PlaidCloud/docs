@@ -5,3 +5,4 @@ sphinxcontrib-fulltoc
 sphinxcontrib-websupport
 recommonmark
 sphinxcontrib.httpdomain
+sphinx_sitemap
