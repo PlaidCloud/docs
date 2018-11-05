@@ -6,10 +6,8 @@ COPY src /src
 # Install sphinx and other dependencies
 RUN pip install -r /docs/requirements.txt \
 # Build our documentation
-&& echo "I AM LOST" \
-&& ls src \
 && mkdir /www \ 
-&& sphinx-build -c /src/sphinx/conf.py /src /www
+&& sphinx-build -c /src/sphinx /src /www
 
 # Throw away plaid source before publishing cd
 
