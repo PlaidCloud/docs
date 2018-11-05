@@ -1,15 +1,14 @@
 FROM python:2.7
 
-WORKDIR /
-
-COPY requirements.txt /
-COPY docs /
+COPY docs /docs
+COPY src /src
 
 # Install sphinx and other dependencies
-RUN pip install -r requirements.txt
+RUN pip install -r /docs/requirements.txt
 
 # Build our documentation
-RUN cd /docs/ \
-&& sphinx-build source build
+RUN cd /docs/docs && sphinx-build source build
 
-# Throw away plaid source before publishing 
+# Throw away plaid source before publishing cd
+
+CMD python /docs/web/main.py --port 80

@@ -19,15 +19,15 @@ podTemplate(label: 'io',
       docker.withRegistry('', 'gbates101') {
 
         stage('Build Image') {
-          scm_map = checkout scm
-
-          stage('Checkout Plaid') {
-            checkout([$class: 'GitSCM', source: 'https://github.com/PlaidCloud/docs.git', credentialsId: "kellen_github"])
+          dir('docs') {
+            scm_map = checkout scm
           }
 
-          stage('Install sphinx and build documentation') {
-            image = docker.build("${plaid_image}:latest", "--pull .")
+          dir('src') {
+            checkout([$class: 'GitSCM', source: 'https://github.com/PlaidCloud/plaid.git', credentialsId: "kellen_github"])
           }
+          
+          image = docker.build("${plaid_image}:latest", "--pull -f docs/Dockerfile .")
         }
 
         stage('Publish to DockerHub') {
