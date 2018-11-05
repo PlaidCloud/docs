@@ -19,14 +19,7 @@ podTemplate(label: 'io',
       docker.withRegistry('', 'gbates101') {
         
           stage('Checkout Plaid') {
-          checkout([$class: 'GitSCM', 
-          branches: [[name: '*/master']],
-          doGenerateSubmoduleConfigurations: false,
-          extensions: [
-               [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'home/']]]
-                ],
-          submoduleCfg: [],
-          url: 'https://github.com/PlaidCloud/plaid.git'])
+          checkout scm: [$class: 'GitSCM', source: 'https://github.com/PlaidCloud/plaid.git', clean: true, credentialsId: 'kellen_github'], poll: false
           }
 
         stage('Build Image') {
