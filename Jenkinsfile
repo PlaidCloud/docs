@@ -26,7 +26,7 @@ podTemplate(label: 'io',
                [$class: 'SparseCheckoutPaths',  sparseCheckoutPaths:[[$class:'SparseCheckoutPath', path:'home/']]]
                 ],
           submoduleCfg: [],
-          url: 'git@github.com:PlaidCloud/plaid.git')
+          url: 'git@github.com:PlaidCloud/plaid.git'])
           }
 
         stage('Build Image') {
