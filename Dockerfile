@@ -4,10 +4,10 @@ COPY docs /docs
 COPY src /src
 
 # Install sphinx and other dependencies
-RUN pip install -r /docs/requirements.txt
-
+RUN pip install -r /docs/requirements.txt \
 # Build our documentation
-RUN cd /docs/docs && sphinx-build source build
+&& mkdir /www \ 
+&& sphinx-build /src /www
 
 # Throw away plaid source before publishing cd
 
