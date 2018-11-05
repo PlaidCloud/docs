@@ -24,8 +24,10 @@ podTemplate(label: 'io',
           stage('Checkout Plaid') {
             checkout([$class: 'GitSCM', source: 'https://github.com/PlaidCloud/docs.git', credentialsId: "kellen_github"])
           }
-          
-          image = docker.build("${plaid_image}:latest", "--pull .")
+
+          stage('Install sphinx and build documentation') {
+            image = docker.build("${plaid_image}:latest", "--pull .")
+          }
         }
 
         stage('Publish to DockerHub') {

@@ -2,6 +2,8 @@ FROM python:2.7
 
 WORKDIR /
 
+COPY requirements.txt /
+
 # Install sphinx and other dependencies
 RUN pip install -r requirements.txt
 
