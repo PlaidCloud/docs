@@ -49,7 +49,7 @@ podTemplate(label: 'io',
     if (scm_map.GIT_BRANCH == 'master') {
       stage("Deploy to Kubernetes") {
         container('kubectl') {
-          sh "kubectl set image deployment/docs docs=plaidcloud/docs:${image_label} --record"
+          sh "kubectl -n plaid set image deployment/docs docs=plaidcloud/docs:${image_label} --record"
         }
       }
     }
