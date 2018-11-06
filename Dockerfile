@@ -8,6 +8,6 @@ RUN pip install -r /docs/requirements.txt \
 # Build our documentation
 && mkdir /www \ 
 && sphinx-build /docs/docs/source /www \
-&& rm /src
+&& rm -rf /src
 
-CMD python /docs/web/main.py --port 80
+CMD python /docs/web/main.py
