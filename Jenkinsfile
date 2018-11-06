@@ -31,7 +31,7 @@ podTemplate(label: 'io',
         }
 
         stage('Remove plaid repository from container') {
-
+              //Test
         }
 
         stage('Publish to DockerHub') {
