@@ -27,7 +27,7 @@ TORNADO_SETTINGS = {
     'debug': False,
 }
 
-tornado.options.define("port", default=8000, type=int)
+tornado.options.define("port", default=80, type=int)
 logging.info("Creating Tornado Application")
 application = tornado.web.Application(HANDLER_MAP, **TORNADO_SETTINGS)
 

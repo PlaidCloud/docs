@@ -30,10 +30,6 @@ podTemplate(label: 'io',
           image = docker.build("${plaid_image}:latest", "--pull -f docs/Dockerfile .")
         }
 
-        stage('Remove plaid repository from container') {
-              //Test
-        }
-
         stage('Publish to DockerHub') {
           stage('Push "latest" Tag') {
             image.push()
