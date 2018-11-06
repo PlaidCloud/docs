@@ -7,7 +7,7 @@ COPY src /src
 RUN pip install -r /docs/requirements.txt \
 # Build our documentation
 && mkdir /www \ 
-&& sphinx-build -c /src/sphinx /src /www
+&& sphinx-build /docs/docs/source /www
 
 # Throw away plaid source before publishing cd
 
