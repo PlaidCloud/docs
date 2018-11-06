@@ -15,6 +15,8 @@ __license__ = "Proprietary"
 __maintainer__ = "Kellen Kapper"
 __email__ = "kellen.kapper@tartansolutions.com"
 
+root = os.path.dirname(__file__)
+
 # Application Configuration Settings
 HANDLER_MAP = [
     (r"/(.*)", web.StaticFileHandler, {
