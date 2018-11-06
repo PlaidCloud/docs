@@ -18,7 +18,7 @@ __email__ = "kellen.kapper@tartansolutions.com"
 # Application Configuration Settings
 HANDLER_MAP = [
     (r"/(.*)", web.StaticFileHandler, {
-        "path": "/www",
+        "path": root,
         "default_filename": "index.html",
     })
 ]
