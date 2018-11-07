@@ -25,7 +25,7 @@ from docutils.utils import get_source_line  # monkeypatch from SO
 import recommonmark
 
 sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('/src/plaid/rpc_v1'))
+sys.path.insert(0, os.path.abspath('/src/plaid/plaid/rpc_v1'))
 
 def _warn_node(self, msg, node, **kwargs):                             # monkeypatch
     if not msg.startswith('nonlocal image URI found:'):                # monkeypatch
