@@ -7,6 +7,6 @@ COPY src /src
 RUN pip install -r /docs/requirements.txt \
 # Build our documentation
 && mkdir /www \ 
-&& sphinx-build /docs/docs/source /www 
+&& sphinx-build -c /src/sphinx /docs/docs/source /www 
 
 CMD python /docs/web/main.py
