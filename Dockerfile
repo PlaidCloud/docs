@@ -5,7 +5,7 @@ COPY src /src
 
 # Install sphinx and other dependencies
 RUN pip install -r /docs/requirements.txt \
-&& pip install /r /src/plaid \
+&& pip install -r /src/plaid \
 # Build our documentation
 && mkdir /www \ 
 && sphinx-build -n /docs/docs/source /www 
