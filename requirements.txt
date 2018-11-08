@@ -4,3 +4,5 @@ sphinx-rtd-theme >= 0.2.4
 sphinxcontrib-fulltoc
 sphinxcontrib-websupport
 recommonmark
+sphinxcontrib.httpdomain
+sphinx_sitemap

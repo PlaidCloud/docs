@@ -25,7 +25,7 @@ from docutils.utils import get_source_line  # monkeypatch from SO
 import recommonmark
 
 sys.path.insert(0, os.path.abspath('.'))
-sys.path.insert(0, os.path.abspath('/home/plaid/src/plaid/plaid/rpc_v1'))
+sys.path.insert(0, os.path.abspath('/src/plaid/rpc_v1'))
 
 def _warn_node(self, msg, node, **kwargs):                             # monkeypatch
     if not msg.startswith('nonlocal image URI found:'):                # monkeypatch
@@ -59,6 +59,9 @@ extensions = [
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
+
+# This allows these modules to be mocked up without importing all dependencies, to add to this just add the root module name.
+autodoc_mock_imports = ["plaid", "plaidtools"]
 
 # Adding markdown so we can use lecacy stuff more-easily.
 # http://www.sphinx-doc.org/en/stable/markdown.html
@@ -223,4 +226,4 @@ add_module_names = True
 autodoc_docstring_signature = True
 
 # This is for the sitemap generation
-site_url = 'https://plaidcloud.com/docs/'
+site_url = 'https://plaidcloud.io/docs/'
