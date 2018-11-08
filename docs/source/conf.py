@@ -60,6 +60,8 @@ extensions = [
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
+autodoc_mock_imports = ["plaid" , "plaidtools"]
+
 # Adding markdown so we can use lecacy stuff more-easily.
 # http://www.sphinx-doc.org/en/stable/markdown.html
 source_parsers = {
