@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM plaidcloud/base
 
 COPY docs /docs
 COPY src /src
