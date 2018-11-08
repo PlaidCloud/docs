@@ -9,11 +9,11 @@ Welcome to PlaidCloud
    :includehidden:
    :titlesonly:
 
-   Documentation Home <https://plaidcloud.com/docs/index.html>
-   Solutions <https://plaidcloud.com/solutions>
-   Resources <https://plaidcloud.com/resources>
-   About <https://plaidcloud.com/about>
-   Sign In <https://plaidcloud.com/client>
+   Documentation Home <https://plaidcloud.io/docs/index.html>
+   Solutions <https://plaidcloud.io/solutions>
+   Resources <https://plaidcloud.io/resources>
+   About <https://plaidcloud.io/about>
+   Sign In <https://plaidcloud.io/client>
 
 
 .. toctree::

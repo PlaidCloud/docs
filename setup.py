@@ -7,6 +7,6 @@ setup(
     version='0.1',
     description='PlaidCloud Documentation',
     author='Tartan Solutions, Inc',
-    url='https://plaidcloud.com',
+    url='https://plaidcloud.io',
     packages=['docs']
 )
