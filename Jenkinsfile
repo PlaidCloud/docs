@@ -40,7 +40,7 @@ podTemplate(label: 'io',
             git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-machine-user'
           }
           
-          image = docker.build("${plaid_image}:latest", "--pull ${docker_args} -f docs/Dockerfile .")
+          image = docker.build("${image_name}:latest", "--pull ${docker_args} -f docs/Dockerfile .")
         }
 
         // No need to publish dev branches.
