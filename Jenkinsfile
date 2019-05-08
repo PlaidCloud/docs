@@ -37,7 +37,7 @@ podTemplate(label: 'io',
         stage('Build Image') {
 
           dir('docs') {
-            image = docker.build("${image_name}:latest", "--pull -f docs/Dockerfile .")
+            image = docker.build("${image_name}:latest", "--pull -f Dockerfile .")
           }
 
           dir('src') {
@@ -60,7 +60,7 @@ podTemplate(label: 'io',
 
           stage("Deploy to Kubernetes") {
             container('kubectl') {
-              sh "kubectl -n plaid set image deployment/docs docs=plaidcloud/docs:${image_label} --record"
+              sh "kubectl -n plaid set image deployment/docs docs=plaidcloud/${image_name}:${image_label} --record"
             }
           } 
         }
