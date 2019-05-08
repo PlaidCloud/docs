@@ -21,35 +21,34 @@ podTemplate(label: 'io',
     ])
     container('docker') {
       docker.withRegistry('', 'plaid-docker') {
-        // Checkout source
-        scm_map = checkout([
-            $class: 'GitSCM',
-            branches: scm.branches,
-            doGenerateSubmoduleConfigurations: false,
-            extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: false, reference: '', trackingSubmodules: false]],
-            submoduleCfg: [],
-            userRemoteConfigs: scm.userRemoteConfigs
-        ])
+        dir('docs') {
+          scm_map = checkout scm
+        }
 
         // When building from a PR event, we want to read the branch name from the CHANGE_BRANCH binding. This binding does not exist on branch events.
         CHANGE_BRANCH = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
 
-        stage('Build Image') {
+        docker_args = ''
 
-          dir('docs') {
-            image = docker.build("${image_name}:latest", "--pull -f /docs/Dockerfile .")
-          }
-
-          dir('src') {
-            git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-machine-user'
-          }          
+        // Add any extra docker build arguments here.
+        if (params.no_cache) {
+          docker_args += '--no-cache'
         }
 
-        // No need to publish dev branches, we can change this later.
+        stage('Build Image') {
+          dir('src') {
+            git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-machine-user'
+          }
+          
+          image = docker.build("${plaid_image}:latest", "--pull ${docker_args} -f docs/Dockerfile .")
+        }
+
+        // No need to publish dev branches.
         if (CHANGE_BRANCH == 'master') {
 
-          stage('Publish to DockerHub') 
-              image.push()
+          stage('Publish to DockerHub') {
+            image.push()
+          }
 
           stage('Push Git Tag') {
             // Add additional, unique image tag and push.
