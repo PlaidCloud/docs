@@ -37,7 +37,7 @@ podTemplate(label: 'io',
         stage('Build Image') {
 
           dir('docs') {
-            image = docker.build("${image_name}:latest", "--pull -f Dockerfile .")
+            image = docker.build("${image_name}:latest", "--pull -f /docs/Dockerfile .")
           }
 
           dir('src') {
