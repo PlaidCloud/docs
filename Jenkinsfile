@@ -59,7 +59,7 @@ podTemplate(label: 'io',
 
           stage("Deploy to Kubernetes") {
             container('kubectl') {
-              sh "kubectl -n plaid set image deployment/docs docs=plaidcloud/${image_name}:${image_label} --record"
+              sh "kubectl -n plaid set image deployment/docs docs=${image_name}:${image_label} --record"
             }
           } 
         }
