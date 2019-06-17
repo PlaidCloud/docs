@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Data Type Expressions
 ======================
 
@@ -9,8 +12,6 @@ Data Type Expressions
 
    .. contents::
       :local: 
-
-      
 
 Analyze offers a wide variety of standard data types (dtypes) to support your
 requirements. As datasets become larger, determining smaller size
@@ -133,5 +134,3 @@ func.to() Data Type Conversions
 | g                     | time zone      | epoch to time  | amp(200120 |
 | float)                |                | stamp          | 400)       |
 +-----------------------+----------------+----------------+------------+
-
-.. todo:: Add screenshots

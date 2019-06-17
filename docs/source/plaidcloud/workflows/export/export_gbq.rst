@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Export to Google BigQuery
 =============================
 
@@ -44,9 +43,6 @@ Examples
 
 No examples for Export Google BigQuery yet.
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
-.. todo:: Update icon to match PlaidCloud Workflow indicator
-
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
-
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/database.png

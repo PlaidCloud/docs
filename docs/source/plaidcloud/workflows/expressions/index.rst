@@ -1,7 +1,6 @@
 Expressions
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
 .. sidebar:: Expressions
 
    .. toctree::
@@ -9,5 +8,5 @@ Expressions
       :includehidden:
       :glob:
       
-      
       *
+      

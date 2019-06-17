@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Aggregation
 ============
 
@@ -39,4 +42,4 @@ Analyze provides the ability to aggregate a table. The following aggregations ca
 | Population Variance             | Population Variance in group                            |
 +---------------------------------+---------------------------------------------------------+
 
-.. todo:: Add screenshots and possible infographic to show aggregations
+.. todo:: Screenshots and infographics to show aggregations coming soon

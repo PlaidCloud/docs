@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Run SAP PCM Hyper Loader
 =============================
 
@@ -36,8 +35,6 @@ Loads an SAP Profitability and Cost Management (PCM) model using direct
 table loads. This process is significantly faster than Databridge. The
 Hyper Loader supports virtually all of the current PCM data, assignment,
 and structure tables.
-
-.. todo:: Verify this is the complete list.  More were added recently.
 
 This is the current list of available loading targets:
 
@@ -122,7 +119,5 @@ the target load table. Inspect source>>propagate both sides of the table
 will reveal the data. Click "Save and Run Step" when the data is entered and you
 have added any expressions.
 
-.. todo:: Update icon to match PlaidCloud Workflow indicator
-
 .. |SAP Partner| image:: ../../../_static/images/partnerships/sap/SAP_Partner.gif
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/block.png

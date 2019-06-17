@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Delete SAP PCM Model
 =============================
 
@@ -61,9 +60,8 @@ Select "Agent to Use" from the dropdown. Select your desired
 not (if so, check the check box). Finally, check the "Wait for Deletion to Complete" and 
 click "Save and Run Step".
 
-.. todo:: Add examples and screenshots
+.. todo:: Examples and screenshots coming soon
 
 .. |SAP Partner| image:: ../../../_static/images/partnerships/sap/SAP_Partner.gif
 .. |PCM Delete Model| image:: ../../../_static/images/transforms/PCM_delete_model_ex.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/block--minus.png
-

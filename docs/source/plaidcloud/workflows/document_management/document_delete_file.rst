@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Delete Document File
 =========================
 
@@ -41,8 +40,7 @@ First, select the appropriate account from the dropdown menu.
 
 Next, press the **Browse** button to select the file to delete.
 
-.. note:: If the file doesn't exist (already deleted), no action is
-    taken.
+.. note:: If the file doesn't exist (already deleted), no action is taken.
 
 Workflow Configuration Forms
 ----------------------------

@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Machine Learning
 =================
 
@@ -17,5 +20,5 @@ an external system.
 
 Additional documentation on how to use machine learning is coming soon.
 
-.. todo:: Address Parsing machine learning, screenshots, more expansive explanation of AI / Machine Learning
+.. todo:: Address Parsing machine learning, screenshots, more expansive explanation of AI / Machine Learning coming soon
 

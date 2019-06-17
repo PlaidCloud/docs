@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Document Text Substitution
 ============================
 
@@ -50,4 +49,3 @@ Under "Input File or Directory", make a selection from the "Account" dropdown an
 .. |Document Text Substitution in File| image:: ../../../_static/images/transforms/document_text_substitution.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-convert.png
-

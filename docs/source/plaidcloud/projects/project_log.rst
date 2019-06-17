@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Project Log
 ===========
 
@@ -56,8 +59,6 @@ To clear the Project Log:
 |clear log select|
 
 
-
-
 Viewing the Project Report
 --------------------------
 
@@ -74,7 +75,6 @@ To download the report:
 
 |report icon select|
 
-
 .. |log icon select| image:: ../../_static/img/plaidcloud/projects/common/1_log_icon_select.png
 .. |member icon select| image:: ../../_static/img/plaidcloud/projects/common/1_member_icon_select.png
 .. |projects action select| image:: ../../_static/img/plaidcloud/projects/common/2_projects_action_select.png
@@ -83,10 +83,3 @@ To download the report:
 .. |clear log select| image:: ../../_static/img/plaidcloud/projects/project_log/clearing_the_project_log/2_clear_log_select.png
 .. |viewing the project report| image:: ../../_static/img/plaidcloud/projects/project_log/viewing_the_project_report/1_report_icon_select.png
 .. |report icon select| image:: ../../_static/img/plaidcloud/projects/project_log/viewing_the_project_report/1_report_icon_select.png
-
-
-
-
-
-
-

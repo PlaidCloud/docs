@@ -1,6 +1,5 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Export SPSS
 =============================
 
@@ -27,14 +26,11 @@ Export SPSS
 | **Output Type**     | PlaidCloud Analyze Table   |
 +---------------------+----------------------------+
 
-
 Description
 -----------
 
 Import SPSS sav and zsav files from PlaidCloud Document.
 
-.. todo:: Add additional detail about exporting to SPSS sav and zsav files.
-
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-table.png

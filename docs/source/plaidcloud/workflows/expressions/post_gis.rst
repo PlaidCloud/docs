@@ -1,4 +1,7 @@
-﻿PostGIS
+﻿.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
+PostGIS
 ============
 
 .. toctree::
@@ -9,8 +12,6 @@
 
    .. contents::
       :local: 
-
-
 
 Analyze provides access to the powerful PostGIS library of functions for
 geospatial analysis. The functions available are shown in the following
@@ -250,28 +251,3 @@ Geometry Constructors
 |                       | is an alias name for        |
 |                       | ST\_GeomFromText            |
 +-----------------------+-----------------------------+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

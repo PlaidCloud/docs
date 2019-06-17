@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Lookup
 =============================
 
@@ -210,4 +209,3 @@ section of the BCS Demo.
 .. |Lookup Operation 1| image:: ../../../_static/images/transforms/table_lookup_lookup_operation.png
 .. |Lookup Operation 2| image:: ../../../_static/images/transforms/table_lookup_table_preview.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/table-join.png
-

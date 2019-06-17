@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Call SAP General Ledger Posting
 ===============================
 
@@ -63,4 +62,3 @@ Requests number, and select Wait for RFC to Complete. Save and Run Step.
 .. |SAP Remote Function Call 1| image:: ../../../_static/images/transforms/SAP_rfc_1_ex.png
 .. |SAP Remote Function Call 2| image:: ../../../_static/images/transforms/SAP_rfc_2_ex.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-invoice.png
-

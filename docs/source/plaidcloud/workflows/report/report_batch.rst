@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Report Batch
 =============================
 
@@ -39,6 +38,6 @@ Examples
 
 No examples yet...
 
-.. todo:: Add examples and screenshots
+.. todo:: Examples and screenshots coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/blue-document-view-thumbnail.png

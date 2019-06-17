@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Delete Document Directory
 ===========================
 
@@ -41,8 +40,7 @@ First, select the appropriate account from the dropdown menu.
 
 Next, press the **Browse** button to select the directory to delete.
 
-.. note:: If the directory doesn't exist (already deleted), no
-    action is taken.
+.. note:: If the directory doesn't exist (already deleted), no action is taken.
 
 Workflow Configuration Forms
 ----------------------------

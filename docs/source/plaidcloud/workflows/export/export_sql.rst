@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Export SQL
 =============================
 
@@ -51,8 +50,6 @@ Configuration Parameters
 Examples
 --------
 
-No examples for Export SQL yet.
-
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/database-import.png

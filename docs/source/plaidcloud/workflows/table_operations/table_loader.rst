@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Loader
 =============================
 
@@ -99,4 +98,3 @@ has data. |Table Loader|
 
 .. |Table Loader| image:: ../../../_static/images/transforms/table_loader.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/table--plus.png
-

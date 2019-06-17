@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Export to Excel
 =============================
 
@@ -173,6 +172,5 @@ respectively. No additional operations are performed.
 .. _Source Table Slicing: ../transforms/common_features#source-table-slicing-limit
 .. _Select Subset of Final Data: ../transforms/common_features#select-subset-of-final-data
 .. _Final Data Table Slicing: ../transforms/common_features#final-data-table-slicing-limit
-
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-excel-table.png

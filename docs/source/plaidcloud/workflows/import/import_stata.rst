@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Import Stata
 =============================
 
@@ -93,12 +92,10 @@ Type** value to numeric format, as needed. |Import Stata 2|
 
 No **Data Filters** are used.
 
-.. todo:: Add examples and screenshots
+.. todo:: Examples and screenshots coming soon
 
 .. |Import Stata 1| image:: ../../../_static/images/transforms/import_stata_import_parameters.png
 .. |Import Stata 2| image:: ../../../_static/images/transforms/import_stata_table_data_selection.png
 
-.. todo:: Update icon to match PlaidCloud Workflow indicator
-
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/database.png
 

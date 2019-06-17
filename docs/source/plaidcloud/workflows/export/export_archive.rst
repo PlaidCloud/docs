@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Export Table Archive
 =============================
 
@@ -41,4 +40,3 @@ Examples
 No examples yet...
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/box--arrow.png
-

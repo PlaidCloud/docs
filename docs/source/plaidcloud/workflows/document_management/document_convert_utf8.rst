@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Convert Document Encoding to UTF-8
 ==================================
 
@@ -48,9 +47,8 @@ Select the input file and browse for the file within that location. Select the d
 location, and browse to selected the desired location for the file. Save and run. |Document Convert File to UTF-8
 Encoding|
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Document Convert File to UTF-8 Encoding| image:: ../../../_static/images/transforms/document_convert_ascii_encoding.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-globe-blue.png
-

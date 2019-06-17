@@ -1,6 +1,8 @@
-Dashboards
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
+Dashboards
+!!!!!!!!!!!
 
 .. sidebar:: This Topic
 
@@ -12,7 +14,6 @@ Dashboards
       :includehidden:
       :glob:
       
-
 Description
 -----------
 
@@ -111,4 +112,3 @@ To **change the chart type:**
 3) Click "Query"
 
 From here you are able to set axis labels, margins, ticks, etc. 
-

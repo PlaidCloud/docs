@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Convert Document Encoding
 ==========================
 
@@ -43,9 +42,6 @@ Examples
 Create a source input, select the input file and browse for the file within that location. Select the desired output
 location, and browse to selected the desired location for the file. Save and run.
 
-.. todo:: Add screenshots, description, and update parameters
-
 .. |Document Convert File to ASCII Encoding| image:: ../../../_static/images/transforms/document_convert_ascii_encoding.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-view-book.png
-

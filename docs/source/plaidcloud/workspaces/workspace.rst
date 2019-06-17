@@ -1,6 +1,8 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Workspaces
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 .. sidebar:: This Page
 
@@ -171,11 +173,3 @@ To remove a member:
 .. |organization workspace select| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/workspaces/viewing_and_managing_workspaces/viewing_and_managing_workspaces/1_organization_workspace_select.png
 .. |member icon select| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/workspaces/workspace_members/adding_members/1_member_icon_select.png
 .. |adding members form submit| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/workspaces/workspace_members/adding_members/2_adding_members_form_submit.png
-
-
-
-
-
-
-
-

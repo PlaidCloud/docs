@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table In-Place Delete
 =============================
 
@@ -32,7 +31,9 @@ Table In-Place Delete
 Description
 -----------
 
-Performs a delete on the table using the specified filter conditions. The operation is performed on the designated table directly so no additional tables are created. Only the rows that meet the filter criteria are deleted. This may be an effective approach when concerns of data size are encountered.
+Performs a delete on the table using the specified filter conditions. The operation is performed on the designated table 
+directly so no additional tables are created. Only the rows that meet the filter criteria are deleted. This may be an 
+effective approach when concerns of data size are encountered.
 
 Table Selection
 ---------------
@@ -46,8 +47,6 @@ Workflow Configuration Forms
 Examples
 --------
 
-No examples yet.
-
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/table-delete-row.png

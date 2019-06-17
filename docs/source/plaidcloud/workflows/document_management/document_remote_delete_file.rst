@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Document - Remote Delete File
 ===============================
 
@@ -49,4 +48,3 @@ First, make a selection from the "Agent to Use" dropdown. Next, enter the file o
 .. |Document Remote Delete| image:: ../../../_static/images/transforms/document_remote_delete_ex.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/blue-document--minus.png
-

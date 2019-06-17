@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Stop Loop
 =============================
 
@@ -45,7 +44,5 @@ from the **Workflow** dropdown menu.
 
 Examples
 --------
-
-No examples yet...
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/arrow-repeat.png

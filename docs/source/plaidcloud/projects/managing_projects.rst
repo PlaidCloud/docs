@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Managing Projects
 =================
 
@@ -5,7 +8,6 @@ Managing Projects
 
    .. contents::
       :local:
-
 
 Creating New Projects
 ---------------------
@@ -26,7 +28,19 @@ To create a new project:
 
 The project is now ready for updating access permissions, adding owners, and creating workflows.
 
-.. note:: By default the project will be accessible by all members of the current workspace. 
+.. note:: By default the project will be accessible by all members of the current workspace.
+
+Automatic Change Tracking
+-------------------------
+
+All changes to a project including workflows, data editors, hierarchies, table structures, and 
+UDFs are tracked and allow point-in-time recovery of the state.  This allows for easy recovery from
+user introduced problems or simply copying a different point-in-time to another project for comparison.
+
+In addition to overall tracking, projects and its elements also allow for versioning.  Not only is creating
+a version easy, you can also merge changes from one version to another easily too.  This provides a simple way
+to keep track of snapshots or to create a version for development and then be able to merge those changes
+into the non-development version when you want.
 
 Managing Project Access
 -----------------------
@@ -163,14 +177,16 @@ To set a project level variable:
 
 |project variables icon|
 
-From the Variables Table you can view the variables and view/edit the current values. You can also add new or delete existing variables by clicking the "New Project Variable" button.
+From the Variables Table you can view the variables and view/edit the current values. You 
+can also add new or delete existing variables by clicking the "New Project Variable" button.
 
 |new project variable|
 
-Duplicating a Project
+Cloning a Project
 ---------------------
 
-When a project is duplicated there may be project related references, such as workflow steps, that run within the project. For this, PlaidCloud offers two options for performing a full duplication:
+When a project is cloned there may be project related references, such as workflow steps, 
+that run within the project. For this, PlaidCloud offers two options for performing a full duplication:
 
 - Duplicate with updating project references
 - Duplicate without updating project references
@@ -222,13 +238,3 @@ To duplicate **without** updating project references:
 .. |new project variable| image:: ../../_static/img/plaidcloud/projects/managing_projects/managing_project_variables/2_new_project_variable.png
 .. |duplicate without update select| image:: ../../_static/img/plaidcloud/projects/managing_projects/duplicating_a_project/2_duplicate_without_update_select.png
 .. |duplicate with update select| image:: ../../_static/img/plaidcloud/projects/managing_projects/duplicating_a_project/3_duplicate_with_update_select.png
-
-
-
-
-
-
-
-
-
-

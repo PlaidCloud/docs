@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Import Google BigQuery
 =============================
 
@@ -45,8 +44,4 @@ Examples
 
 No examples for Import Google BigQuery yet.
 
-.. todo:: Add examples and screenshots
-
-.. todo:: Update icon to match PlaidCloud Workflow indicator
-
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/database.png

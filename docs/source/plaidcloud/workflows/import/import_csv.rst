@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Import CSV
 =============================
 
@@ -275,4 +274,3 @@ of the BCS Demo.
 .. |Import CSV Text Replacement| image:: ../../../_static/images/transforms/import_csv_b.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-excel-csv.png
-

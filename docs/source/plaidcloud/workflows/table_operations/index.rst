@@ -1,6 +1,8 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Transforms - Table
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 .. sidebar:: Table Transforms
 
@@ -9,10 +11,4 @@ Transforms - Table
       :includehidden:
       :glob:
 	   
-	   
       *
-
-Description
------------
-
-Table Transforms enable users to perform SQL-esque data transformations on data that has been imported into PlaidCloud Analyze tables.

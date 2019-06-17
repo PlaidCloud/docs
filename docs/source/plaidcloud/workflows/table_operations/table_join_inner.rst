@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Inner Join
 =============================
 
@@ -271,4 +270,3 @@ section of the BCS Demo.
 .. |Inner Join Table B| image:: ../../../_static/images/transforms/table_join_inner_b.png
 .. |Inner Join Table Output| image:: ../../../_static/images/transforms/table_join_inner_c.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/sql-join-inner.png
-

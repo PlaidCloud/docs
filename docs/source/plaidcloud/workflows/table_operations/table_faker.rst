@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Faker
 =============================
 
@@ -504,15 +503,18 @@ While these two generators do not have arguments, the options they provide act s
 | 13          | {:^10d}  | 13         | Center aligned (width 10)                      |
 +-------------+----------+------------+------------------------------------------------+
 
-
-
 **Random Choice**:
 
-In order to provide the options for random choice, simply put your options in quotes and seperate each option with a comma. So a string of random choice options would appear like this: "x","y","z"
+In order to provide the options for random choice, simply put your options in quotes and seperate each option with a comma. 
+So a string of random choice options would appear like this: "x","y","z"
 
 |sentence equation|
 
-Here the "Key Word Args/Pattern/Choices" column of the "pattern" row contains a sentence with several refrences. The first reference equation ( {percentage0-100:.2f}% ) points to the "percentage0-100" row which will generate a random equation. Therefore, the random percentage produced by the "percentage0-100" row will be automatically inserted into the scentence. The reference equation {first_name} points to the row titled "first_name" which will randomly generate a first name, and this name will be automatically inserted into the sentence. The last refernce equation ( {randomn_choice} ) operates the same as the other two. 
+Here the "Key Word Args/Pattern/Choices" column of the "pattern" row contains a sentence with several refrences. 
+The first reference equation ( {percentage0-100:.2f}% ) points to the "percentage0-100" row which will generate a random equation. 
+Therefore, the random percentage produced by the "percentage0-100" row will be automatically inserted into the scentence. The 
+eference equation {first_name} points to the row titled "first_name" which will randomly generate a first name, and this name will 
+be automatically inserted into the sentence. The last refernce equation ( {randomn_choice} ) operates the same as the other two. 
 
 With this, when the pattern generator is run, you will recieve the following results. 
 
@@ -520,12 +522,3 @@ With this, when the pattern generator is run, you will recieve the following res
 
 .. |sentence equation| image:: ../../_static/img/plaidcloud/workflow/table_operation/table_faker/1_sentence_equation.png
 .. |final result| image:: ../../_static/img/plaidcloud/workflow/table_operation/table_faker/2_final_result.png
-
-
-
-
-
-
-
-
-

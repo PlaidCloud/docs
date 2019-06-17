@@ -1,6 +1,5 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Table Anti Join
 =============================
 
@@ -172,9 +171,9 @@ Workflow Configuration Forms
 Examples
 --------
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
+
 .. |Inner Join Table A| image:: ../../../_static/images/transforms/table_join_inner_a.png
 .. |Inner Join Table B| image:: ../../../_static/images/transforms/table_join_inner_b.png
 .. |Inner Join Table Output| image:: ../../../_static/images/transforms/table_join_inner_c.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/sql-join-inner.png
-

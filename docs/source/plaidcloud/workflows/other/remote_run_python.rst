@@ -1,6 +1,5 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Run Remote Python
 =============================
 
@@ -35,9 +34,6 @@ This transforms will run a Python file using PlaidLink.  The Python file is exec
 
 A set of global variables can be passed the script execution on the remote system.
 
-Duration Parameters
--------------------
-
 
 Workflow Configuration Forms
 ----------------------------
@@ -45,8 +41,6 @@ Workflow Configuration Forms
 Examples
 --------
 
-No examples yet.
-
-.. todo:: Add better description, examples, and screenshots
+.. todo:: Description, examples, and screenshots coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/application-terminal.png

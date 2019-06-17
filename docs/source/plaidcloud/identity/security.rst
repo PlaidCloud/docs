@@ -1,8 +1,5 @@
-
 .. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
-
-
 
 Managing Security
 =================
@@ -11,7 +8,6 @@ Managing Security
 
    .. contents::
       :local:
-
 
 Security and access management for PlaidCloud is straightforward because all access is granted based on which security groups a member is associated, and the security groups a member belongs to are easily customizable to the access constraints desired.
 

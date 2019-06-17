@@ -2,7 +2,6 @@
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 .. sectionauthor:: Andrew Hodgson <andrew.hodgson@tartansolutions.com>
 
-
 Rename Workflow
 ===============
 
@@ -50,11 +49,6 @@ from the **Workflow** dropdown menu.
 
 Finally, enter the new workflow name into the **Rename To** field. Remember
 that the name should be unique to the Project.
-
-How to Handle Existing Workflow
--------------------------------
-
-.. todo:: how to handle existing workflow
 
 Workflow Configuration Forms
 ----------------------------

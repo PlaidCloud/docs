@@ -1,7 +1,6 @@
 .. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 File and Folder Management
 ==========================
 
@@ -9,7 +8,6 @@ File and Folder Management
 
    .. contents::
       :local:
-
 
 Account Types and Navigation
 ----------------------------
@@ -23,6 +21,7 @@ including:
 - Amazon S3
 - Azure Cloud Storage
 - Rackspace Cloudfiles
+- Wasabi Hot Storage
 - Dropbox
 - Google Drive
 - Local Servers via SFTP
@@ -50,7 +49,8 @@ Private accounts operate much like shared accounts but are only viewable
 by the owners. This is particularly useful for storing sensitive information 
 that is not intended for wider sharing.
 
-To access private accounts, first select the main **Document** page then select "My Private Accounts" along the top of the page. This will open a list of accounts to explore, provided the member has 
+To access private accounts, first select the main **Document** page then select "My Private Accounts" 
+along the top of the page. This will open a list of accounts to explore, provided the member has 
 private accounts already established.
 
 |My Private Accounts Tab|

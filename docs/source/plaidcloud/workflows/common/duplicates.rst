@@ -1,8 +1,11 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Duplicates
 ~~~~~~~~~~~~~~
-To report duplicates, select the **Report Duplicates in Table** checkbox and then specify an output table which will contain all of the duplicate records.
 
-.. todo:: Add screenshots, description, and update parameters
+To report duplicates, select the **Report Duplicates in Table** checkbox and then specify an output 
+table which will contain all of the duplicate records.
 
 .. image:: ../../../_static/images/transforms/common_data_filters_duplicates.png
 

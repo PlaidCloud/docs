@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Notify Agent
 =============================
 
@@ -51,8 +50,6 @@ Examples
 
 No examples for Notify PlaidCloud Agent yet.
 
-.. todo:: Add examples and screenshots
+.. todo:: Examples and screenshots coming soon
 
-.. todo:: Update icon to match PlaidCloud Workflow indicator
-
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/mails.png

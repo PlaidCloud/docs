@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Final Data Table Slicing (Limit)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -7,7 +10,5 @@ specify the following:
 -  **Initial Rows to Skip:** Rows of data to skip (column header row is not included in count)
 -  **End at Row:** Last row of data to include. This is
    different from simply counting rows at the end to drop
-
-.. todo:: Add screenshots, description, and update parameters
 
 .. image:: ../../../_static/images/transforms/common_data_filters_target_table_slicing.png

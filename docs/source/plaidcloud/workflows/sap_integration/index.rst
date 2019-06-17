@@ -1,7 +1,8 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Transforms - SAP Integration
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 
 .. sidebar:: SAP Integration Transforms
 
@@ -10,5 +11,5 @@ Transforms - SAP Integration
       :includehidden:
       :glob:
       
-      
       *
+      

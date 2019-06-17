@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Clear Workflow Log
 =============================
 
@@ -56,10 +55,8 @@ Examples
 In this example, the log from the **Analyze Demo** workflow is cleared.
 |Clear Workflow Log|
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Clear Workflow Log| image:: ../../../_static/images/transforms/model_clear_log.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/odata.png
-
-

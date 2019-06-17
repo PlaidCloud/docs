@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Run SAP PCM Console Job
 =============================
 
@@ -55,10 +54,8 @@ Select Agent to Use from the dropdown, enter console file path
 in the "Console File Path" field, click the "Wait for Console Job to Complete" check box (if desired), 
 then click "Save and Run Step".
 
-.. todo:: Add examples and screenshots
-
-.. todo:: Update icon to match PlaidCloud Workflow indicator
+.. todo:: Examples and screenshots coming soon
 
 .. |SAP Partner| image:: ../../../_static/images/partnerships/sap/SAP_Partner.gif
 .. |PCM Run Console Job| image:: ../../../_static/images/transforms/PCM_run_console_job_ex.png
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/block.png

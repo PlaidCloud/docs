@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Pivot
 =============================
 
@@ -99,9 +98,8 @@ Examples
 
 No examples for Table Rows to Columns (Pivot) yet.
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Pivot Source and Target Parameters| image:: ../../../_static/images/transforms/table_pivot_a.png
 .. |Pivot Operation| image:: ../../../_static/images/transforms/table_pivot_b.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/table-rotate.png
-

@@ -1,6 +1,5 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Export XML
 =============================
 
@@ -46,6 +45,6 @@ Examples
 
 No examples yet.
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/blue-document-xaml.png

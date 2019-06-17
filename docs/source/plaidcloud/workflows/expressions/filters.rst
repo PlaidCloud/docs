@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Filters
 =========
 
@@ -103,5 +106,3 @@ You may apply filters using column references.
 | !=            | Not Equal                | table.column != 23 table.column   |
 |               |                          | != 'blue'                         |
 +---------------+--------------------------+-----------------------------------+
-
-.. todo:: Add screenshots

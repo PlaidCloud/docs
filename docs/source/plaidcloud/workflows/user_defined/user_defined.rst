@@ -84,4 +84,3 @@ section of the BCS Demo.
 .. |Edit User Defined Transform 2| image:: ../../../_static/images/transforms/user_defined_fibonacci.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/hard-hat.png
-

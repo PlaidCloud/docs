@@ -34,8 +34,8 @@ Description
 
 The Run App Operation allows for execution of speciality operations that interact with applications outside of Analyze such as Bills of Material, Projects, and the Profit Applications.
 
-Duration Parameters
--------------------
+Configuration Parameters
+------------------------
 
 Specify the specialty application to run and pass in parameters in the arguments table.
 
@@ -45,8 +45,6 @@ Workflow Configuration Forms
 Examples
 --------
 
-No examples yet.
-
-.. todo:: Add examples and screenshots
+.. todo:: Examples and screenshots coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/grear.png

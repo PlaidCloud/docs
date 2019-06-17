@@ -1,6 +1,8 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Organizations
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 .. sidebar:: This Page
 
@@ -83,7 +85,7 @@ To automatically create members:
 
 Use of this feature greatly simplifies member management as new members will automatically have access without any setup in PlaidCloud. Similarly, if members are removed from the single sign-on facility, they will no longer have access to PlaidCloud.
 
-.. todo:: Add screenshots to illustrate the process
+.. todo:: Steps and screenshots to illustrate the process coming soon
 
 Allow Security Group Assignments from Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -94,7 +96,7 @@ If Single Sign-on is enabled, you can choose to pass a group association list al
 
 If this option is enabled, security roles will be assigned using the supplied list the next time members login. If the option is disabled, existing members will retain their current security roles until updated manually within PlaidCloud.
 
-.. todo:: Add steps and screenshots to illustrate the process
+.. todo:: Steps and screenshots to illustrate the process coming soon
 
 Set Expiration of Members
 -------------------------
@@ -126,7 +128,7 @@ To get a list of current workspace members:
 
 .. note:: If you prefer a different delimiter for the file you can specify it in the "Optional Parameters" area using the **delimiter** parameter name.
 
-.. todo:: Add steps and screenshots to illustrate the process
+.. todo:: Steps and screenshots to illustrate the process coming soon
 
 Disabling Members Through Workflow
 ----------------------------------
@@ -138,9 +140,7 @@ To do so:
 
 .. note:: If the file is not a tab delimited file, you must specify the **delimiter**, a **column name**, and the **member attribution** in the optional parameters. All members matching the attribute specified within the organization will be disabled.
 
-.. todo:: Add steps and screenshots to illustrate the process
-
-
+.. todo:: Steps and screenshots to illustrate the process coming soon
 
 .. |organization settings admin tab| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/organization/managing_organization_administrators/managing_organization_administrators/1_organization_settings_admin_tab.png
 .. |add admin select| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/organization/managing_organization_administrators/adding_an_administrator/1_add_admin_select.png
@@ -150,8 +150,3 @@ To do so:
 .. |sso adjust update| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/organization/using_single_sign_on/using_single_sign_on/2_sso_adjust_update.png
 .. |organization user settings tab| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/organization/set_expiration_of_members/1_organization_user_settings_tab.png
 .. |expiration set update| image:: ../../_static/img/plaidcloud/organizations_and_workspaces/organization/set_expiration_of_members/2_expiration_set_update.png
-
-
-
-
-

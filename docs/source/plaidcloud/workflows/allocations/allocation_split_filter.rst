@@ -45,6 +45,6 @@ Examples
 
 No examples for Allocation Split with Data Filters yet.
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/funnel--arrow.png

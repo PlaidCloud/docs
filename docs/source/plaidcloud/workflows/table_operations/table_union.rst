@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Union Distinct
 =============================
 
@@ -166,4 +165,3 @@ Finally, the 2014 data is loaded. |Table Append 3|
 .. |Table Append 2| image:: ../../../_static/images/transforms/table_union_2.png
 .. |Table Append 3| image:: ../../../_static/images/transforms/table_union_3.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/tables-stacks.png
-

@@ -1,12 +1,14 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 JupyterLab
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+==========
 
 .. sidebar:: This Page
 
    .. contents::
       :local:
       
-
 Description
 -----------
 

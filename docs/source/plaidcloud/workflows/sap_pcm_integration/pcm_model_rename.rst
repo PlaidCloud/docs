@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Rename SAP PCM Model
 =============================
 
@@ -55,9 +54,8 @@ Examples
 
 Select Agent to Use from the dropdown, enter "From Model Name" and "To Model Name" in the "Model Information" field, click the "Wait for Copy to Complete" check box, then click "Save and Run Step".
 
-.. todo:: Add examples and screenshots
+.. todo:: Examples and screenshots coming soon
 
 .. |SAP Partner| image:: ../../../_static/images/partnerships/sap/SAP_Partner.gif
 .. |PCM Rename Model| image:: ../../../_static/images/transforms/PCM_rename_model_ex.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/block--pencil.png
-

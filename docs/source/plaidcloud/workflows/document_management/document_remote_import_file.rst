@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Document - Remote Import File
 ================================
 
@@ -50,4 +49,3 @@ First, make a selection from the "Agent to Use" dropdown. Next, enter the file o
 .. |Document Remote Import| image:: ../../../_static/images/transforms/document_remote_import_ex.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/blue-document-import.png
-

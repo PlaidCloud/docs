@@ -1,6 +1,13 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Table Data Selection
 ~~~~~~~~~~~~~~~~~~~~~
-The Table Data Selection tab is used to map columns from the source data table to the target data table. All source columns on the left side of the window are automatically mapped to the target data table depicted on the right side of the window.  Using the **Inspect Source** menu button, there are a few additional ways to map columns from source to target:
+
+The Table Data Selection tab is used to map columns from the source data table to the target data table. All source 
+columns on the left side of the window are automatically mapped to the target data table depicted on the right side 
+of the window.  Using the **Inspect Source** menu button, there are a few additional ways to map columns from 
+source to target:
 
  - Populate Both Mapping Tables: Propagates all values from the source data table into the target data table. This is done by default.
  - Populate Source Mapping Table Only: Maps all values in the source data table only. This is helpful when modifying an existing workflow when source column structure has changed.
@@ -15,17 +22,21 @@ If the source and target column options aren't enough, other columns can be adde
  - Right click on target side and select **Insert Row** to insert a row immediately above the currently selected row.
  - Right click on target side and select **Append Row** to insert a row at the bottom (far right) of the target data table.
 
-.. Warning:: Selecting **Propagate All** may effectively create a duplicate of every column. Analyze does not check to see if the columns are already mapped. Make sure  duplicate column names do not exist.
+.. Warning:: Selecting **Propagate All** may effectively create a duplicate of every column. Analyze does not check to see 
+if the columns are already mapped. Make sure  duplicate column names do not exist.
 
 To delete columns from the target data table, select the desired column(s), then right click and select **Delete**.
 
-To rearrange columns in the target data table, select the desired column(s), then right click and select **Move to Top**, **Move Up**, **Move Down**, or **Move to Bottom**.
+To rearrange columns in the target data table, select the desired column(s), then right click and select 
+**Move to Top**, **Move Up**, **Move Down**, or **Move to Bottom**.
 
-To return only distinct options, select the **Distinct** menu option. This will toggle a set of checkboxes for each column in the source. Simply check any box next to the corresponding column to return distinct results only.
+To return only distinct options, select the **Distinct** menu option. This will toggle a set of checkboxes for each 
+column in the source. Simply check any box next to the corresponding column to return distinct results only.
 
 .. Warning:: When the target data table contains only a subset of the source data table, only select the check box next to the columns which **are** to be included in the target data table. Selecting all checkboxes could provide output that does not appear to be distinct.
 
-To aggregate results, select the **Summarize** menu option.  This will toggle a set of drop down boxes for each column in the target data table. The following summarization options are available:
+To aggregate results, select the **Summarize** menu option.  This will toggle a set of drop down boxes for each column 
+in the target data table. The following summarization options are available:
 
  - Group by (set as default)
  - Sum

@@ -1,7 +1,8 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Transforms - Document Management
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
 
 .. sidebar:: Document Management Transforms
 
@@ -10,5 +11,5 @@ Transforms - Document Management
       :includehidden:
       :glob:
       
-      
       *
+      

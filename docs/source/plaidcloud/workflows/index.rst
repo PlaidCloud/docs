@@ -2,7 +2,7 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
 Workflows
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!
 
 .. sidebar:: Workflow Operations
 
@@ -55,8 +55,6 @@ The status of the workflow will be displayed if it is running, has a warning or 
 creation and update dates are also shown along with who created or updated the workflow.  In addition, the total size
 of the workflow is also displayed which includes all of the workflow specific tables.
 
-.. todo:: Add screenshots to illustrate the process
-
 Creating
 -----------
 
@@ -69,9 +67,6 @@ not need to be set but can be useful for sending notifications or to trigger oth
 remediate failures.
 
 Once the form is complete, click on the **Create** button and the new workflow will be added to the project.
-
-.. todo:: Add screenshots to illustrate the process
-
 
 Managing Errors
 -----------------
@@ -87,8 +82,6 @@ PlaidCloud provides three levels of error handling in that case:
   - Stop the workflow when an error occurs
   - Mark the step as an error but keep processing the workflow
   - Mark the step as an error and trigger a remediation workflow process instead of continuing the current workflow
-
-  .. todo:: Add screenshot
 
 Stop the Workflow
 ~~~~~~~~~~~~~~~~~
@@ -118,8 +111,6 @@ the entire workflow to stop will trigger the remediation process.
 A remediation workflow may be useful for simply notifying people that a failure has occurred or it can perform other
 complex processing to attempt an automatic correction of any underlying reasons the original workflow failed.
 
-.. todo:: Add screenshots to illustrate the process
-
 Creating an Archive
 -------------------
 
@@ -141,8 +132,6 @@ When all the settings are completed, click on the **Archive** button and the arc
 Depending on the size of the workflow this may take several minutes so the process runs in the background and a
 progress bar displays progress.
 
-.. todo:: Add screenshots to illustrate the process
-
 Restoring an Archive
 --------------------
 
@@ -155,8 +144,6 @@ import setup form where you can select the archive and the items to import.  Cli
 the import process which will run in the background.  The import process may take several minutes depending on the size
 of the workflow.  A progress bar will be displayed to indicate progress towards completion.
 
-.. todo:: Add screenshots to illustrate the process
-
 Viewing the Workflow Log
 ------------------------
 
@@ -166,15 +153,11 @@ is also present in the project log in case you would like to see a more comprehe
 
 The log viewer allows for sorting and filtering the log as well as viewing the details of a particular log entry.
 
-.. todo:: Add screenshots to illustrate the process
-
 Clearing the Workflow Log
 -------------------------
 
 Clearing the workflow log may be desirable from time to time.  From the log viewer, select the **Clear Log** button.
 This will clear the workflow log which will also remove the log entries from the project level log too.
-
-.. todo:: Add screenshots to illustrate the process
 
 Viewing the Workflow Report
 ---------------------------
@@ -186,8 +169,6 @@ provides detailed documentation of workflows, workflow steps, user defined funct
 The report is generated on-demand and reflects the current state of the workflow.  To download the report click on
 the Report icon in the **Workflows** hierarchy.
 
-.. todo:: Add screenshots to illustrate the process
-
 Managing Workflow Variables
 ---------------------------
 
@@ -197,8 +178,6 @@ on the variables icon in the **Workflows** hierarchy.
 
 From the variables table you can view the variables, the current values, and edit the values.  You can also add new
 variables or delete existing ones.
-
-.. todo:: Add screenshots to illustrate the process
 
 Duplicating a Workflow
 ----------------------
@@ -211,8 +190,6 @@ the top of the table.  This will copy the workflows and append the word *Copy* t
 Once the duplication process is complete, the workflow is fully functional.  Copied workflows are completely separate
 from the original and can be modified without impacting the original workflow.
 
-.. todo:: Add screenshots to illustrate the process
-
 Setting Parallelism
 --------------------
 
@@ -221,15 +198,11 @@ steps to run in parallel, place the steps in a group within the workflow hierarc
 and select the **Execute in Parallel** option.  This will allow all the steps in the group to trigger simultaneously
 and execute in parallel.  Once all steps in the group complete, the next set step in the workflow after the group will activate.
 
-.. todo:: Add screenshots to illustrate the process
-
 Running One Step
 ----------------------
 
 During initial workflow development, testing, or troubleshooting it is often quite useful to run steps individually.
 To run a single step in isolation, right click on the step and select **Run Step** from the context menu.
-
-.. todo:: Add screenshots to illustrate the process
 
 Running Multiple Steps
 ------------------------------------
@@ -240,8 +213,6 @@ testing, or troubleshooting.  To run a subset of steps, select all the steps you
 workflow processing but start the workflow at the beginning of the selected steps and stop once the last selected
 step is complete.
 
-.. todo:: Add screenshots to illustrate the process
-
 Running and Entire Workflow
 ---------------------------
 
@@ -250,8 +221,6 @@ You can trigger a full workflow run by either clicking on the run icon from the 
 
 You can also click on the **Toggle Start/Stop** button at the top of the workflow table.  This toggle button will
 stop a running workflow or start a workflow.
-
-.. todo:: Add screenshots to illustrate the process
 
 Setting the Workflow to Skip Steps
 ----------------------------------
@@ -265,8 +234,6 @@ still be run using the single step run process.
 
 Steps that have been set to disabled will have a disabled indicator in the workflow steps hierarchy table.
 
-.. todo:: Add screenshots to illustrate the process
-
 Changing the Order of Steps
 ---------------------------------------
 
@@ -274,8 +241,6 @@ There are two ways to update the order of steps in the workflow.  The first way 
 in the **Workflows** table to move the step up or down.  The second way is to use the **Step Move** option which allows
 you to move the step much easier if a large changes are necessary.  The step move option allows you to move the step to
 the top, bottom, or after a specific step in one operation.
-
-.. todo:: Add screenshots to illustrate the process
 
 Setting Steps to Continue on Error
 ----------------------------------
@@ -290,8 +255,6 @@ workflow to stop.
 
 Steps that have been set to continue on error will have a special indicator in the workflow steps hierarchy table.
 
-.. todo:: Add screenshots to illustrate the process
-
 Copy Steps
 ----------------------
 
@@ -300,8 +263,6 @@ within workflows as well as between workflows, even in other projects.  You can 
 Select the workflow steps within the hierarchy and click the **Copy Selected Steps** button at the top of the table.
 
 This will place the selected steps in the clipboard and allow pasting within the current workflow or another one.
-
-.. todo:: Add screenshots to illustrate the process
 
 Paste Steps
 ----------------------
@@ -318,8 +279,6 @@ in a workflow, that pasting them will paste them in order but will not have any 
 they were copied.  The pasting will be a flat list of steps to insert only.  This might be unexpected but it is safer
 than creating all of the directory structure in the target workflow that existed in the source workflow.
 
-.. todo:: Add screenshots to illustrate the process
-
 Run Dependency Audit
 ----------------------
 
@@ -329,5 +288,3 @@ all dependencies are in the correct order.  When data already exists in tables, 
 many cases but may actually have a dependency issue if the data is populated out of order.
 
 This tool will provide a dependency audit and identify issues with data dependency relationships.
-
-.. todo:: Add screenshots to illustrate the process

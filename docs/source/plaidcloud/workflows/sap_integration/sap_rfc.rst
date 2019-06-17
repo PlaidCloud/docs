@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Call SAP RFC
 =============================
 
@@ -89,4 +88,3 @@ etc. The excluded values can be entered below. Save and Run Step.
 .. |SAP Remote Function Call 5| image:: ../../../_static/images/transforms/SAP_rfc_4_ex.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/server-cast.png
-

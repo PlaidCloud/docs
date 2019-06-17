@@ -1,9 +1,15 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 .. toctree::
    :maxdepth: 2
    :includehidden:
 
 Text Expressions
-~~~~~~~~~~~~~~~~~
+-----------------
+
+Common Text Expressions
+~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------+----------------+----------------+------------+-----------+
 | Analyze Expression    | Return Type    | Description    | Example    | Result    |
@@ -331,7 +337,3 @@ Text Expressions
 |                       |                | character in   |            |           |
 |                       |                | the to set     |            |           |
 +-----------------------+----------------+----------------+------------+-----------+
-
-.. todo:: fix function.encode function.decode.  
-
-.. todo:: Add screenshots

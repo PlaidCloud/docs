@@ -1,19 +1,20 @@
-Event Scheduler
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
+Event Scheduler
+================
 
 .. sidebar:: This Page
 
    .. contents::
       :local:
       
-
 Description
 -----------
 
 Scheduling specific workflows can be a useful organization tool so PlaidCloud provides the ability to do so. Using event
-scheduler, you can schedule a workflow to run by month, day, hour, minute, or even a financial workday schedule.
-If using the financial workday schedule approach, PlaidCloud also allows to configure holiday schedules using various holiday calendars.
+scheduler, you can schedule a workflow to run by month, day, hour, minute, or even on a financial workday schedule.
+If using the financial workday schedule approach, PlaidCloud also allows configuration of holiday schedules using various holiday calendars.
 
 To view events:
 
@@ -27,7 +28,7 @@ This will open the **Events Table** showing all the current events configured fo
 
 If the event is active, the "Active" icon will be displayed.  |active event icon|
 
-The Events Table will also indicate whether the event is scheduled by month, day, hour and minute or workday under the even description column.
+The Events Table will also indicate whether the event is scheduled by month, day, hour and minute or workday under the event description column.
 
 
 Creating an Event
@@ -132,7 +133,6 @@ To run an event immediately:
 
 |run selected events select|
 
-
 .. |delete icon select| image:: ../../_static/img/plaidcloud/tools/common/1_delete_icon_select.png
 .. |edit icon select| image:: ../../_static/img/plaidcloud/tools/common/1_edit_icon_select.png
 .. |analyze tools event scheduler| image:: ../../_static/img/plaidcloud/tools/events_schedule/description/1_analyze_tools_event_scheduler.png
@@ -146,13 +146,3 @@ To run an event immediately:
 .. |schedule type workday| image:: ../../_static/img/plaidcloud/tools/events_schedule/creating_an_event/7_schedule_type_workday.png
 .. |active check select| image:: ../../_static/img/plaidcloud/tools/events_schedule/pausing_an_event/1_active_check_select.png
 .. |run selected events select| image:: ../../_static/img/plaidcloud/tools/events_schedule/running_events_on_demand/1_run_selected_events_select.png
-
-
-
-
-
-
-
-
-
-

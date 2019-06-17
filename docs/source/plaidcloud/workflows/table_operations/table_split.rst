@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Split
 =============================
 
@@ -47,11 +46,6 @@ No configuration parameters for Table Split yet.
 Examples
 --------
 
-No examples for Table Split yet.
+.. todo:: Screenshots, description, and update parameters coming soon
 
-.. todo:: Add screenshots, description, and update parameters
-
-.. todo:: Update icon to match PlaidCloud Workflow indicator
-
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
-
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/table.png

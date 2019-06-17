@@ -1,7 +1,6 @@
 .. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Table Extract
 =============================
 
@@ -189,4 +188,3 @@ section of the BCS Demo.
 .. |Table Extract_6| image:: ../../../_static/images/transforms/table_extract_data_filters_2.png
 .. |Table Extract_7| image:: ../../../_static/images/transforms/table_extract_table_preview_2.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/table-select-row.png
-

@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Table Melt
 =============================
 
@@ -230,4 +229,3 @@ section of the BCS Demo.
 .. |Melt Layout| image:: ../../../_static/images/transforms/table_melt_b.png
 .. |Table Melt Source and Target Parameters| image:: ../../../_static/images/transforms/table_melt_source_and_target_parameters.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/table-split-row.png
-

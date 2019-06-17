@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Export to CSV
 ================
 
@@ -171,4 +170,3 @@ rows of data.
    :alt: Export CSV
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/document-excel-csv.png
-

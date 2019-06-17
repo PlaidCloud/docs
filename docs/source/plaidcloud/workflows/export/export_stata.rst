@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Export Stata
 =============================
 
@@ -92,14 +91,11 @@ Export Stata File
 Next, all columns are mapped in the **Table Data Selection**. No
 additional operations are performed. 
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 |Export Stata 2|
 
 .. |Export Stata 1| image:: ../../../_static/images/transforms/export_stata_export_parameters.png
 .. |Export Stata 2| image:: ../../../_static/images/transforms/export_stata_table_data_selection.png
 
-.. todo:: Update icon to match PlaidCloud Workflow indicator
-
-.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/poop.png
-
+.. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/database.png

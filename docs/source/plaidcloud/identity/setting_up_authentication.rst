@@ -1,7 +1,6 @@
 .. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Member Authentication
 ======================
    
@@ -10,23 +9,28 @@ Member Authentication
    .. contents::
       :local:
 
-
-The Identity tab houses the security and authentication features that PlaidCloud focuses on in order to ensure a secure member platform. PLaidCloud offers three options for authentication types. They are:
+The Identity tab houses the security and authentication features that PlaidCloud focuses on 
+in order to ensure a secure member platform. PLaidCloud offers three options for 
+authentication types. They are:
 
 -  Password Only
 -  Two-Factor Authentication
 -  Single Sign-On 
 
-If the company who creates your account uses Single Sign-On, you will automatically have this method of authentication as your authentication type. If the company who creates your account uses password only or two-factor authentication as their authentication type, your account will automatically use password only as its authentication type.
+The default authentication type is password only.  However, Two-Factor can be activated too.  
+If a Single Sign-On SAML authentication provider is available, you can configure your PlaidCloud 
+organization to use Single Sign-On.
 
-If you choose to create a personal account, the default authentication type is password only. To change this to a two-factor authentication, reference the steps under the Two-Factor section.
+If you choose to create a personal account, the default authentication type is password only. 
+To change this to a two-factor authentication, reference the steps under the Two-Factor section.
 
 .. note:: Members may have access to the Identity tab for security purposes or in order to manage members for the workspace. Details on managing security and authentication for new members or members without access can be found on the main "Identity" page.
 
 Changing Passwords
 ------------------
 
-For members using Two-Factor or Password-only authentication, password changes are simple and can be performed under the "Member" menu (gravatar icon) in the upper right corner. 
+For members using Two-Factor or Password-only authentication, password changes are simple 
+and can be performed under the "Member" menu (gravatar icon) in the upper right corner. 
 
 .. note:: The "Member" menu icon will be different for each user
 

@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Calculate PCM Model
 =============================
 
@@ -55,10 +54,8 @@ Select Agent to Use from the dropdown, enter model name
 in the "Model Name" field, click the "Wait for Calculation to Complete" check box (if desired),
 then click "Save and Run Step".
 
-.. todo:: Add examples and screenshots
+.. todo:: Examples and screenshots coming soon
 
 .. |SAP Partner| image:: ../../../_static/images/partnerships/sap/SAP_Partner.gif
 .. |PCM Calculate Model| image:: ../../../_static/images/transforms/PCM_calculate_model.png
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/control.png
-
-

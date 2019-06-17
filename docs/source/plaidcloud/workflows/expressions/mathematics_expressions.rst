@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Mathematics Expressions
 ------------------------
 
@@ -215,4 +218,3 @@ Trigonometric Functions
 +----------------------+--------------------------+
 | func.tan(x)          | tangent                  |
 +----------------------+--------------------------+
-

@@ -1,12 +1,14 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Jupyter Notebook
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+================
 
 .. sidebar:: This Page
 
    .. contents::
       :local:
       
-
 Description
 -----------
 
@@ -22,10 +24,7 @@ narrative text. It allows for data visualization, on-demand narrative analysis, 
 
 Click here (https://jupyter-notebook.readthedocs.io/en/stable/) for additional information from JupyterLab regarding code consoles.
 
-.. todo:: Add instructions and screenshots here to augment the official documentation
+.. todo:: Instructions and screenshots to augment the official documentation coming soon
 
 This ability is **coming soon**! PlaidCloud is currently in the process of developing this capability so, unfortunately,
 it is not currently available.  Our team is working hard to build and implement this tool for your use. We appreciate and thank you for your patience.
-
-
-

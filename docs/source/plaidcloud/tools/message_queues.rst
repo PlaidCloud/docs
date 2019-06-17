@@ -1,6 +1,8 @@
-Message Queues
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
+Message Queues
+==============
 
 .. sidebar:: This Page
 
@@ -13,15 +15,15 @@ Description
 
 In order to ease the transition between new applications it may sometimes be desired and necessary for business teams
 to coordinate services and processes using disconnected services. PlaidCloud provides a high performance messaging
-queue not to replace internal message queues but instead to allow for a wide range of delivery options. These options include:
+queue, with a wide range of delivery options. These options include:
 
   - Direct exchange
   - Fanout exchange
   - Topic exchange
   - Headers exchange
 
-This function is provided by RabbitMQ clusters and is not intended to replace internal message queueing systems that
-process many messages per second, although PlaidCloud's message queue is capable of that.
+This function is provided by RabbitMQ clusters and is not intended to replace internal message 
+queueing systems, although PlaidCloud's message queue is capable of that.
 
 Click here (https://www.rabbitmq.com/tutorials/tutorial-two-python.html) for additional information from RabbitMQ.
 
@@ -65,7 +67,7 @@ To create a vHost:
 
 Once the vHost is created, it will be tagged with its reference to a workspace identifier. For example, if you create a
 vHost with the name of 'super' and its identifier is 890,  the actual name of the user will be 'cloud_890_super'.
-This allows for unique users without constant name collisions.
+This allows for unique vHosts without constant name collisions.
 
 Deleting vHosts
 ~~~~~~~~~~~~~~~
@@ -119,7 +121,8 @@ Durability is useful if a message needs to be retained in the event of a system 
 create a durable queue then, the message will be lost after a restart. Although durability is useful, it is not always desired.
 
 Creating a durable queue results in a slightly slower process because each message must be stored in permanent storage.
-We suggest then that you only create a durable queue when the message is critical and use non-durable queues when a message is executed right away or is not critical.
+We suggest then that you only create a durable queue when the message is critical and 
+use non-durable queues when a message is executed right away or is not critical.
 
 Deleting Queues
 ~~~~~~~~~~~~~~~
@@ -362,8 +365,6 @@ To delete a user:
 
 .. note:: Deleting a user will automatically remove all permissions granted to the user on all vHosts.
 
-
-
 .. |delete icon select| image:: ../../_static/img/plaidcloud/tools/common/1_delete_icon_select.png
 .. |edit icon select| image:: ../../_static/img/plaidcloud/tools/common/1_edit_icon_select.png
 .. |queueing vhost select| image:: ../../_static/img/plaidcloud/tools/message_queues/virtual_hosts/virtual_hosts/1_queueing_vhost_select.png
@@ -387,17 +388,3 @@ To delete a user:
 .. |add user form create| image:: ../../_static/img/plaidcloud/tools/message_queues/users/creating_users/2_add_user_form_create.png
 .. |user access options| image:: ../../_static/img/plaidcloud/tools/message_queues/users/controlling_user_access/1_user_access_options.png
 .. |delete user form| image:: ../../_static/img/plaidcloud/tools/message_queues/users/deleting_users/2_delete_user_form.png
-
-
-
-
-
-
-
-
-
-
-
-
-
-

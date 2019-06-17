@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Create Workflow
 =============================
 
@@ -41,11 +40,6 @@ First, select the Project in which the new workflow should be created from the d
 
 Next, type in a workflow name. The name should be unique to the Project.
 
-How to Handle Existing Workflow
--------------------------------
-
-.. todo:: how to handle existing workflow
-
 Workflow Configuration Forms
 ----------------------------
 
@@ -55,6 +49,6 @@ Workflow Configuration Forms
 Examples
 --------
 
-.. todo:: Add screenshots, description, and update parameters
+.. todo:: Screenshots, description, and update parameters coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/block--plus.png

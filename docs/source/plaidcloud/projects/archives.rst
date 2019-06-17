@@ -1,3 +1,5 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
 Archives
 ========
@@ -11,7 +13,9 @@ Archives
 Creating an Archive
 -------------------
 
-Project normally contain critical processes and logic which are important to archive so, if need be, you can restore the project back to its original state. PlaidCloud allows you to archive projects in full or in part.
+Projects normally contain critical processes and logic which are important to archive so, if need 
+be, you can restore the project back to its original state. PlaidCloud allows you to archive 
+projects in full or in part.
 
 A **full backup** includes all of the data tables included in the project. This can make the archive quite large depending on the volume of data in the project. 
 
@@ -69,6 +73,3 @@ To set an archiving schedule:
 .. |directory document select| image:: ../../_static/img/plaidcloud/projects/archives/archiving_schedule/2_directory_document_select.png
 .. |backup frequency select| image:: ../../_static/img/plaidcloud/projects/archives/archiving_schedule/3_backup_frequency_select.png
 .. |backup items select| image:: ../../_static/img/plaidcloud/projects/archives/archiving_schedule/4_backup_items_select.png
-
-
-

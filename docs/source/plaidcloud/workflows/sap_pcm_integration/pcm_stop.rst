@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Stop PCM Model Calculation
 =============================
 
@@ -51,9 +50,7 @@ Examples
 
 Select Agent to Use from the dropdown, enter "Model Name", click the "Wait for Copy to Complete" check box, then click "Save and Run Step".
 
-.. todo:: Add examples and screenshots
+.. todo::Examples and screenshots coming soon
 
 .. |SAP Partner| image:: ../../../_static/images/partnerships/sap/SAP_Partner.gif
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/control-stop-square.png
-
-

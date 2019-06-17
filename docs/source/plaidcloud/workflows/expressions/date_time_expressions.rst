@@ -1,3 +1,6 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Dates and Time Expressions
 ===========================
 
@@ -332,5 +335,3 @@ Date and Time Formatting Directives
 | tz         | time-zone name |
 |            | (lowercase)    |
 +------------+----------------+
-
-.. todo:: Add screenshots

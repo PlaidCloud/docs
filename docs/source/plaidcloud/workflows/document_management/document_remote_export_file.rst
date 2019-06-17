@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Document - Remote Export File
 ==============================
 
@@ -51,4 +50,3 @@ First, make a selection from the "Agent to Use" dropdown. Next, brose for the fi
 .. |Document Remote Export| image:: ../../../_static/images/transforms/document_remote_export_ex.png
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/blue-document-export.png
-

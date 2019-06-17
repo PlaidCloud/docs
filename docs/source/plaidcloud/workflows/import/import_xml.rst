@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Import XML
 =============================
 
@@ -41,6 +40,6 @@ Examples
 --------
 No examples yet.
 
-.. todo:: Add description, examples, and screenshots
+.. todo:: Description, examples, and screenshots coming soon
 
 .. |Icon| image:: https://plaidcloud.com/client/resource/fugue/icons/blue-document-xaml.png

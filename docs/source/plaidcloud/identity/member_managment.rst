@@ -1,7 +1,6 @@
 .. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Member Management
 =================
    
@@ -9,7 +8,6 @@ Member Management
 
    .. contents::
       :local:
-
 
 Identity provides the ability to add, remove, and/or suspend members of the
 workspace. Since PlaidCloud members can be members of multiple clouds,

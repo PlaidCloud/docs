@@ -1,7 +1,6 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 .. sectionauthor:: Michael Rea <michael.rea@tartansolutions.com>
 
-
 Export Quandl
 =============================
 
@@ -27,7 +26,6 @@ Export Quandl
 +---------------------+----------------------------+
 | **Output Type**     | Quandl Dataset             |
 +---------------------+----------------------------+
-
 
 Description
 -----------

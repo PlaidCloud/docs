@@ -26,8 +26,6 @@ Export to Json
 | **Output Type**     | PlaidCloud Document File   |
 +---------------------+----------------------------+
 
-
-
 Description
 -----------
 

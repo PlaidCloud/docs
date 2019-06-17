@@ -1,9 +1,8 @@
 .. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
-
 Document
-========
+!!!!!!!!
 
 .. sidebar:: This Topic
 
@@ -17,6 +16,8 @@ Document
 
       *
 
+Description
+-----------
 
 PlaidCloud Document (accessible from the main PlaidCloud navigation on the left side
 of the screen) is a file management tool that allows for easy file management within
@@ -24,8 +25,7 @@ PlaidCloud. This tool provides members of each workspace with four different
 file sharing options:
 
 -  Shared temporary storage (files are automatically removed after 24 hours)
--  Personal temporary storage dropbox (files are automatically removed after 
-   24 hours)
+-  Personal temporary storage dropbox (files are automatically removed after 24 hours)
 -  Shared account access
 -  Private account access
 

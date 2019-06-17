@@ -1,5 +1,8 @@
+.. sectionauthor:: Genova Morel <genova.morel@tartansolutions.com>
+.. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
+
 Jupyter
-=======
+!!!!!!!
 
 .. sidebar:: JupyterLab Operations
 
@@ -33,7 +36,7 @@ From Jupyter, you have access to all the data you have been granted permission t
 processes to interact with other PlaidCloud services directly from JupyterLab and Jupyter Notebooks.
 
 
-.. todo:: Add screenshots to illustrate the power of Jupyter Notebooks, Lab, and Console
+.. todo:: Screenshots to illustrate the power of Jupyter Notebooks, Lab, and Console coming soon
 
 This ability is **coming soon**! PlaidCloud is currently in the process of developing this capability so, unfortunately,
 it is not currently available.  Our team is working hard to build and implement this tool for your use. We appreciate
