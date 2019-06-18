@@ -58,23 +58,6 @@ To clear the Project Log:
 
 |clear log select|
 
-
-Viewing the Project Report
---------------------------
-
-When a project or workflow is dynamic, maintaining detailed documentation becomes a challenge. To help solve this
-problem, PlaidCloud provides the ability to generate a project-level report that gives detailed documentation of
-workflows, workflow steps, user defined transforms, variables, and tables. This report is generated on-demand
-and reflects the current state of the project.
-
-To download the report:
-
-1) Open Analyze
-2) Select "Projects"
-3) Click the report icon
-
-|report icon select|
-
 .. |log icon select| image:: ../../_static/img/plaidcloud/projects/common/1_log_icon_select.png
 .. |member icon select| image:: ../../_static/img/plaidcloud/projects/common/1_member_icon_select.png
 .. |projects action select| image:: ../../_static/img/plaidcloud/projects/common/2_projects_action_select.png
@@ -82,4 +65,3 @@ To download the report:
 .. |view log details| image:: ../../_static/img/plaidcloud/projects/project_log/viewing_and_sorting_the_project_log/3_view_log_details.png
 .. |clear log select| image:: ../../_static/img/plaidcloud/projects/project_log/clearing_the_project_log/2_clear_log_select.png
 .. |viewing the project report| image:: ../../_static/img/plaidcloud/projects/project_log/viewing_the_project_report/1_report_icon_select.png
-.. |report icon select| image:: ../../_static/img/plaidcloud/projects/project_log/viewing_the_project_report/1_report_icon_select.png

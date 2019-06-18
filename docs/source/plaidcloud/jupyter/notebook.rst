@@ -26,5 +26,12 @@ Click here (https://jupyter-notebook.readthedocs.io/en/stable/) for additional i
 
 .. todo:: Instructions and screenshots to augment the official documentation coming soon
 
-This ability is **coming soon**! PlaidCloud is currently in the process of developing this capability so, unfortunately,
-it is not currently available.  Our team is working hard to build and implement this tool for your use. We appreciate and thank you for your patience.
+Available Notebook Kernels
+--------------------------
+
+PlaidCloud Jupyter Notebooks can utilize the following kernels:
+
+ - Python 3
+ - Python 2
+ - R
+ - Julia

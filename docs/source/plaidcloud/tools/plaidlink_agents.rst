@@ -25,7 +25,7 @@ usually require you to open non-standard ports. Before gaining access, the agent
 agent identifier. From this, if the agent has a successful authentication process, the agent is granted access to the approved operations.
 
 PlaidLink can be installed on Windows, Unix, and Linux systems and run under low privlege users.  On Windows systems, PlaidLink can
-operate as a Windows Service with full control from the Service panel.  On linux or unix systems, it can run as a deamon.
+operate as a Windows Service with full control from the Service panel.  On linux or unix systems, it can run as a deamon process.
 
 Managing Agents
 ----------------
@@ -107,6 +107,14 @@ To disable an agent:
 4) Uncheck the "Active" checkbox  |active agent checkbox|
 
 .. note:: When an agent is not marked as active, remote systems will not be able to connect using those agent credentials.
+
+Running Multiple Agents
+-----------------------
+
+PlaidLink is designed to allow operation of multiple agents using a single service installation.  This provides the ability for a single installation to handle
+agents from multiple workspaces and / or agents with different levels of permissions for task execution.
+
+To enable mulitple agents, you simply add the agent credentials to the PlaidLink configuration file.
 
 .. |delete icon select| image:: ../../_static/img/plaidcloud/tools/common/1_delete_icon_select.png
 .. |edit icon select| image:: ../../_static/img/plaidcloud/tools/common/1_edit_icon_select.png

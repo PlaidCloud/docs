@@ -40,8 +40,11 @@ members of the workspace and does not require any additional assignment of membe
 
 The **"Specific Members Only"** access setting requires assignment of each member to
 an account. To do so, simply click the members icon and drag desired members from the "Unassigned Members" column on
-the left to the "Assigned Members" column on the right or vice vera to remove members. For clouds with large numbers
+the left to the "Assigned Members" column on the right or vice vera to remove members. For workspaces with large numbers
 of members, this approach can often require more effort than desired, which is where security groups become useful.
+
+This option is particularly useful when combined with the single sign-on option of dynamically assigning members based
+on a list of groups sent with the authentication.
 
 |Member Icon Select|
 
@@ -56,10 +59,8 @@ from the "Unassigned Groups" column on the left to the "Assigned Groups" column 
 
 |Group Assignment|
 
-The **"All PlaidCloud Members"** access control is only necessary if the workspace has remote agents operating through
-`PlaidLink </about/plaidlink>`__. Remote agents will often use
-Document accounts to store files or move files among systems. To allow 
-remote agents to access Document accounts agents **MUST** have permission granted. This is a security feature to limit
+Remote agents will often use Document accounts to store files or move files among systems. To allow 
+remote agents access to Document accounts agents **MUST** have permission granted. This is a security feature to limit
 unwanted access to potentially sensitive information. To add agents, click the agent icon and drag desired agents from
 the "Unassigned Agents" column on the left to the "Assigned Agents" column on the right or vice versa to remove agents.
 
@@ -84,8 +85,8 @@ then drag new owners from the "Unassigned Members" column on the left to the "As
 Because only owners have the ability to view and edit an account,
 account administration is set up with two levels.
 
-1) The member needs security access to view and manage accounts in general.
-2) The member must be an owner of the account to view, manage, and change settings of accounts.
+1) The member needs security access to view and manage accounts in general
+2) The member must be an owner of the account to view, manage, and change settings of accounts
 
 .. note:: A member will only see accounts they are assigned as owners to in the list of accounts to manage.
 
@@ -106,7 +107,7 @@ another server may be one location with a second backup sent to Amazon
 S3 for off-site storage.
 
 By using the prefix feature, it's possible to have a single backup
-account contain the backups from multiple accounts. Each account backup
+account contain the backups from multiple other accounts. Each account backup
 set begins its top level folder(s) with a different prefix, making it easy
 to distinguish the originating location and the restoration process.  For example, if you have three different
 Document accounts but want to set their backup destination to the same location, using a prefix would allow
@@ -176,7 +177,7 @@ To delete a backup set:
 Managing Accounts
 -----------------
 
-Account accesses various cloud-based storage services, including Amazon S3, Dropbox, Google Drive, Azure Blob Storage
+Accounts access grants various cloud-based storage services, including Amazon S3, Wasabi, Dropbox, Google Drive, Azure Blob Storage
 Swift, Ceph, and SFTP. To access the accounts, access
 credentials must be provided. Depending on the service, providing access
 credentials occurs via various methods. Please refer to the individual service 

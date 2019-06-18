@@ -10,8 +10,8 @@ Member Management
       :local:
 
 Identity provides the ability to add, remove, and/or suspend members of the
-workspace. Since PlaidCloud members can be members of multiple clouds,
-removing a member from the workspace does not delete the member account.
+workspace. Since PlaidCloud members can be members of multiple workspaces,
+removing a member from the workspace does not delete the member account from PlaidCloud.
 
 Adding Members
 --------------
@@ -44,7 +44,7 @@ New Member Welcome Email
 After adding a new member, a welcome email with sign-in credentials will be sent to their provided email address. The
 welcome email can be customized to provide additional information so new members have a better idea as to why they are receiving an email.
  
- To update or view the welcome email:
+To update or view the welcome email:
 
 1) Open Identity
 2) Select the "Member" tab
@@ -70,7 +70,7 @@ To view the current member sessions:
 
 From this table, it's possible to view session information (current sessions and last activity) as well as terminate sessions if desired.
 
-To terminate a session simply right click to highlight the section you wish to delete, then click the "End Selected Sessions" button in the upper left.
+To terminate a session simply highlight the members you wish to logout, then click the "End Selected Sessions" button in the upper left.
 
 |terminate session select|
 

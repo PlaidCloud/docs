@@ -14,12 +14,19 @@ Creating an Archive
 -------------------
 
 Projects normally contain critical processes and logic which are important to archive so, if need 
-be, you can restore the project back to its original state. PlaidCloud allows you to archive 
-projects in full or in part.
+be, you can restore the project back to a specific state. PlaidCloud allows you to archive 
+projects at any point in time.
 
-A **full backup** includes all of the data tables included in the project. This can make the archive quite large depending on the volume of data in the project. 
+Creation of archives complements the built-in point-in-time tracking of PlaidCloud by allowing for specific
+points in time to be captured.  This might be particularly useful before a major change or to capture the exact
+state of a production environment for posterity.
 
-A **partial backup** can be used if all of the project data can be derived from other sources. If this is the case, it is not necessary to archive the data in the project and still have it remain elsewhere. Partial archives can save time and storage space when creating the archive.
+A **full backup** includes all of the data tables included in the project. This can make the archive quite 
+large depending on the volume of data in the project. 
+
+A **partial backup** can be used if all of the project data can be derived from other sources. If this 
+is the case, it is not necessary to archive the data in the project and still have it remain elsewhere. 
+Partial archives can save time and storage space when creating the archive.
 
 To archive a project:
 
@@ -31,8 +38,6 @@ Restoring an Archive
 
 Once you have an archive, you may want to restore it. You can restore an archive into a new project or into an existing project.
 
-Using this archiving function is an advanced way of combining pieces of projects together by archiving and restoring selected pieces. You can restore selected pieces from a full archive if needed.
-
 To restore an archive:
 
 1) Open Analyze
@@ -41,7 +46,12 @@ To restore an archive:
 Archiving Schedule
 ------------------
 
-Archives can also serve as a periodic backup of your project. PlaidCloud allows you to manage the backup schedule and set the retention period of the backup archives to what is most convenient or desired. 
+Archives can also serve as a periodic backup of your project. PlaidCloud allows you to manage the backup schedule 
+and set the retention period of the backup archives to what is most convenient or desired.
+
+Since all changes to a project are automatically tracked, archving is not necessary for rollback purposes.  However, it
+does provide a specific snapshot of the project state which is often useful for control purposes and/or having the ability
+to recover to a known point.
 
 To set an archiving schedule:
 

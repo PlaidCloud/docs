@@ -13,14 +13,16 @@ Organizations
 Description
 -----------
 
-Organizations in PlaidCloud control options with single sign-on and member access capabilities using workspaces and
-serve as the main level of tenant separation within PlaidCloud. A workspace helps to align teams with specific areas
-of interest and isolate access as appropriate. PlaidCLoud allows an organization to have an unlimited amount of workspaces.
+Organizations in PlaidCloud provide a top level area to control options such as single sign-on and member access capabilities.
+Oranizations contain at least one workspace which allows worspaces to serve as the main level of tenant separation within PlaidCloud. 
+A workspace helps to align teams with specific areas
+of interest and isolate access as appropriate. PlaidCLoud allows an organization to have an unlimited number of workspaces.
 
 Managing Organization Administrators
 ------------------------------------
 
-Each organization in PlaidCloud can assign multiple administrators. Administrators have special privileges to control the organization. They can do things such as billing, access management, and workspace management.
+Each organization in PlaidCloud can assign multiple administrators. Administrators have special privileges to control the 
+organization. They can do things such as manage billing, update access management, and perform workspace management.
 
 To manage administrators:
 
@@ -29,7 +31,8 @@ To manage administrators:
 
 |organization settings admin tab|
 
-This will display the table of current administrators. After the table opens, you may add new administrators, delete existing administrators, or alter administrative privileges.
+This will display the table of current administrators. After the table opens, you may add new administrators, delete 
+existing administrators, or alter administrative privileges.
 
 
 Adding an Administrator
@@ -57,7 +60,8 @@ Deleting an Administrator:
 Using Single Sign-On
 --------------------
 
-Each organization can have a custom url (https://plaidcloud.com/sso/<custom_name_here>) for members to access the single sign-on page you specified in the configuration.
+Each organization can have a custom url (https://plaidcloud.com/sso/<custom_name_here>) for members to access the single 
+sign-on page you specified in the configuration.
 
 .. note:: Single Sign-On uses SAML 2.0 protocols and is set up through the user interface. 
 
@@ -74,7 +78,8 @@ Each organization can have a custom url (https://plaidcloud.com/sso/<custom_name
 Allow Creation of Users Automatically
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If Single Sign-on is enabled, you can choose to automatically create members based on successful single sign-on authentication. New members will receive the default workspace and new member security roles specified in the organization settings.
+If Single Sign-on is enabled, you can choose to automatically create members based on successful single sign-on 
+authentication. New members will receive the default workspace and new member security roles specified in the organization settings.
 
 To automatically create members:
 
@@ -83,25 +88,32 @@ To automatically create members:
 3) Check the "Create Users Automatically from Single Sign-On" box
 4) Choose the desired default workspace
 
-Use of this feature greatly simplifies member management as new members will automatically have access without any setup in PlaidCloud. Similarly, if members are removed from the single sign-on facility, they will no longer have access to PlaidCloud.
+Use of this feature greatly simplifies member management as new members will automatically have access without 
+any setup in PlaidCloud. Similarly, if members are removed from the single sign-on facility, they will no 
+longer have access to PlaidCloud.
 
 .. todo:: Steps and screenshots to illustrate the process coming soon
 
 Allow Security Group Assignments from Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If Single Sign-on is enabled, you can choose to pass a group association list along with the positive authentication message. The list's items will be used to assign a member to the specified groups and remove them from any not specified. This is an effective way to manage security group assignments through by using a central user management service such as Active Directory or other LDAP service.
+If Single Sign-on is enabled, you can choose to pass a group association list along with the positive authentication 
+message. The list's items will be used to assign a member to the specified groups and remove them from any not 
+specified. This is an effective way to manage security group assignments by using a central user management 
+service such as Active Directory or other LDAP service.
 
-.. note:: If a member is marked as an administrators within a workspace, they will continue to have full access to that workspace regaurdless of the specic role they may be assigned through this automated procces. 
+.. note:: If a member is marked as an administrators within a workspace, they will continue to have full access to 
+that workspace regaurdless of the specic role they may be assigned through this automated procces. 
 
-If this option is enabled, security roles will be assigned using the supplied list the next time members login. If the option is disabled, existing members will retain their current security roles until updated manually within PlaidCloud.
+If this option is enabled, security roles will be assigned using the supplied list the next time members login. If 
+the option is disabled, existing members will retain their current security roles until updated manually within PlaidCloud.
 
 .. todo:: Steps and screenshots to illustrate the process coming soon
 
 Set Expiration of Members
 -------------------------
 
-If inactive members in PlaidCloud bothers you, members can be set for automatic removal from the organization after a
+If inactive members in PlaidCloud is not desired, members can be set for automatic removal from the organization after a
 specified period of inactivity using the expiration capabilities PlaidCloud offers. This automated removal of dormant
 members can be set as short as one day if desired.
 
@@ -136,7 +148,6 @@ Disabling Members Through Workflow
 If you have a list of members to disable, this can be processed automatically through a workflow. 
 
 To do so:
-
 
 .. note:: If the file is not a tab delimited file, you must specify the **delimiter**, a **column name**, and the **member attribution** in the optional parameters. All members matching the attribute specified within the organization will be disabled.
 

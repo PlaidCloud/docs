@@ -4,7 +4,7 @@
 Jupyter
 !!!!!!!
 
-.. sidebar:: JupyterLab Operations
+.. sidebar:: Jupyter Operations
 
    .. contents::
       :local:
@@ -26,18 +26,17 @@ PlaidCloud provides access to Jupyter interactive services, a project aimed to d
 interactive computing across multiple programming languages. This access allows for data analysis and exploration,
 including detailed data processing and visualization, through PlaidCloud.
 
-PlaidCloud can provide access to multiple Jupyter services including Jupyter Notebooks, JupyterLab, and JupyterConsole.
+PlaidCloud provides access to Jupyter services including JupyterLab, Jupyter Notebooks and Jupyter Console.  Many plugins are 
+installed by default and a seemless PlaidCloud experience is built-in.  All notebooks are versioned and saved as part
+of the project.  They are available through the PlaidCloud Git service for direct access.
+
+We also made it easy to move your existing notebooks to PlaidCloud by fully supporting the open standards of the Jupyter project.
 
 JupyterLab and Jupyter Notebooks are common tools used by many data scientists as they provide powerful capabilities
 including narrative style data analysis (typically used for qualitative data) and strong ad-hoc
 insight (a type of business intelligence.)
 
 From Jupyter, you have access to all the data you have been granted permission to see. You can also utilize the JSON-RPC
-processes to interact with other PlaidCloud services directly from JupyterLab and Jupyter Notebooks.
+processes to interact with other PlaidCloud services directly from JupyterLab, Jupyter Consoles, and Jupyter Notebooks.
 
-
-.. todo:: Screenshots to illustrate the power of Jupyter Notebooks, Lab, and Console coming soon
-
-This ability is **coming soon**! PlaidCloud is currently in the process of developing this capability so, unfortunately,
-it is not currently available.  Our team is working hard to build and implement this tool for your use. We appreciate
-and thank you for your patience.
+.. todo:: Screenshots to illustrate the power of Jupyter Notebooks, JupyterLab, and Jupyter Console coming soon

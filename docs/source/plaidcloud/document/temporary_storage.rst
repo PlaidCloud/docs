@@ -29,8 +29,8 @@ a table of files currently in the workspace's Temp Share area.
 
 |STS Workspace Select|
 
-To add new files to a shared temporary storage location, follow the below
-instructions:
+To add new files to a shared temporary storage location, follow the
+instructions below:
 
 1) Select the "Temp Share" menu along the top of the main **Document** page 
 2) Click "Workspace Temp Share"
@@ -60,8 +60,8 @@ Personal Temporary Storage
 
 Personal temporary storage is only viewable by the member to which
 the temp share belongs. This storage option is beneficial because 
-it's accessible across clouds. This functionality makes it easy to 
-move or use files across clouds if the member is working in multiple clouds
+it's accessible across workspaces. This functionality makes it easy to 
+move or use files across workspaces if the member is working in multiple workspaces
 simultaneously.
 
 All members of the workspace can upload files to a members personal share 

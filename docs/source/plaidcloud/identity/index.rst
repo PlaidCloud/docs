@@ -28,9 +28,12 @@ Identity provides the foundation for member management, security, and different 
 **Security** is a main focus for PlaidCloud. This subset of the Identity tab allows you to perform security audits, set
 up security groups and default security groups for new members, and control the approved security level of each member.
 
-**Authentication** is where security starts. PlaidCloud offers more than just a password only authentication, although
-that is an option. Two-factor authentication and Single Sign-on are also authentication processes PlaidCloud offers,
-both of which offer higher security than password only without too much additional effort.
+**Authentication** is where security starts. PlaidCloud offers multiple authentication options to support most use cases.  They are:
+ - Single Sign-on (SAML2)
+ - User and password only
+ - Two factor using Yubikey
+ - Two factor using authenticator (e.g. Authy, Google Authenticator, Okta, etc...)
+ - Two factor using SMS
 
 More information on these topics can be found under the associated tab under the "Identity"
 

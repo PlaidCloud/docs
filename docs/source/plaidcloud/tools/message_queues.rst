@@ -14,8 +14,8 @@ Description
 -----------
 
 In order to ease the transition between new applications it may sometimes be desired and necessary for business teams
-to coordinate services and processes using disconnected services. PlaidCloud provides a high performance messaging
-queue, with a wide range of delivery options. These options include:
+to coordinate services and processes using services that cannot communicate in real-time. PlaidCloud provides a high performance messaging
+queue to handle asyncronous communication, with a wide range of delivery options. These options include:
 
   - Direct exchange
   - Fanout exchange

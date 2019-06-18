@@ -10,7 +10,7 @@ Member Authentication
       :local:
 
 The Identity tab houses the security and authentication features that PlaidCloud focuses on 
-in order to ensure a secure member platform. PLaidCloud offers three options for 
+in order to ensure a secure member platform. PlaidCloud offers three options for 
 authentication types. They are:
 
 -  Password Only
@@ -91,7 +91,7 @@ Types of Two-Factor Authentication
 
 PlaidCloud has three options for receiving this additional information:
 
-1. Via smartphone app (Google Authenticator, Authy, or FreeOTP)
+1. Via smartphone app (e.g. Google Authenticator, Authy, Okta, FreeOTP, etc...)
 2. Via text message (or SMS)
 3. Via a YubiKey from `Yubico <http://yubico.com>`
 
@@ -198,7 +198,7 @@ with the PlaidCloud logo and can be shipped directly to members or in bulk to an
 
 |plaidcloud yubikey|
 
-The managed pool provides advantages over individual Yubkikeys in the
+The managed pool provides advantages over individual Yubikeys in the
 following ways:
 
 -  Lost keys are easily replaced without the member needing to store recovery codes
@@ -220,8 +220,7 @@ To order new keys:
 
 |order more keys select|
 
-If managed keys were ordered, they will appear in the managed keys
-table. 
+If managed keys were ordered, they will appear in the managed keys table. 
 
 From the key assignment form, keys can be assigned, marked as unassigned, or marked as lost. In addition, each key can have a memo
 attached for keeping track of notes related to issuance of the key. To do this simply click the edit icon and make the desired adjustments. 
@@ -273,7 +272,6 @@ To do so:
 
 |yubikey lost select update|
 
-
 This will mark the key as lost and allow you to issue a new one. 
 
 Single Sign-On
@@ -286,10 +284,10 @@ passwords across multiple applications and ensure good member management practic
 Single Sign-On is by far the easiest to use for members and is as secure as the authentication process used by the external party. Single
 Sign-On helps ensure passwords are up to date and synchronized with other services the member interacts with.
 
-While Single Sign-On does requires a more extensive authentication process behind the scenes and usually requires technical coordination with IT
+While Single Sign-On does require a more extensive authentication process behind the scenes and usually requires technical coordination with IT
 and/or network security, it can be used by anyone, although it is typically used by larger companies and academic institutions.
 
-For more information on setting up and managing Single Sign-On see the `Organization and Workspace management area. </docs/workspaces/organization>`__
+For more information on setting up and managing Single Sign-On see the `Organization and Workspace management area. </docs/plaidcloud/workspaces/organization.html>`__
 
 .. |change password select| image:: ../../_static/img/plaidcloud/identity/setting_up_authentication/password_only/2_change_password_select.png
 .. |change password form| image:: ../../_static/img/plaidcloud/identity/setting_up_authentication/password_only/3_change_password_form.png

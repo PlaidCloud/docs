@@ -19,7 +19,7 @@ Tools
 Description
 -----------
 
-The tools section helps you to manage workflow options and data analysis. PlaidCloud includes tools such as event scheduling,
+The tools section helps you manage workflow options and data analysis. PlaidCloud includes tools such as event scheduling,
 data connections to various other data sources, and message queues for asynchronous operations. In addition, PlaidLink
 agents are also managed in the tools section, enabling remote operations to support analysis when operating in a closed
 environment with no direct external access.

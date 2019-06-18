@@ -19,7 +19,7 @@ Projects
 Description
 -----------
 Within **Analyze**, the Projects function provides a level of compartmentalization that makes controlling access and
-modifying privileges much easier. Projects are what provide the primary segregation of data in the Analyze tab.
+modifying privileges much easier. Projects are what provide the primary segregation of data in the within a workspace tab.
 
 While Projects fall under Analyze, workflows fall under Projects meaning that Projects contain workflows. Workflows,
 simply put, perform a wide range of tasks including data transformation pipelines, data analysis, and even ETL
@@ -36,7 +36,7 @@ To access Projects:
 
 |analyze projects tab|
 
-This displays the **Projects Table**. From here, you will see a list of projects for which you have access. There may
+This displays the **Projects Hierarchy**. From here, you will see a hierarchy of projects for which you have access. There may
 be additional projects within the workspace but if you are not an owner or assigned to the project, they will not visible to you.
 
 |projects table|

@@ -9,6 +9,12 @@ Managing Projects
    .. contents::
       :local:
 
+Searching
+---------
+
+Searching for projects is accomplished by using the filter box in the lower left of the hierarchy.  The search filter
+will search project names and labels for matches and show the results in the hierarhcy above.
+
 Creating New Projects
 ---------------------
 
@@ -37,7 +43,7 @@ All changes to a project including workflows, data editors, hierarchies, table s
 UDFs are tracked and allow point-in-time recovery of the state.  This allows for easy recovery from
 user introduced problems or simply copying a different point-in-time to another project for comparison.
 
-In addition to overall tracking, projects and its elements also allow for versioning.  Not only is creating
+In addition to overall tracking, projects and their elements also allow for versioning.  Not only is creating
 a version easy, you can also merge changes from one version to another easily too.  This provides a simple way
 to keep track of snapshots or to create a version for development and then be able to merge those changes
 into the non-development version when you want.
@@ -54,6 +60,20 @@ Project security has been simplified into three types of access:
   - Specific Members Only
   - Specific Security Groups Only
 
+Setting the project security is accomplished by:
+
+1) Open Analyze
+2) Select "Projects"
+3) Click the edit icon of the project you want to restrict
+
+|edit icon select|
+
+4) Choose desired restriction under "Access Control"
+
+|restriction select|
+
+5) Click "Update"
+
 All Workspace Members
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -63,9 +83,9 @@ members of the workspace and does not require any additional assignment of membe
 Specific Members Only
 ^^^^^^^^^^^^^^^^^^^^^^
 
-The "Specific Members Only"access setting requires assignment of each member to an account. 
+The "Specific Members Only" access setting requires assignment of each member to the project. 
 
-To assign members to an account:
+To assign members to a project:
 
 1) Open Analyze
 2) Select "Projects" from the top menu bar
@@ -101,28 +121,6 @@ To edit assigned groups:
 
 5) Click "Update"
 
-Restricting Projects
-~~~~~~~~~~~~~~~~~~~~
-
-The project can be restricted to specific users using an Access Control List (ACL) or by assigning members to specific security group.
-
-To restrict users using an Access Control List:
-
-1) Open Analyze
-2) Select "Projects"
-3) Click the edit icon of the project you want to restrict
-
-|edit icon select|
-
-4) Choose desired restriction under "Access Control"
-
-|restriction select|
-
-5) Click "Update"
-
-To restrict users by assigning members to security groups:
-
-
 Setting Different Viewing Roles
 -------------------------------
 
@@ -136,7 +134,7 @@ There are three built-in viewing roles:
 - Manager
 - Explorer
 
-The **Architect** role is the simplest as it allows full visibility and control of the project, workflows, tables, variables, and user defined functions.
+The **Architect** role is the simplest as it allows full visibility and control of the project, workflows, tables, variables, data editors, hierarchies, and user defined functions.
 
 The **Manager** and **Explorer** roles have no specific access privileges but can instead be custom defined. In other words, you can choose which items are visible to each group.  
 
@@ -221,6 +219,22 @@ To duplicate **without** updating project references:
 
 |duplicate without update select|
 
+Viewing the Project Report
+--------------------------
+
+When a project or workflow is dynamic, maintaining detailed documentation becomes a challenge. To help solve this
+problem, PlaidCloud provides the ability to generate a project-level report that gives detailed documentation of
+workflows, workflow steps, user defined transforms, variables, and tables. This report is generated on-demand
+and reflects the current state of the project.
+
+To download the report:
+
+1) Open Analyze
+2) Select "Projects"
+3) Click the report icon
+
+|report icon select|
+
 
 .. |log icon select| image:: ../../_static/img/plaidcloud/projects/common/1_log_icon_select.png
 .. |member icon select| image:: ../../_static/img/plaidcloud/projects/common/1_member_icon_select.png
@@ -238,3 +252,4 @@ To duplicate **without** updating project references:
 .. |new project variable| image:: ../../_static/img/plaidcloud/projects/managing_projects/managing_project_variables/2_new_project_variable.png
 .. |duplicate without update select| image:: ../../_static/img/plaidcloud/projects/managing_projects/duplicating_a_project/2_duplicate_without_update_select.png
 .. |duplicate with update select| image:: ../../_static/img/plaidcloud/projects/managing_projects/duplicating_a_project/3_duplicate_with_update_select.png
+.. |report icon select| image:: ../../_static/img/plaidcloud/projects/project_log/viewing_the_project_report/1_report_icon_select.png

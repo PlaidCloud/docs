@@ -9,17 +9,21 @@ Getting Started
    .. contents::
       :local:
 
-Welcome to PlaidCloud! When you login for the first time, your 
-workspace will be empty. Don't worry. As you begin to use the software, 
+Welcome to PlaidCloud!
+
+When you login for the first time, your 
+workspace will be empty. Don't worry. As you begin to use the service, 
 your activity will be displayed in the "Activity Stream" (on the right hand side).
 To get you started, we'll cover some of the primary features.
 
 Creating an Account and Signing In
 -------------------------------------
 
-This is step 1! If you have not created an account with PlaidCloud, do so by going to:
+This is step 1! 
 
-https://plaidcloud.com/signup
+If you have not created an account with PlaidCloud, do so by going to:
+
+Sign-up Link (https://plaidcloud.com/signup)
 
 Once you have an account, go ahead and sign into Workspace. You won't have anything in your newly created Workspace
 yet but we will go through how to get started using the service.
@@ -27,26 +31,26 @@ yet but we will go through how to get started using the service.
 Personalization
 ---------------
 
-PlaidCloud offers the abilty to personalize your experience throught picking a theme for your browser client and preferred language.
-In addition, the dashboard visualizations and Lab area allow personalization with themes and language preferences too.  The themes are
+PlaidCloud offers the abilty to personalize your experience through picking a theme for your browser client and preferred language.
+In addition, the dashboard visualizations and JupyterLab area allow personalization with themes and language preferences too.  The themes are
 slightly different depending on the area due to each theme being optimized for the particular task.
 
-The Dashboards and Lab areas are mobile friendly.  In addition the dashboards are designed for display from very large displays in public
+The Dashboards and JupyterLab areas are mobile friendly.  In addition the dashboards are designed for display from very large displays in public
 areas all the way down to mobile phones.
 
 Branding
 --------
 
-The PlaidCloud Firewall installation either on-prem or in a private cloud allows for customized branding options.  The PlaidCloud SaaS solution
-does not offer customized branding options.
+The PlaidCloud Firewall installation, either on-prem or in a private cloud, allows for customized branding options.  The PlaidCloud SaaS solution
+does not offer customized branding options at this time.
 
-For enterprise customers, custom domains are possible too.
+For enterprise customers, custom domains are possible for the PlaidCloud SaaS.
 
 
 Projects, Workflows, and Tables
 -------------------------------------
 
-PlaidCloud makes it simple and easy to organize analytic workflows by separating them into two levels: Projects and Workflows.
+PlaidCloud makes it simple and easy to organize analytic workflows by separating them into two levels within a Workspace: Projects and Workflows.
 
 To access these:
 

@@ -78,7 +78,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'PlaidCloud'
-copyright = u'2008-2018, Tartan Solutions, Inc'
+copyright = u'2008-2019, Tartan Solutions, Inc'
 author = u'Paul Morel, Michael Rea'
 
 # The version info for the project you're documenting, acts as replacement for
