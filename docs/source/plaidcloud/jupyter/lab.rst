@@ -23,7 +23,7 @@ In addition to using JupyterLab on PlaidCloud, you are able to run JupyterLab lo
 interact with PlaidCloud the same you would if using JupyterLab directly on PlaidCloud. You can perform the exact 
 same operations elsewhere as long as you have plaid_tools installed. 
 
-Click here (https://jupyterlab.readthedocs.io/en/stable/) for additional information from JupyterLab regarding code consoles.
+Click `here <https://jupyterlab.readthedocs.io/en/stable/>`_ for additional information from JupyterLab regarding code consoles.
 
 Available JuypterLab Kernels
 ----------------------------

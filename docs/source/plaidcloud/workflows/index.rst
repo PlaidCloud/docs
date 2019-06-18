@@ -33,16 +33,18 @@ Workflows
 Building a Workflow
 =========================
 
-Many available transforms are available for use in a workflow. The output of a workflow step can be a source dependent table, source independent table, file, notification, or remote system action if using PlaidLink. The output is determined by the tranform type.
+Many available transform steps are available for use in a PlaidCloud workflow. The output of a workflow step can be 
+a table, view, file, notification, or remote system action if using PlaidLink. The output is determined by the 
+tranform step type.
 
 
 Viewing Workflows
 -----------------
 
-Workflows are **Project** specific.  From the top menu in the **Analyze** menu click on the **Workflows** menu item.
-This will open the **Workflows** table showing the list of workflows for the selected project at the top of the table.
-To see workflows in other projects you have access to, simply select the project in the selectbox and the list of
-workflows will update.
+Workflows exist within a **Project**.  From the top menu in the **Analyze** menu click on the **Projects** menu item.
+This will open the **Projects** hierarchy showing the list of projects.
+Open the project and navigate to the **Workflows** tab to see the workflows in the project.  Workflows are organized in
+a hierarchy.
 
 The list of projects is determined by your access security for each of the projects and your Viewing Role within the
 project (i.e. Architect, Manager, or Explorer).  If you are expecting to see a project and it is not present then it
@@ -50,20 +52,18 @@ could be that you have not been granted access to the project by one of the proj
 see certain workflows within the project and you are not an Architect on the project, then they might be hidden to your
 viewing role.
 
-
 The status of the workflow will be displayed if it is running, has a warning or error, or completed normally.  The
-creation and update dates are also shown along with who created or updated the workflow.  In addition, the total size
-of the workflow is also displayed which includes all of the workflow specific tables.
+creation and update dates are also shown along with who created or updated the workflow.
 
 Creating
 -----------
 
-Once you navigate to the **Workflows** table and select the project in which you would like to create a new workflow,
+Once you navigate to the **Workflows** tab in a project,
 click on the **New Workflow** button.  This will open a form where you can enter in the details of the workflow
 including the name and memo.
 
 In addition, you can set a remediation workflow to run if the workflow ends in an error.  A remediation workflow does
-not need to be set but can be useful for sending notifications or to trigger other processes that may automatically
+not need to be set but can be useful for sending notifications or triggering other processes that may automatically
 remediate failures.
 
 Once the form is complete, click on the **Create** button and the new workflow will be added to the project.
@@ -111,44 +111,11 @@ the entire workflow to stop will trigger the remediation process.
 A remediation workflow may be useful for simply notifying people that a failure has occurred or it can perform other
 complex processing to attempt an automatic correction of any underlying reasons the original workflow failed.
 
-Creating an Archive
--------------------
-
-It may be useful to retain a point-in-time archive of a workflow so that all the steps and configurations can be
-restored to their original state.  This may be useful for compliance reasons or during times of significant change
-where it would be ideal to have known revert points.
-
-To create an archive, right click on the workflow row in the **Workflows** table.  Select the **Export Workflow** menu
-item from the context menu.  This will open a form where you can choose the items to archive and the destination for
-the resulting archive file.  The options for archiving are:
-
-  - Dimensions and Entity Structure
-  - User Defined Transforms
-  - Variables
-  - Functions
-  - Workflow Steps
-
-When all the settings are completed, click on the **Archive** button and the archiving process will be initiated.
-Depending on the size of the workflow this may take several minutes so the process runs in the background and a
-progress bar displays progress.
-
-Restoring an Archive
---------------------
-
-Restoring an archive provides the ability to load an entire archive back into the project or selected portions of an
-archive.  For example, an archive may be used to load just the User Defined Functions and skip the recreation of all
-the workflow steps.  This flexibility is often useful to allow restoring portions for reference or to act as a backup process.
-
-To restore and archive, select **Import Archive** from the top menu of the **Workflows** table.  This will open an
-import setup form where you can select the archive and the items to import.  Click the **Import** button to initiate
-the import process which will run in the background.  The import process may take several minutes depending on the size
-of the workflow.  A progress bar will be displayed to indicate progress towards completion.
-
 Viewing the Workflow Log
 ------------------------
 
 As things happen within a workflow, such as steps running or warnings occurring, those events are logged to the workflow
-log.  This log is viewable from the **Workflow Options** menu in the top right of the workflow table.  The workflow log
+log.  This log is viewable from the **Project** area under the **Log** tab.  The workflow log
 is also present in the project log in case you would like to see a more comprehensive view of logs across multiple workflows.
 
 The log viewer allows for sorting and filtering the log as well as viewing the details of a particular log entry.
@@ -157,7 +124,7 @@ Clearing the Workflow Log
 -------------------------
 
 Clearing the workflow log may be desirable from time to time.  From the log viewer, select the **Clear Log** button.
-This will clear the workflow log which will also remove the log entries from the project level log too.
+This will clear the log based on the workflow selected which will also remove the log entries from the project level log too.
 
 Viewing the Workflow Report
 ---------------------------
@@ -196,7 +163,7 @@ Setting Parallelism
 Workflows in PlaidCloud can be executed as a combination of serial steps and parallel operations.  To set a group of
 steps to run in parallel, place the steps in a group within the workflow hierarchy.  Right click on the group folder
 and select the **Execute in Parallel** option.  This will allow all the steps in the group to trigger simultaneously
-and execute in parallel.  Once all steps in the group complete, the next set step in the workflow after the group will activate.
+and execute in parallel.  Once all steps in the group complete, the next step or group in the workflow after the group will activate.
 
 Running One Step
 ----------------------
@@ -216,7 +183,7 @@ step is complete.
 Running and Entire Workflow
 ---------------------------
 
-You can trigger a full workflow run by either clicking on the run icon from the **Workflows** table or by selecting
+You can trigger a full workflow run by either clicking on the run icon from the **Workflows** hierarchy or by selecting
 **Run All** from the **Actions** menu within a specific workflow.
 
 You can also click on the **Toggle Start/Stop** button at the top of the workflow table.  This toggle button will
@@ -228,7 +195,11 @@ Setting the Workflow to Skip Steps
 Steps in the workflow can be set to skip during the workflow run.  This may be useful if there are debugging steps or
 old steps that you are not prepared to completely remove from the workflow yet.
 
-To set this option, click on the step edit option, the pencil icon in the workflow table, to open the edit form.
+To set this option, you have two options:
+ - Edit the step form
+ - Uncheck the enabled checkbox in the workflow hierarchy
+ 
+To edit the step form, click on the step edit option, the pencil icon in the workflow table, to open the edit form.
 Uncheck the enabled checkbox.  After saving the updated step it will no longer run as part of the workflow but can
 still be run using the single step run process.
 
@@ -263,6 +234,10 @@ within workflows as well as between workflows, even in other projects.  You can 
 Select the workflow steps within the hierarchy and click the **Copy Selected Steps** button at the top of the table.
 
 This will place the selected steps in the clipboard and allow pasting within the current workflow or another one.
+
+Copying a step will make a duplicate step within the project.  If you want to place the same step in more than one
+location in a workflow, use the **Add Step** menu option to add a reference to the same step rather than a clone of
+the original step.
 
 Paste Steps
 ----------------------

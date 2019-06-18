@@ -20,9 +20,9 @@ available Jupyter Console use and supports all of the most common Jupyter Consol
 
 In addition to using Jupyter Console on PlaidCloud, you are able to run Jupyter Console locally or on other 
 systems and still interact with PlaidCloud the same you would if using Jupyter Console directly on PlaidCloud. 
-You can perform the exact same operations elsewhere as long as you have plaid_tools installed. 
+You can perform the exact same operations elsewhere as long as you have plaidtools installed. 
 
-Click here (https://jupyterlab.readthedocs.io/en/stable/user/code_console.html) for additional information 
+Click `here <https://jupyterlab.readthedocs.io/en/stable/user/code_console.html>`_ for additional information 
 from JupyterLab regarding code consoles.
 
 Available Console Kernels

@@ -22,7 +22,7 @@ narrative text. It allows for data visualization, on-demand narrative analysis, 
  systems and still interact with PlaidCloud the same you would if using Jupyter Notebooks directly on PlaidCloud.
  You can perform the exact same operations elsewhere as long as you have plaid_tools installed.
 
-Click here (https://jupyter-notebook.readthedocs.io/en/stable/) for additional information from JupyterLab regarding code consoles.
+Click `here <https://jupyter-notebook.readthedocs.io/en/stable/>`_ for additional information from JupyterLab regarding code consoles.
 
 .. todo:: Instructions and screenshots to augment the official documentation coming soon
 
