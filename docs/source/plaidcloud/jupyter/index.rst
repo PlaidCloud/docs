@@ -45,4 +45,4 @@ interoperate with PlaidCloud as if it was running within the service.
 
 .. todo:: Screenshots to illustrate the power of Jupyter Notebooks, JupyterLab, and Jupyter Console coming soon
 
-.. |jupyter icon| image:: ../../_static/img/plaidcloud/jupyter/common/250px-Jupyter_logo.png
+.. |jupyter icon| image:: ../../_static/img/plaidcloud/jupyter/250px-Jupyter_logo.png
