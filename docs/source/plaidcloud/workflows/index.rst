@@ -41,10 +41,11 @@ tranform step type.
 Viewing Workflows
 -----------------
 
-Workflows exist within a **Project**.  From the top menu in the **Analyze** menu click on the **Projects** menu item.
-This will open the **Projects** hierarchy showing the list of projects.
-Open the project and navigate to the **Workflows** tab to see the workflows in the project.  Workflows are organized in
-a hierarchy.
+Workflows exist within a **Project** and are organized in a hierarchy. To access workflows:
+
+1) Select **Analyze** from the left menu 
+2) Double click on the project you want
+3) Click the **Workflows** tab at the top
 
 The list of projects is determined by your access security for each of the projects and your Viewing Role within the
 project (i.e. Architect, Manager, or Explorer).  If you are expecting to see a project and it is not present then it
@@ -55,18 +56,21 @@ viewing role.
 The status of the workflow will be displayed if it is running, has a warning or error, or completed normally.  The
 creation and update dates are also shown along with who created or updated the workflow.
 
+Because workflows are organized in a hierarchy, the same workflow is able to exist in multiple projects simultaneously.
+
 Creating
 -----------
 
-Once you navigate to the **Workflows** tab in a project,
-click on the **New Workflow** button.  This will open a form where you can enter in the details of the workflow
-including the name and memo.
+To create and add a new workflow to a project:
 
-In addition, you can set a remediation workflow to run if the workflow ends in an error.  A remediation workflow does
-not need to be set but can be useful for sending notifications or triggering other processes that may automatically
-remediate failures.
+1) Select **Analyze** from the left menu 
+2) Double click on the project you want
+3) Click the **Workflows** tab at the top
+4) Select the "New Workflow" button
+5) Fill in the information
+6) Click "Create" or "Create and Open Config"
 
-Once the form is complete, click on the **Create** button and the new workflow will be added to the project.
+The "Create and Open Config" option brings you directly to the workflow configuration page whereas the "create button will bring you to the main wokrflow page. 
 
 Managing Errors
 -----------------
@@ -169,25 +173,32 @@ Running One Step
 ----------------------
 
 During initial workflow development, testing, or troubleshooting it is often quite useful to run steps individually.
-To run a single step in isolation, right click on the step and select **Run Step** from the context menu.
+To run a single step in isolation:
+
+1) Right click on the step
+2) Select **Run Step** from the context menu.
 
 Running Multiple Steps
 ------------------------------------
 
 While running individual steps is useful, it also may be useful to run subsets of an entire workflow for development,
-testing, or troubleshooting.  To run a subset of steps, select all the steps you would like to run and select
-**Run Selected** from the **Actions** menu at the top of the workflow steps hierarchy.  This will trigger a normal
-workflow processing but start the workflow at the beginning of the selected steps and stop once the last selected
+testing, or troubleshooting.  
+
+To run a subset of steps:
+
+1) Select all the steps you would like to run 
+2) Click **Actions** from the top bar
+3) Select **Run Selected** 
+
+This will trigger a normal workflow processing but start the workflow at the beginning of the selected steps and stop once the last selected
 step is complete.
 
 Running and Entire Workflow
 ---------------------------
 
-You can trigger a full workflow run by either clicking on the run icon from the **Workflows** hierarchy or by selecting
-**Run All** from the **Actions** menu within a specific workflow.
+To run the entire workflow:
 
-You can also click on the **Toggle Start/Stop** button at the top of the workflow table.  This toggle button will
-stop a running workflow or start a workflow.
+Select **start** from the top bar or click the "run" icon
 
 Setting the Workflow to Skip Steps
 ----------------------------------
@@ -199,19 +210,35 @@ To set this option, you have two options:
  - Edit the step form
  - Uncheck the enabled checkbox in the workflow hierarchy
  
-To edit the step form, click on the step edit option, the pencil icon in the workflow table, to open the edit form.
-Uncheck the enabled checkbox.  After saving the updated step it will no longer run as part of the workflow but can
-still be run using the single step run process.
+To edit the step form:
 
-Steps that have been set to disabled will have a disabled indicator in the workflow steps hierarchy table.
+1) Double click on the workflow
+2) Uncheck the **enable** box of the step you wish to skip
+
+Or: 
+
+2) Select the step(s) you wish to skip
+3) Open the **actions** tab from the top bar
+4) Click **disable step**
+
+
+.. note:: Steps that have been set to disabled will have a disabled indicator in the workflow steps hierarchy table.
 
 Changing the Order of Steps
 ---------------------------------------
 
-There are two ways to update the order of steps in the workflow.  The first way is to use the up and down arrows present
-in the **Workflows** table to move the step up or down.  The second way is to use the **Step Move** option which allows
-you to move the step much easier if a large changes are necessary.  The step move option allows you to move the step to
-the top, bottom, or after a specific step in one operation.
+There are two ways to update the order of steps in the workflow.  
+
+For small changes:
+
+1) Use the up and down arrows next to each step 
+
+For larger changes:
+
+1) Select the step you want to move
+2) Either right click on the step and select the **move this step** option or click the step placement icon
+3) Edit the position 
+4) Click "update position"
 
 Setting Steps to Continue on Error
 ----------------------------------

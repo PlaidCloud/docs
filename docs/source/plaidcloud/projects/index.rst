@@ -31,8 +31,7 @@ Accessing Projects
 
 To access Projects:
 
-1) Open Analyze
-2) Select "Projects" from the top menu bar
+Open Analyze
 
 |analyze projects tab|
 

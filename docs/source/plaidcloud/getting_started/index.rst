@@ -54,8 +54,7 @@ PlaidCloud makes it simple and easy to organize analytic workflows by separating
 
 To access these:
 
-1) Open the **Analyze** tab on the left of the browser
-2) Select Projects from the top of the screen
+Open the **Analyze** tab on the left of the browser
 
 The **Projects** area displays the projects you have access to and allows you to interact with those projects. Double 
 clicking on the project record will open the project in a separate tab where you can view the project details as well as

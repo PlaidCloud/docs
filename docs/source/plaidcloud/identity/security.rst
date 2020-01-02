@@ -92,18 +92,12 @@ The complete list of available permission for each application is viewable from 
 
 1) Open Identity
 2) Select the "Security" 
-3) Click "Security Bins" in the dropdown menu
+3) Click "All Security Scopes" in the dropdown menu
 
-|security bins tab|
+|security scopes tab|
 
-To view the detailed security settings for each application, select the
-tags icon on the far left.
 
-|tags icon select|
-
-This available security settings information is informational only. For
-details on managing permissions, refer to the 
-Managing Security Groups section above.
+This available security settings information is informational only. For details on managing permissions, refer to the Managing Security Groups section above.
 
 .. |managing security groups| image:: ../../_static/img/plaidcloud/identity/security/managing_security_groups/2_security_security_groups_tab.png
 .. |create security group select| image:: ../../_static/img/plaidcloud/identity/security/managing_security_groups/3_create_security_group_select.png
@@ -113,8 +107,8 @@ Managing Security Groups section above.
 .. |default security group| image:: ../../_static/img/plaidcloud/identity/security/setting_default_security_groups/1_default_security_group.png
 .. |security group audit tab| image:: ../../_static/img/plaidcloud/identity/security/performing_a_security_audit/2_security_group_audit_tab.png
 .. |export icon select| image:: ../../_static/img/plaidcloud/identity/security/performing_a_security_audit/3_export_icon_select.png
-.. |security bins tab| image:: ../../_static/img/plaidcloud/identity/security/viewing_available_permission_settings/2_security_bins_tab.png
 .. |tags icon select| image:: ../../_static/img/plaidcloud/identity/security/viewing_available_permission_settings/3_tags_icon_select.png
 .. |gravatar icon select| image:: ../../_static/img/plaidcloud/identity/common/1_gravatar_icon_select.png
 .. |identity tab| image:: ../../_static/img/plaidcloud/identity/common/1_the_identity_tab.png
 .. |manage multi factor auth select| image:: ../../_static/img/plaidcloud/identity/common/3_manage_multi_factor_auth_select.png
+.. |security scopes tab| image:: ../../_static/img/plaidcloud/identity/security/viewing_available_permission_settings/2_security_scopes_tab.png

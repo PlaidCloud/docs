@@ -170,20 +170,6 @@ To view exchanges:
 
 This will open the **Exchanges Table** which displays the list of all exchanges related to the vHost.
 
-Creating Exchanges
-~~~~~~~~~~~~~~~~~~
-
-To create an exchange:
-
-1) Open Analyze 
-2) Select the "Tools" menu
-3) Hover over "Queueing" in the dropdown menu
-4) Click "vHosts"
-5) Click the exchanges icon of the desired vHost
-6) Click "Add Exchange"
-7) Complete the required fields
-8) Click "Submit"
-
 Deleting Exchanges
 ~~~~~~~~~~~~~~~~~~
 
