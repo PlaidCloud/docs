@@ -2,6 +2,14 @@ Identity
 =============================
 
 
+Current Member Information
+----------------------------------
+
+.. automodule:: identity.me
+    :members:
+    :undoc-members:
+    :exclude-members: TestModule
+
 Group Management
 ----------------------------------
 
