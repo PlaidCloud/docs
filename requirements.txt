@@ -6,3 +6,8 @@ sphinxcontrib-websupport
 recommonmark
 sphinxcontrib.httpdomain
 sphinx_sitemap
+sqlalchemy
+pika
+magic
+numpy
+toolz
