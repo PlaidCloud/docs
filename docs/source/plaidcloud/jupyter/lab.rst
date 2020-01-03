@@ -8,7 +8,7 @@ JupyterLab
 
    .. contents::
       :local:
-      
+
 Description
 -----------
 
@@ -37,5 +37,6 @@ PlaidCloud JupyterLab can utilize the following kernels:
 
  In addition, the following additional capabilities are available:
 
+  - Diagram
   - Bash Terminal
   - Text file
