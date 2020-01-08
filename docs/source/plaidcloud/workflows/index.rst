@@ -98,36 +98,46 @@ Keep Processing
 ~~~~~~~~~~~~~~~
 
 Each step can be set to continue on error in the step form.  If this checkbox is enabled then any errors will be marked
-for the step but the workflow will treat the error as a completion of the step and continue on.  This is often useful if
+for the step, but the workflow will treat the error as a completion of the step and continue on.  This is often useful if
 there are steps that perform tasks that can error when there is missing data but are harmless to the overall processes.
 
-Since the workflow is continuing on error under this scenario the workflow will not display an error indicator and
+Since the workflow is continuing on error under this scenario, the workflow will not display an error indicator but instead
 continue to show a running indicator.
 
 Trigger Remediation Workflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With the ability to set a remediation workflow as part of the workflow setup, a workflow error will immediately stop
-the processing of the current workflow and start processing the remediation workflow.  Note that if a step is marked to
-continue on error that a failure will not trigger the remediation workflow.  Only steps that fail that would also cause
-the entire workflow to stop will trigger the remediation process.
+the processing of the current workflow and start processing the remediation workflow. Note that, if a step is marked to
+continue on error, a failure will not trigger the remediation workflow.  Only steps that fail resulting in the entire workflow to stop will trigger the remediation process.
 
-A remediation workflow may be useful for simply notifying people that a failure has occurred or it can perform other
-complex processing to attempt an automatic correction of any underlying reasons the original workflow failed.
+A remediation workflow may be useful for simply notifying people that a failure has occurred. It can also attempt an automatic correction of any underlying reasons 
+the original workflow failed.
 
 Viewing the Workflow Log
 ------------------------
 
 As things happen within a workflow, such as steps running or warnings occurring, those events are logged to the workflow
-log.  This log is viewable from the **Project** area under the **Log** tab.  The workflow log
-is also present in the project log in case you would like to see a more comprehensive view of logs across multiple workflows.
+log.  To view this log:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **log** tab from the top 
 
 The log viewer allows for sorting and filtering the log as well as viewing the details of a particular log entry.
+
+The workflow log is also present in the project log in case you would like to see a more comprehensive view of logs across multiple workflows.
 
 Clearing the Workflow Log
 -------------------------
 
-Clearing the workflow log may be desirable from time to time.  From the log viewer, select the **Clear Log** button.
+Clearing the workflow log may be desirable from time to time.  To clear the workflow log:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **log** tab from the top
+4) Select the **Clear Log** button
+
 This will clear the log based on the workflow selected which will also remove the log entries from the project level log too.
 
 Viewing the Workflow Report
@@ -137,13 +147,17 @@ Maintaining detailed documentation to support both statutory and management requ
 projects and workflows may be dynamic.  To help solve this problem, PlaidCloud provides a Workflow level report that
 provides detailed documentation of workflows, workflow steps, user defined functions, and variables.
 
-The report is generated on-demand and reflects the current state of the workflow.  To download the report click on
-the Report icon in the **Workflows** hierarchy.
+The report is generated on-demand and reflects the current state of the workflow.  To download the report:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Click the **Report** icon 
 
 Managing Workflow Variables
 ---------------------------
 
-PlaidCloud allows variables at both the project scope and workflow scope.  This allows for setting project wide
+PlaidCloud allows variables at both the project and workflow scope. This allows for setting project wide
 variables or being able to pass information easily between workflows.  The variables and values are viewed by clicking
 on the variables icon in the **Workflows** hierarchy.
 
@@ -154,9 +168,15 @@ Duplicating a Workflow
 ----------------------
 
 It may be useful to copy a workflow when planning to make major changes or to replicate the process with different
-options.  Duplicating an entire workflow is very easy in PlaidCloud.  Simply select the workflows you would like to
-duplicate in the **Workflows** table of a selected project and click the **Duplicate Selected Workflows** button at
-the top of the table.  This will copy the workflows and append the word *Copy* to the name.
+options.  Duplicating an entire workflow is very easy in PlaidCloud.  To do so:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the workflows tab from the top
+4) Select the workflows you would like to duplicate 
+5) Click the **Duplicate Selected Workflows** button at the top 
+
+This will copy the workflows and append the word *Copy* to the name.
 
 Once the duplication process is complete, the workflow is fully functional.  Copied workflows are completely separate
 from the original and can be modified without impacting the original workflow.
@@ -165,8 +185,19 @@ Setting Parallelism
 --------------------
 
 Workflows in PlaidCloud can be executed as a combination of serial steps and parallel operations.  To set a group of
-steps to run in parallel, place the steps in a group within the workflow hierarchy.  Right click on the group folder
-and select the **Execute in Parallel** option.  This will allow all the steps in the group to trigger simultaneously
+steps to run in parallel:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **steps** tab from the top 
+4) Click the new folder button
+5) Select the new folder
+6) Click "add steps" from the top
+7) Place all the desired steps into the folder
+8) Right click on the group folder
+9) Select the **Execute in Parallel** option
+
+This will allow all the steps in the group to trigger simultaneously
 and execute in parallel.  Once all steps in the group complete, the next step or group in the workflow after the group will activate.
 
 Running One Step
@@ -175,8 +206,12 @@ Running One Step
 During initial workflow development, testing, or troubleshooting it is often quite useful to run steps individually.
 To run a single step in isolation:
 
-1) Right click on the step
-2) Select **Run Step** from the context menu.
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Double click on the workflow you want
+5) Right click on the step you want to run
+6) Select **Run Step** from the context menu.
 
 Running Multiple Steps
 ------------------------------------
@@ -186,14 +221,18 @@ testing, or troubleshooting.
 
 To run a subset of steps:
 
-1) Select all the steps you would like to run 
-2) Click **Actions** from the top bar
-3) Select **Run Selected** 
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Double click on the workflow you want
+5) Select all the steps you would like to run 
+6) Click **Actions** from the top bar
+7) Select **Run Selected** 
 
 This will trigger a normal workflow processing but start the workflow at the beginning of the selected steps and stop once the last selected
 step is complete.
 
-Running and Entire Workflow
+Running an Entire Workflow
 ---------------------------
 
 To run the entire workflow:
@@ -212,14 +251,17 @@ To set this option, you have two options:
  
 To edit the step form:
 
-1) Double click on the workflow
-2) Uncheck the **enable** box of the step you wish to skip
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Double click on the workflow you want
+5) Uncheck the **enable** box of the step you wish to skip
 
 Or: 
 
-2) Select the step(s) you wish to skip
-3) Open the **actions** tab from the top bar
-4) Click **disable step**
+5) Select the step(s) you wish to skip
+6) Open the **actions** tab from the top bar
+7) Click **disable step**
 
 
 .. note:: Steps that have been set to disabled will have a disabled indicator in the workflow steps hierarchy table.
@@ -231,14 +273,18 @@ There are two ways to update the order of steps in the workflow.
 
 For small changes:
 
-1) Use the up and down arrows next to each step 
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Double click on the workflow you want
+5) Use the up and down arrows next to each step 
 
 For larger changes:
 
-1) Select the step you want to move
-2) Either right click on the step and select the **move this step** option or click the step placement icon
-3) Edit the position 
-4) Click "update position"
+5) Select the step you want to move
+6) Either right click on the step and select the **move this step** option or click the step placement icon
+7) Edit the position 
+8) Click "update position"
 
 Setting Steps to Continue on Error
 ----------------------------------
@@ -247,9 +293,17 @@ Workflow steps can be set to continue processing even when there is an error.  T
 conditions or where data may be available intermittently.  If the step errors, it will be recorded as an error but the
 workflow will continue to process.
 
-To set this option, click on the step edit option, the pencil icon in the workflow table, to open the edit form.  Check
-the checkbox for **Continue On Error**.  After saving the updated step, any errors with the step will not cause the
-workflow to stop.
+To set this option:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Double click on the workflow you want
+5) Click on the edit icon
+6) Check the checkbox for **Continue On Error**
+7) Save changes
+
+Now any errors with the step will not cause the workflow to stop.
 
 Steps that have been set to continue on error will have a special indicator in the workflow steps hierarchy table.
 
@@ -257,8 +311,14 @@ Copy Steps
 ----------------------
 
 It is often very useful to copy steps instead of starting from scratch each time.  PlaidCloud allows copying steps
-within workflows as well as between workflows, even in other projects.  You can select multiple steps to copy at once.
-Select the workflow steps within the hierarchy and click the **Copy Selected Steps** button at the top of the table.
+within workflows as well as between workflows, even in other projects.  You can select multiple steps to copy at once. To do so:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Double click on the workflow you want
+5) Select the steps you want to copy
+6) Click the **Copy Selected Steps** button at the top 
 
 This will place the selected steps in the clipboard and allow pasting within the current workflow or another one.
 
@@ -290,3 +350,18 @@ all dependencies are in the correct order.  When data already exists in tables, 
 many cases but may actually have a dependency issue if the data is populated out of order.
 
 This tool will provide a dependency audit and identify issues with data dependency relationships.
+
+Workflow conditions
+--------------------
+
+Setting conditions for a workflow will control whether the workflow will rin or not. In order for the workflow to run, all of the conditions that were set must be met.
+If not all set conditions are met, the workflow will not run. To set conditions:
+
+1) Select Analyze
+2) Double click on the project you want
+3) Select the **workflows** tab from the top
+4) Double click on the workflow you want
+5) Click the edit icon of the step you want to set a condition for
+6) Select the **conditions** tab from the top of the window
+7) Fill out the form
+8) Click "update" or "update and open config"
