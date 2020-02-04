@@ -1,6 +1,14 @@
 #!/usr/bin/env groovy
+import groovy.transform.Field
 
-image_name = "plaidcloud/docs"
+@Field 
+def image_name = "plaidcloud/docs"
+
+@Field
+def image_label = ""
+
+@Field
+def branch = ""
 
 podTemplate(label: 'docs',
   containers: [
@@ -26,7 +34,7 @@ podTemplate(label: 'docs',
               }
 
               // When building from a PR event, we want to read the branch name from the CHANGE_BRANCH binding. This binding does not exist on branch events.
-              CHANGE_BRANCH = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
+              branch = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
 
               docker_args = ''
 
@@ -44,7 +52,7 @@ podTemplate(label: 'docs',
               }
 
               // No need to publish dev branches.
-              if (CHANGE_BRANCH == 'master') {
+              if (branch == 'master') {
 
                 stage('Publish to DockerHub') {
                   image.push()
@@ -62,9 +70,11 @@ podTemplate(label: 'docs',
         }
       }
     }
-    container('kubectl') {
-      stage("Deploy to Kubernetes") {
-        sh "kubectl -n plaid set image deployment/docs docs=${image_name}:${image_label} --record"
+    if (branch == 'master') {
+      container('kubectl') {
+        stage("Deploy to Kubernetes") {
+          sh "kubectl -n plaid set image deployment/docs docs=${image_name}:${image_label} --record"
+        }
       }
     }
   }
