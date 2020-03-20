@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: plaid
+    plaid: docs
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  minReadySeconds: 10
+  template:
+    metadata:
+      name: docs
+      labels:
+        app: plaid
+        plaid: docs
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: docs
+        image: {{ .Values.docs.image }}
+        imagePullPolicy: {{ .Values.docs.pullPolicy }}
+        ports:
+        - name: http
+          containerPort: {{ .Values.docs.port }}
+        resources: {{ .Values.docs.resources }}
+        livenessProbe:
+          httpGet:
+            path: /docs/
+            port: {{ .Values.docs.port }}
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /docs/
+            port: {{ .Values.docs.port }}
+          initialDelaySeconds: 3
+          periodSeconds: 3
+      imagePullSecrets:
+      - name: {{ .Values.docs.pullSecret }}
