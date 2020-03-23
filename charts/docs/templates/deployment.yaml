@@ -21,21 +21,25 @@ spec:
       - name: docs
         image: {{ .Values.docs.image }}
         imagePullPolicy: {{ .Values.docs.pullPolicy }}
+        {{- if .Values.devMode }}
+        command: ["sphinx-autobuild", "-H", "0.0.0.0", "-p", "{{ .Values.docs.port }}", "--no-initial", "/tmp/docs/source", "/web/docs"]
+        {{- end }}
         ports:
         - name: http
           containerPort: {{ .Values.docs.port }}
-        resources: {{ .Values.docs.resources }}
-        livenessProbe:
-          httpGet:
-            path: /docs/
-            port: {{ .Values.docs.port }}
-          initialDelaySeconds: 3
-          periodSeconds: 3
-        readinessProbe:
-          httpGet:
-            path: /docs/
-            port: {{ .Values.docs.port }}
-          initialDelaySeconds: 3
-          periodSeconds: 3
+        resources:
+{{ .Values.docs.resources | toYaml | indent 10 }}
+        # livenessProbe:
+        #   httpGet:
+        #     path: /docs
+        #     port: {{ .Values.docs.port }}
+        #   initialDelaySeconds: 3
+        #   periodSeconds: 3
+        # readinessProbe:
+        #   httpGet:
+        #     path: /docs
+        #     port: {{ .Values.docs.port }}
+        #   initialDelaySeconds: 3
+        #   periodSeconds: 3
       imagePullSecrets:
       - name: {{ .Values.docs.pullSecret }}

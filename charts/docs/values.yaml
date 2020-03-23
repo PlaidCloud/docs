@@ -1,6 +1,8 @@
+devMode: false
+
 docs:
   image: gcr.io/plaidcloud-build/docs
-  port: 80
+  port: 8000
   pullPolicy: IfNotPresent
   pullSecret: gcr-key
   resources: 

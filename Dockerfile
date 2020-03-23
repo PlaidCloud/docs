@@ -1,12 +1,14 @@
 FROM python:2.7-slim
-COPY docs /docs
-COPY src /src
+COPY requirements.txt /tmp
 
-# Install sphinx and other dependencies
-RUN pip install -r /docs/requirements.txt \
-# Build our documentation
-&& mkdir /www \ 
-&& sphinx-build /docs/docs/source /www \
-&& rm -rf /src
+RUN pip install --no-cache-dir -r /tmp/requirements.txt \
+&& rm /tmp/requirements.txt
 
-CMD python /docs/web/main.py
+COPY web/ /web/
+COPY docs/ /tmp/docs
+
+RUN mkdir /docs \ 
+ && sphinx-build /tmp/docs/source /web/docs \
+ && ln -s /web/docs /web/docs/docs
+
+CMD python /web/main.py
