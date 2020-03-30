@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: plaid
+    plaid: docs
+  annotations:
+    nginx.ingress.kubernetes.io/server-snippet: |
+      if ( $http_x_forwarded_proto != 'https' ) {
+        return 307 https://$host$request_uri;
+      }
+spec:
+  rules:
+  {{- if .Values.devMode }}
+  - host: {{ .Release.Namespace }}.plaidcloud.io
+    http:
+      paths:
+      - path: /docs
+        backend:
+          serviceName: {{ .Release.Name }}
+          servicePort: 80
+  {{- else }}
+  {{- range $hostname := .Values.ingress.hostnames }}
+  - host: {{ $hostname }}
+    http:
+      paths:
+      - path: /docs
+        backend:
+          serviceName: {{ $.Release.Name }}
+          servicePort: 80
+  {{- end }}
+  {{- end }}

@@ -18,3 +18,5 @@ plaid_site.egg-info/
 /plaid_site/sphinx/build
 
 plaid_site/sphinx/source/plaidxl/getting_started\.sublime-workspace
+
+.devspace

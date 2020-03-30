@@ -1,0 +1,40 @@
+version: v1beta8
+images:
+  docs:
+    image: gcr.io/plaidcloud-build/docs
+    build:
+      custom:
+        command: gcloud
+        args:
+        - builds
+        - submit
+        - --project=plaidcloud-build
+        # - --machine-type=n1-highcpu-8
+        - --tag
+deployments:
+- name: docs
+  helm:
+    chart:
+      name: ./charts/docs
+      version: v0.0.1
+    values:
+      devMode: true
+      docs:
+        image: gcr.io/plaidcloud-build/docs
+        port: 8000
+        pullPolicy: IfNotPresent
+        pullSecret: gcr-key
+      ingress:
+        hostnames:
+        - gbates.plaidcloud.io
+dev:
+  sync:
+  - imageName: gcr.io/plaidcloud-build/docs
+    labelSelector:
+      plaid: docs
+      release: docs
+    containerName: "docs"
+    localSubPath: ./docs
+    containerPath: /tmp/docs
+    disableDownload: true
+

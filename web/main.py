@@ -18,7 +18,7 @@ __email__ = "kellen.kapper@tartansolutions.com"
 # Application Configuration Settings
 HANDLER_MAP = [
     (r"/docs/(.*)", web.StaticFileHandler, {
-        "path": "/www",
+        "path": "/web/docs",
         "default_filename": "index.html",
     })
 ]
@@ -27,7 +27,7 @@ TORNADO_SETTINGS = {
     'debug': False,
 }
 
-tornado.options.define("port", default=80, type=int)
+tornado.options.define("port", default=8000, type=int)
 logging.info("Creating Tornado Application")
 application = tornado.web.Application(HANDLER_MAP, **TORNADO_SETTINGS)
 
