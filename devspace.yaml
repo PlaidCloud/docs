@@ -1,4 +1,4 @@
-version: v1beta7
+version: v1beta8
 images:
   docs:
     image: gcr.io/plaidcloud-build/docs
