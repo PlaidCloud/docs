@@ -49,7 +49,7 @@ podTemplate(label: 'docs',
                 }
 
                 image_label = "${branch}-${BUILD_NUMBER}"
-                image = docker.build("${image_name}:${image_label}", "--pull ${docker_args} -f docs/Dockerfile .")
+                image = docker.build("${image_name}:${image_label}", "--pull ${docker_args} -f docs/Dockerfile docs")
               }
 
               stage('Publish to DockerHub') {
