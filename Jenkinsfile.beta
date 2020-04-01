@@ -2,7 +2,7 @@
 import groovy.transform.Field
 
 @Field 
-def image_name = "plaidcloud/docs"
+def image_name = "gcr.io/plaidcloud-build/docs"
 
 @Field
 def image_label = ""
@@ -28,7 +28,7 @@ podTemplate(label: 'docs',
       withCredentials([string(credentialsId: 'docker-server-ip', variable: 'host')]) {
         docker.withServer("$host", "docker-server") {
           withCredentials([dockerCert(credentialsId: 'docker-server', variable: "DOCKER_CERT_PATH")]) {
-            docker.withRegistry("", "plaid-docker") {
+            docker.withRegistry('https://gcr.io', 'gcr:plaidcloud-build') {
               dir('docs') {
                 scm_map = checkout scm
               }
