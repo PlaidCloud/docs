@@ -44,12 +44,8 @@ podTemplate(label: 'docs',
               }
 
               stage('Build Image') {
-                dir('src') {
-                  git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-machine-user'
-                }
-
                 image_label = "${branch}-${BUILD_NUMBER}"
-                image = docker.build("${image_name}:${image_label}", "--pull ${docker_args} -f docs/Dockerfile docs")
+                image = docker.build("${image_name}:latest", "--pull ${docker_args} .")
               }
 
               stage('Publish to DockerHub') {

@@ -29,9 +29,16 @@ podTemplate(label: 'docs',
         docker.withServer("$host", "docker-server") {
           withCredentials([dockerCert(credentialsId: 'docker-server', variable: "DOCKER_CERT_PATH")]) {
             docker.withRegistry('https://gcr.io', 'gcr:plaidcloud-build') {
-              dir('docs') {
-                scm_map = checkout scm
-              }
+              
+              // Checkout source before doing anything else
+              scm_map = checkout([
+                  $class: 'GitSCM',
+                  branches: scm.branches,
+                  doGenerateSubmoduleConfigurations: false,
+                  extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', trackingSubmodules: true]],
+                  submoduleCfg: [],
+                  userRemoteConfigs: scm.userRemoteConfigs
+              ])
 
               // When building from a PR event, we want to read the branch name from the CHANGE_BRANCH binding. This binding does not exist on branch events.
               branch = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
@@ -44,11 +51,7 @@ podTemplate(label: 'docs',
               }
 
               stage('Build Image') {
-                dir('src') {
-                  git url: 'https://github.com/PlaidCloud/plaid.git', credentialsId: 'plaid-machine-user'
-                }
-
-                image = docker.build("${image_name}:latest", "--pull ${docker_args} -f docs/Dockerfile docs")
+                image = docker.build("${image_name}:latest", "--pull ${docker_args} .")
               }
 
               // No need to publish dev branches.
@@ -61,7 +64,7 @@ podTemplate(label: 'docs',
                 stage('Push Git Tag') {
                   // Add additional, unique image tag and push.
                   // https://github.com/jenkinsci/docker-workflow-plugin/blob/50ad50bad2ee14eb73d1ae3ef1058b8ad76c9e5d/src/main/resources/org/jenkinsci/plugins/docker/workflow/Docker.groovy#L176-L179
-                  image_label = scm_map.GIT_COMMIT.substring(0, 7)
+                  image_label = "${scm_map.GIT_COMMIT.substring(0, 7)}-${BUILD_NUMBER}"
                   image.push(image_label)
                 }
               }

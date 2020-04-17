@@ -6,7 +6,7 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt \
 
 COPY web/ /web/
 COPY docs/ /tmp/docs
-COPY src /src
+COPY plaid /src
 
 RUN mkdir /docs \ 
  && sphinx-build /tmp/docs/source /web/docs \
