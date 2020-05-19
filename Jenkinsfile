@@ -12,10 +12,11 @@ def branch = ""
 
 podTemplate(label: 'docs',
   containers: [
-    containerTemplate(name: 'docker', image: 'docker:18.09.9', ttyEnabled: true, command: 'cat'),
-    containerTemplate(name: 'kubectl', image: "lachlanevenson/k8s-kubectl:v1.15.9", ttyEnabled: true, command: 'cat')
+    containerTemplate(name: 'docker', image: 'docker:18.09.9-git', ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'argocd', image: "gcr.io/plaidcloud-build/tools/argocd:latest", ttyEnabled: true, command: 'cat', alwaysPullImage: true, workingDir: '/home/jenkins/agent')
   ],
-  serviceAccount: 'jenkins'
+  serviceAccount: 'jenkins',
+  imagePullSecrets: ['gcr-key']
 )
 {
   node(label: 'docs') {
@@ -73,10 +74,28 @@ podTemplate(label: 'docs',
         }
       }
     }
-    if (branch == 'master') {
-      container('kubectl') {
+    container('argocd') {
+      if (branch == 'master') {
         stage("Deploy to Kubernetes") {
-          sh "kubectl -n plaid set image deployment/docs docs=${image_name}:${image_label} --record"
+          withCredentials([usernamePassword(credentialsId: 'plaid-machine-user', usernameVariable: 'user', passwordVariable: 'pass')]) {
+            sh """
+              # Package and push helm chart, along with copying chart changes to k8s repo for argo.
+              package_helm_chart --repo-url=https://$user:$pass@github.com/PlaidCloud/k8s.git --chart-name=docs
+            """
+          }
+          withCredentials([string(credentialsId: 'argocd-token', variable: 'token')]) {
+            sh """
+              # Tell argo which image version to use.
+              export ARGOCD_SERVER=deploy.plaidcloud.io
+              export ARGOCD_AUTH_TOKEN=${token}
+              argocd --grpc-web app set docs -p docs.image="${image_name}:${image_label}"
+            """
+          }
+        }
+      } else {
+        stage('Process Helm Chart Changes') {
+          // This script will lint, check for version increment, and dry-run an install.
+          sh "check_helm_chart --repo-path=${env.WORKSPACE} --chart-name=docs"
         }
       }
     }
