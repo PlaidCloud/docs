@@ -2,6 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}
+  {{- if .Values.ingress.annotations }}
+  annotations:
+{{ .Values.ingress.annotations | toYaml | indent 4 }}
+  {{- end }}
   labels:
     app: plaid
     plaid: docs
