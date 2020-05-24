@@ -12,6 +12,10 @@ spec:
   template:
     metadata:
       name: docs
+      {{- if .Values.docs.annotations }}
+      annotations:
+{{ .Values.docs.annotations | toYaml | indent 8 }}
+      {{- end }}
       labels:
         app: plaid
         plaid: docs
@@ -27,8 +31,10 @@ spec:
         ports:
         - name: http
           containerPort: {{ .Values.docs.port }}
+        {{- if .Values.docs.resources }}
         resources:
-{{ .Values.docs.resources | toYaml | indent 10 }}
+{{ toYaml .Values.docs.resources | indent 10 }}
+        {{- end }}
         # livenessProbe:
         #   httpGet:
         #     path: /docs
