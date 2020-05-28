@@ -18,3 +18,6 @@ ingress:
   annotations: {}
   hostnames:
   - plaidcloud.com
+  - plaidcloud.io
+  tls: true
+  tlsSecret: ingress-cert

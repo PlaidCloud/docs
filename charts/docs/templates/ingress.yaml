@@ -10,6 +10,18 @@ metadata:
     app: plaid
     plaid: docs
 spec:
+  {{- if .Values.ingress.tls }}
+  tls:
+  - hosts:
+    {{- if .Values.devMode  }}
+    - {{ .Release.Namespace }}.plaidcloud.io
+    {{- else }}
+    {{- range $hostname := .Values.ingress.hostnames }}
+    - {{ $hostname }}
+    {{- end }}
+    {{- end }}
+    secretName: {{ .Values.ingress.tlsSecret }}
+  {{- end }}
   rules:
   {{- if .Values.devMode }}
   - host: {{ .Release.Namespace }}.plaidcloud.io
