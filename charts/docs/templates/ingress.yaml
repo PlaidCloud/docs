@@ -1,3 +1,4 @@
+{{- if .Values.ingress.enabled }}
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
@@ -8,8 +9,21 @@ metadata:
   {{- end }}
   labels:
     app: plaid
-    plaid: docs
+    plaid: docs.
+    release: {{ .Release.Name }}
 spec:
+  {{- if .Values.ingress.tls }}
+  tls:
+  - hosts:
+    {{- if .Values.devMode  }}
+    - {{ .Release.Namespace }}.plaidcloud.io
+    {{- else }}
+    {{- range $hostname := .Values.ingress.hostnames }}
+    - {{ $hostname }}
+    {{- end }}
+    {{- end }}
+    secretName: {{ .Values.ingress.tlsSecret }}
+  {{- end }}
   rules:
   {{- if .Values.devMode }}
   - host: {{ .Release.Namespace }}.plaidcloud.io
@@ -30,3 +44,4 @@ spec:
           servicePort: 80
   {{- end }}
   {{- end }}
+{{- end }}
