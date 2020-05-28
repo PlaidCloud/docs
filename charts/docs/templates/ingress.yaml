@@ -9,7 +9,8 @@ metadata:
   {{- end }}
   labels:
     app: plaid
-    plaid: docs
+    plaid: docs.
+    release: {{ .Release.Name }}
 spec:
   {{- if .Values.ingress.tls }}
   tls:
