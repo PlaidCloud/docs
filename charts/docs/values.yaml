@@ -15,6 +15,7 @@ docs:
     #   memory: 250Mi
 
 ingress:
+  enabled: true
   annotations: {}
   hostnames:
   - plaidcloud.com
