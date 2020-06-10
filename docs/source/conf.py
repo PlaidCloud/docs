@@ -78,7 +78,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'PlaidCloud'
-copyright = u'2008-2019, Tartan Solutions, Inc'
+copyright = u'2008-2020, Tartan Solutions, Inc'
 author = u'Paul Morel, Michael Rea'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -226,4 +226,4 @@ add_module_names = True
 autodoc_docstring_signature = True
 
 # This is for the sitemap generation
-site_url = 'https://plaidcloud.io/docs/'
+site_url = 'https://api.plaidcloud.io/'

@@ -6,7 +6,6 @@
 {%- else %}
   {%- set titlesuffix = "" %}
 {%- endif %}
-{%- set master_doc = 'nevermind.  Mike monkeypatched this to not use masterdoc.  we hard code plaidcloud.com now.' %}
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
@@ -108,7 +107,7 @@
             <a href="http://plaidcloud.com" class="icon icon-home"> {{ project }}
           {% endif %}
           #}
-          <a href="http://plaidcloud.com">
+          <a href="https://api.plaidcloud.com">
 
           {% if logo %}
             {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}

@@ -9,7 +9,7 @@ import tornado.web as web
 from tornado.options import options, parse_command_line
 
 __author__ = "Kellen Kapper"
-__copyright__ = "© Copyright 2018-2019, Tartan Solutions, Inc"
+__copyright__ = "© Copyright 2018-2020, Tartan Solutions, Inc"
 __credits__ = ["Kellen Kapper", "Garrett Bates", "Paul Morel"]
 __license__ = "Proprietary"
 __maintainer__ = "Kellen Kapper"
