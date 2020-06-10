@@ -16,7 +16,7 @@ spec:
   tls:
   - hosts:
     {{- if .Values.devMode  }}
-    - {{ .Release.Namespace }}.plaidcloud.io
+    - {{ .Release.Namespace }}-api.plaidcloud.io
     {{- else }}
     {{- range $hostname := .Values.ingress.hostnames }}
     - {{ $hostname }}
@@ -26,10 +26,10 @@ spec:
   {{- end }}
   rules:
   {{- if .Values.devMode }}
-  - host: {{ .Release.Namespace }}.plaidcloud.io
+  - host: {{ .Release.Namespace }}-api.plaidcloud.io
     http:
       paths:
-      - path: /docs
+      - path: /
         backend:
           serviceName: {{ .Release.Name }}
           servicePort: 80
@@ -38,7 +38,7 @@ spec:
   - host: {{ $hostname }}
     http:
       paths:
-      - path: /docs
+      - path: /
         backend:
           serviceName: {{ $.Release.Name }}
           servicePort: 80
