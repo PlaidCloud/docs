@@ -3,10 +3,10 @@
 from distutils.core import setup
 
 setup(
-    name='apis',
+    name='docs',
     version='0.1',
-    description='PlaidCloud Documentation',
+    description='PlaidCloud API Documentation',
     author='Tartan Solutions, Inc',
-    url='https://plaidcloud.io',
-    packages=['apis']
+    url='https://api.plaidcloud.io',
+    packages=['docs']
 )
