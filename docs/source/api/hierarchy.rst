@@ -1,7 +1,7 @@
-Hierarchy
+Dimension
 ============================
 
-.. automodule:: analyze.hierarchy
+.. automodule:: analyze.dimension
     :members:
     :undoc-members:
     :exclude-members: TestModule
