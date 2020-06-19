@@ -88,7 +88,7 @@ podTemplate(label: 'docs',
               # Tell argo which image version to use.
               export ARGOCD_SERVER=deploy.plaidcloud.io
               export ARGOCD_AUTH_TOKEN=${token}
-              argocd --grpc-web app set docs -p docs.image="${image_name}:${image_label}"
+              argocd --grpc-web app set docs -p spec.image="${image_name}:${image_label}"
             """
           }
         }

@@ -1,11 +1,15 @@
 devMode: false
 
-docs:
+spec:
+  replicas: 1
   image: gcr.io/plaidcloud-build/docs:latest
   port: 8000
-  pullPolicy: IfNotPresent
-  pullSecret: gcr-key
+  imagePullSecret: gcr-key
+  pullPolicy: Always
   annotations: {}
+    # co.elastic.logs/multiline.pattern: "(ERROR|WARNING|INFO|DEBUG)"
+    # co.elastic.logs/multiline.negate: "true"
+    # co.elastic.logs/multiline.match: "after"
   resources: {}
     # requests:
     #   cpu: 250m
@@ -17,6 +21,8 @@ docs:
 ingress:
   enabled: true
   annotations: {}
-  hostnames: []
+    # kubernetes.io/ingress.class: nginx
+  hostnames:
+  - plaidcloud.io
   tls: true
   tlsSecret: ingress-cert

@@ -7,7 +7,7 @@ metadata:
     plaid: docs
     release: {{ .Release.Name }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.spec.replicas }}
   minReadySeconds: 10
   selector:
     matchLabels:
@@ -17,9 +17,9 @@ spec:
   template:
     metadata:
       name: docs
-      {{- if .Values.docs.annotations }}
+      {{- if .Values.spec.annotations }}
       annotations:
-{{ .Values.docs.annotations | toYaml | indent 8 }}
+{{ .Values.spec.annotations | toYaml | indent 8 }}
       {{- end }}
       labels:
         app: plaid
@@ -28,29 +28,29 @@ spec:
     spec:
       containers:
       - name: docs
-        image: {{ .Values.docs.image }}
-        imagePullPolicy: {{ .Values.docs.pullPolicy }}
+        image: {{ .Values.spec.image }}
+        imagePullPolicy: {{ .Values.spec.pullPolicy }}
         {{- if .Values.devMode }}
-        command: ["sphinx-autobuild", "-H", "0.0.0.0", "-p", "{{ .Values.docs.port }}", "--no-initial", "/tmp/docs/source", "/web/docs"]
+        command: ["sphinx-autobuild", "-H", "0.0.0.0", "-p", "{{ .Values.spec.port }}", "--no-initial", "/tmp/docs/source", "/web/docs"]
         {{- end }}
         ports:
         - name: http
-          containerPort: {{ .Values.docs.port }}
-        {{- if .Values.docs.resources }}
+          containerPort: {{ .Values.spec.port }}
+        {{- if .Values.spec.resources }}
         resources:
-{{ toYaml .Values.docs.resources | indent 10 }}
+{{ toYaml .Values.spec.resources | indent 10 }}
         {{- end }}
         # livenessProbe:
         #   httpGet:
         #     path: /docs
-        #     port: {{ .Values.docs.port }}
+        #     port: {{ .Values.spec.port }}
         #   initialDelaySeconds: 3
         #   periodSeconds: 3
         # readinessProbe:
         #   httpGet:
         #     path: /docs
-        #     port: {{ .Values.docs.port }}
+        #     port: {{ .Values.spec.port }}
         #   initialDelaySeconds: 3
         #   periodSeconds: 3
       imagePullSecrets:
-      - name: {{ .Values.docs.pullSecret }}
+      - name: {{ .Values.spec.imagePullSecret }}
