@@ -15,25 +15,12 @@ spec:
   {{- if .Values.ingress.tls }}
   tls:
   - hosts:
-    {{- if .Values.devMode  }}
-    - {{ .Release.Namespace }}-api.plaidcloud.io
-    {{- else }}
     {{- range $hostname := .Values.ingress.hostnames }}
     - {{ $hostname }}
-    {{- end }}
     {{- end }}
     secretName: {{ .Values.ingress.tlsSecret }}
   {{- end }}
   rules:
-  {{- if .Values.devMode }}
-  - host: {{ .Release.Namespace }}-api.plaidcloud.io
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: {{ .Release.Name }}
-          servicePort: 80
-  {{- else }}
   {{- range $hostname := .Values.ingress.hostnames }}
   - host: {{ $hostname }}
     http:
@@ -42,6 +29,5 @@ spec:
         backend:
           serviceName: {{ $.Release.Name }}
           servicePort: 80
-  {{- end }}
   {{- end }}
 {{- end }}
