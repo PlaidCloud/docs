@@ -18,7 +18,7 @@ deployments:
       name: ./charts/docs
     values:
       devMode: true
-      docs:
+      spec:
         pullPolicy: IfNotPresent
       ingress:
         annotations:
