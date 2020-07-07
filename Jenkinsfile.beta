@@ -29,9 +29,14 @@ podTemplate(label: 'docs',
         docker.withServer("$host", "docker-server") {
           withCredentials([dockerCert(credentialsId: 'docker-server', variable: "DOCKER_CERT_PATH")]) {
             docker.withRegistry('https://gcr.io', 'gcr:plaidcloud-build') {
-              dir('docs') {
-                scm_map = checkout scm
-              }
+              scm_map = checkout([
+                  $class: 'GitSCM',
+                  branches: scm.branches,
+                  doGenerateSubmoduleConfigurations: false,
+                  extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', trackingSubmodules: true]],
+                  submoduleCfg: [],
+                  userRemoteConfigs: scm.userRemoteConfigs
+              ])
 
               // When building from a PR event, we want to read the branch name from the CHANGE_BRANCH binding. This binding does not exist on branch events.
               branch = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
