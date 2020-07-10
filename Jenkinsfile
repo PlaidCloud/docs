@@ -10,6 +10,12 @@ def image_label = ""
 @Field
 def branch = ""
 
+@Field
+def chart_name = "docs"
+
+@Field
+def argo_app = "docs"
+
 podTemplate(label: 'docs',
   containers: [
     containerTemplate(name: 'docker', image: 'docker:18.09.9-git', ttyEnabled: true, command: 'cat'),
@@ -78,24 +84,24 @@ podTemplate(label: 'docs',
       if (branch == 'master') {
         stage("Deploy to Kubernetes") {
           withCredentials([usernamePassword(credentialsId: 'plaid-machine-user', usernameVariable: 'user', passwordVariable: 'pass')]) {
-            sh """
-              # Package and push helm chart, along with copying chart changes to k8s repo for argo.
-              package_helm_chart --repo-url=https://$user:$pass@github.com/PlaidCloud/k8s.git --chart-name=docs
-            """
-          }
-          withCredentials([string(credentialsId: 'argocd-token', variable: 'token')]) {
-            sh """
-              # Tell argo which image version to use.
-              export ARGOCD_SERVER=deploy.plaidcloud.io
-              export ARGOCD_AUTH_TOKEN=${token}
-              argocd --grpc-web app set docs -p spec.image="${image_name}:${image_label}"
-            """
+            withCredentials([string(credentialsId: 'argocd-token', variable: 'ARGOCD_AUTH_TOKEN')]) {
+              sh """
+                export ARGOCD_SERVER=deploy.plaidcloud.io
+
+                # Verify, lint, check versions, package, and push helm chart, along with copying chart changes to k8s repo for argo.
+                check_helm_chart --repo-path=$env.WORKSPACE --chart-name=$chart_name
+                package_helm_chart --repo-url=https://$user:$pass@github.com/PlaidCloud/k8s.git --chart-name=$chart_name
+                
+                # Tell argo which image version to use.
+                argocd app set $argo_app -p spec.image="$image_name:$image_label"
+              """
+            }
           }
         }
       } else {
         stage('Process Helm Chart Changes') {
           // This script will lint, check for version increment, and dry-run an install.
-          sh "check_helm_chart --repo-path=${env.WORKSPACE} --chart-name=docs"
+          sh "check_helm_chart --repo-path=$env.WORKSPACE --chart-name=$chart_name"
         }
       }
     }
