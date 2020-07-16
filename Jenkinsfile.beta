@@ -10,12 +10,19 @@ def image_label = ""
 @Field
 def branch = ""
 
+@Field
+def chart_name = "docs"
+
+@Field
+def argo_app = "beta-docs"
+
 podTemplate(label: 'docs',
   containers: [
     containerTemplate(name: 'docker', image: 'docker:18.09.9', ttyEnabled: true, command: 'cat'),
-    containerTemplate(name: 'kubectl', image: "lachlanevenson/k8s-kubectl:v1.15.9", ttyEnabled: true, command: 'cat')
+    containerTemplate(name: 'argocd', image: "gcr.io/plaidcloud-build/tools/argocd:latest", ttyEnabled: true, command: 'cat', alwaysPullImage: true, workingDir: '/home/jenkins/agent')
   ],
-  serviceAccount: 'jenkins'
+  serviceAccount: 'jenkins',
+  imagePullSecrets: ['gcr-key']
 )
 {
   node(label: 'docs') {
@@ -29,9 +36,14 @@ podTemplate(label: 'docs',
         docker.withServer("$host", "docker-server") {
           withCredentials([dockerCert(credentialsId: 'docker-server', variable: "DOCKER_CERT_PATH")]) {
             docker.withRegistry('https://gcr.io', 'gcr:plaidcloud-build') {
-              dir('docs') {
-                scm_map = checkout scm
-              }
+              scm_map = checkout([
+                  $class: 'GitSCM',
+                  branches: scm.branches,
+                  doGenerateSubmoduleConfigurations: false,
+                  extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', trackingSubmodules: true]],
+                  submoduleCfg: [],
+                  userRemoteConfigs: scm.userRemoteConfigs
+              ])
 
               // When building from a PR event, we want to read the branch name from the CHANGE_BRANCH binding. This binding does not exist on branch events.
               branch = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
@@ -45,7 +57,7 @@ podTemplate(label: 'docs',
 
               stage('Build Image') {
                 image_label = "${branch}-${BUILD_NUMBER}"
-                image = docker.build("${image_name}:latest", "--pull ${docker_args} .")
+                image = docker.build("${image_name}:${image_label}", "--pull ${docker_args} .")
               }
 
               stage('Publish to DockerHub') {
@@ -56,10 +68,18 @@ podTemplate(label: 'docs',
         }
       }
     }
-    container('kubectl') {
+    container('argocd') {
       stage("Deploy to Kubernetes") {
-        withCredentials([file(credentialsId: 'prod-kube-config', variable: 'KUBECONFIG')]) {
-          sh "kubectl -n beta set image deployment/beta-docs docs=${image_name}:${image_label} --record"
+        withCredentials([usernamePassword(credentialsId: 'plaid-machine-user', usernameVariable: 'user', passwordVariable: 'pass')]) {
+          withCredentials([string(credentialsId: 'argocd-token', variable: 'ARGOCD_AUTH_TOKEN')]) {
+            sh """#!/bin/bash
+              export ARGOCD_SERVER=deploy.plaidcloud.io
+              
+              # Verify, lint, check versions, package, and push helm chart, along with copying chart changes to k8s repo for argo.
+              check_helm_chart --repo-path=$env.WORKSPACE --chart-name=$chart_name
+              package_helm_chart --repo-url=https://$user:$pass@github.com/PlaidCloud/k8s.git --chart-name=$chart_name --argo-app=$argo_app --image=$image_name:$image_label
+            """
+          }
         }
       }
     }
