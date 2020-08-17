@@ -8,7 +8,7 @@ COPY web/ /web/
 COPY docs/ /tmp/docs
 COPY plaid /src
 
-RUN sphinx-build /tmp/docs/source /web/docs \
+RUN sphinx-build -W /tmp/docs/source /web/docs \
  && rm -rf /src
 
 CMD python /web/main.py
