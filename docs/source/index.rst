@@ -2,7 +2,7 @@
 .. sectionauthor:: Paul Morel <paul.morel@tartansolutions.com>
 
 PlaidCloud APIs
-!!!!!!
+!!!!!!!!!!!!!!!
 
 .. sidebar:: API Operations
 
@@ -28,4 +28,4 @@ in those protocols but utilize the JSON-RPC methods behind the scenes.  RESTful 
 
 Authentication is performed through oAuth and all traffic is https only.
 
-Please see documentation to set up remote access for using the PlaidCloud APIs
+Please see documentation to set up remote access for using the PlaidCloud APIs at https://plaidcloud.com/documentation
