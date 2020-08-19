@@ -4,7 +4,7 @@ numpy
 orjson
 pika
 psycopg2-binary
-python-magic-bin
+python-magic-bin=0.4.14
 recommonmark
 simplejson
 sphinx
