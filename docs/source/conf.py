@@ -53,8 +53,7 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.ifconfig',
     'sphinxcontrib.fulltoc',
-    'sphinx.ext.napoleon',
-    'sphinx_sitemap'
+    'sphinx.ext.napoleon'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -170,7 +169,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PlaidCloud.tex', u'PlaidCloud Documentation',
+    (master_doc, 'PlaidCloud.tex', u'PlaidCloud API Documentation',
      u'Paul Morel, Michael Rea', 'manual'),
 ]
 
@@ -180,7 +179,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'plaidcloud', u'PlaidCloud Documentation',
+    (master_doc, 'plaidcloud', u'PlaidCloud API Documentation',
      [author], 1)
 ]
 
@@ -191,7 +190,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PlaidCloud', u'PlaidCloud Documentation',
+    (master_doc, 'PlaidCloud', u'PlaidCloud API Documentation',
      author, 'PlaidCloud', 'One line description of project.',
      'Miscellaneous'),
 ]
@@ -224,6 +223,3 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 # PJM - This is to pretty up the API docstring publishing
 add_module_names = True
 autodoc_docstring_signature = True
-
-# This is for the sitemap generation
-site_url = 'https://api.plaidcloud.io/'
