@@ -2,7 +2,6 @@ orjson
 uvicorn
 starlette
 aiofiles
-python-magic-bin
 recommonmark
 sphinx
 sphinx-autobuild
