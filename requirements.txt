@@ -1,6 +1,5 @@
 aiofiles
 orjson
-python-magic==0.4.15
 recommonmark
 sphinx
 sphinx-autobuild
@@ -8,7 +7,5 @@ sphinx-rtd-theme
 sphinxcontrib-fulltoc
 sphinxcontrib-websupport
 sphinxcontrib.httpdomain
-sqlalchemy
 starlette
-toolz
 uvicorn
