@@ -9,3 +9,4 @@ sphinx-rtd-theme
 sphinxcontrib-fulltoc
 sphinxcontrib-websupport
 sphinxcontrib.httpdomain
+sqlalchemy
