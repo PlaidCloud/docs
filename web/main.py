@@ -3,44 +3,62 @@
 
 import logging
 import os
-import tornado.httpserver
-import tornado.ioloop
-import tornado.web as web
-from tornado.options import options, parse_command_line
 
-__author__ = "Kellen Kapper"
-__copyright__ = "© Copyright 2018-2020, Tartan Solutions, Inc"
-__credits__ = ["Kellen Kapper", "Garrett Bates", "Paul Morel"]
+import uvicorn
+from starlette.applications import Starlette
+from starlette.responses import Response
+from starlette.routing import Mount, Route
+from starlette.staticfiles import StaticFiles
+
+__author__ = 'Paul Morel'
+__maintainer__ = 'Paul Morel <paul.morel@tartansolutions.com>'
+__copyright__ = '© Copyright 2020, Tartan Solutions, Inc'
 __license__ = "Proprietary"
-__maintainer__ = "Kellen Kapper"
-__email__ = "kellen.kapper@tartansolutions.com"
+__maintainer__ = "Garrett Bates"
+__email__ = "garrett.bates@tartansolutions.com"
 
-# Application Configuration Settings
-HANDLER_MAP = [
-    (r"/(.*)", web.StaticFileHandler, {
-        "path": "/web/docs",
-        "default_filename": "index.html",
-    })
+ROOT_PATH = '/web/docs'
+LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
+
+logging.basicConfig(
+    level=LOG_LEVEL,
+    format='%(asctime)s.%(msecs)03d %(levelname)s [%(module)s.%(funcName)s:%(lineno)d] %(message)s',
+    datefmt='%Y-%m-%d,%H:%M:%S')
+
+LOGGER = logging.getLogger(__name__)
+
+# -- STANDARD KUBERNETES CHECK ROUTES --
+async def readiness_probe(request):
+    """Kubernetes pod readiness check endpoint"""
+    return Response('ok', status_code=200)
+
+async def liveness_probe(request):
+    """Kubernetes pod liveness check endpoint"""
+    return Response('ok', status_code=200)
+
+# -- APP SPECIFIC ROUTES --
+STATIC_FILES = StaticFiles(directory=ROOT_PATH, html=True)
+
+ROUTES = [
+    Route('/ready/', readiness_probe),
+    Route('/live/', liveness_probe),
+    Mount('/', STATIC_FILES)
 ]
 
-TORNADO_SETTINGS = {
-    'debug': False,
-}
+APP = Starlette(routes=ROUTES, debug=False)
 
-tornado.options.define("port", default=8000, type=int)
-logging.info("Creating Tornado Application")
-application = tornado.web.Application(HANDLER_MAP, **TORNADO_SETTINGS)
 
 if __name__ == "__main__":
+    # This implementation is adapted from an example at:
+    # https://www.mattlayman.com/blog/2019/starlette-mock-service/
+
     try:
-        parse_command_line()
-        http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
-        http_server.listen(options.port)
-        logging.info('Tornado listening on port {} with PID {}'.format(options.port, os.getpid()))
-        tornado.ioloop.IOLoop.current().start()
+        uvicorn.run(APP, host="0.0.0.0", port=8000)
     except KeyboardInterrupt:
         pass
     except:
         import traceback
-        logging.error(traceback.format_exc())
+        LOGGER.error(traceback.format_exc())
         raise
+
+    LOGGER.info('Gracefully exiting')

@@ -1,5 +1,8 @@
 orjson
-python-magic-bin==0.4.14
+uvicorn
+starlette
+aiofiles
+python-magic-bin
 recommonmark
 sphinx
 sphinx-autobuild
@@ -7,4 +10,3 @@ sphinx-rtd-theme
 sphinxcontrib-fulltoc
 sphinxcontrib-websupport
 sphinxcontrib.httpdomain
-tornado
