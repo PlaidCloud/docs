@@ -1,5 +1,6 @@
 aiofiles
 orjson
+python-magic==0.4.15
 recommonmark
 sphinx
 sphinx-autobuild
