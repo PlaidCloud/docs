@@ -1,7 +1,5 @@
-orjson
-uvicorn
-starlette
 aiofiles
+orjson
 recommonmark
 sphinx
 sphinx-autobuild
@@ -10,3 +8,6 @@ sphinxcontrib-fulltoc
 sphinxcontrib-websupport
 sphinxcontrib.httpdomain
 sqlalchemy
+starlette
+toolz
+uvicorn
