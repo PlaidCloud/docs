@@ -60,7 +60,7 @@ extensions = [
 templates_path = ['_templates']
 
 # This allows these modules to be mocked up without importing all dependencies, to add to this just add the root module name.
-autodoc_mock_imports = ["plaid", "plaidtools", "magic", "sqlalchemy", "toolz", "unicodecsv", "numpy", "psycopg2", "gevent", "faker", "sqlalchemy_views", "pika", "simplejson", "sqlalchemy_utils"]
+autodoc_mock_imports = ["plaid", "plaidtools", "magic", "sqlalchemy", "toolz", "unicodecsv", "numpy", "psycopg2", "gevent", "faker", "sqlalchemy_views", "pika", "simplejson", "sqlalchemy_utils", "pandas"]
 
 # Adding markdown so we can use lecacy stuff more-easily.
 # http://www.sphinx-doc.org/en/stable/markdown.html
