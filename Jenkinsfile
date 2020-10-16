@@ -14,7 +14,7 @@ def branch = ""
 def chart_name = "docs"
 
 @Field
-def argo_app = "docs"
+def argo_app = "io-docs"
 
 podTemplate(label: 'docs',
   containers: [

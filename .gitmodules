@@ -1,3 +1,4 @@
 [submodule "plaid"]
 	path = plaid
 	url = https://github.com/PlaidCloud/plaid.git
+	branch = master
