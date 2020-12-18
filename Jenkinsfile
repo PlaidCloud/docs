@@ -16,10 +16,12 @@ def chart_name = "docs"
 @Field
 def argo_app = "io-docs"
 
+@Field
+def target_lint_dir = "docs"
+
 podTemplate(label: 'docs',
   containers: [
-    containerTemplate(name: 'docker', image: 'docker:18.09.9-git', ttyEnabled: true, command: 'cat'),
-    containerTemplate(name: 'argocd', image: "gcr.io/plaidcloud-build/tools/argocd:latest", ttyEnabled: true, command: 'cat', alwaysPullImage: true, workingDir: '/home/jenkins/agent')
+    containerTemplate(name: 'build', image: "gcr.io/plaidcloud-build/tools/python-build:latest", ttyEnabled: true, command: 'cat', alwaysPullImage: true, workingDir: '/home/jenkins/agent')
   ],
   serviceAccount: 'jenkins',
   imagePullSecrets: ['gcr-key']
@@ -27,81 +29,120 @@ podTemplate(label: 'docs',
 {
   node(label: 'docs') {
     properties([
+      [$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '50')),
       parameters([
-        booleanParam(name: 'no_cache', defaultValue: false, description: 'Adds --no-cache flag to docker build command(s).')
+        booleanParam(name: 'no_cache', defaultValue: true, description: 'Adds --no-cache flag to docker build command(s).'),
+        booleanParam(name: 'skip_lint', defaultValue: false, description: 'Do not lint.')
       ])
     ])
-    container('docker') {
-      withCredentials([string(credentialsId: 'docker-server-ip', variable: 'host')]) {
-        docker.withServer("$host", "docker-server") {
-          withCredentials([dockerCert(credentialsId: 'docker-server', variable: "DOCKER_CERT_PATH")]) {
-            docker.withRegistry('https://gcr.io', 'gcr:plaidcloud-build') {
-              
-              // Checkout source before doing anything else
-              scm_map = checkout([
-                  $class: 'GitSCM',
-                  branches: scm.branches,
-                  doGenerateSubmoduleConfigurations: false,
-                  extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', trackingSubmodules: true]],
-                  submoduleCfg: [],
-                  userRemoteConfigs: scm.userRemoteConfigs
-              ])
+    container('build') {
+      scm_map = checkout([
+        $class: 'GitSCM',
+        branches: scm.branches,
+        doGenerateSubmoduleConfigurations: false,
+        extensions: [[$class: 'SubmoduleOption', disableSubmodules: false, parentCredentials: true, recursiveSubmodules: true, reference: '', trackingSubmodules: true]],
+        submoduleCfg: [],
+        userRemoteConfigs: scm.userRemoteConfigs
+      ])
 
-              // When building from a PR event, we want to read the branch name from the CHANGE_BRANCH binding. This binding does not exist on branch events.
-              branch = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
+      branch = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
 
-              docker_args = ''
+      stage("Test Helm Chart") {
+        withCredentials([usernamePassword(credentialsId: 'plaid-machine-user', usernameVariable: 'user', passwordVariable: 'pass')]) {
+          // This script will lint, check for version increment, and dry-run an install.	
+          sh "check_helm_chart --repo-path=$env.WORKSPACE --chart-name=$chart_name"
+        }
+      }
 
-              // Add any extra docker build arguments here.
-              if (params.no_cache) {
-                docker_args += '--no-cache'
-              }
+      stage("Run Checks") {
+        if (!params.skip_lint) {
+          sh """
+            export BRANCH=$branch
+            export TARGET_LINT_DIR=$target_lint_dir
 
-              stage('Build Image') {
-                image = docker.build("${image_name}:latest", "--pull ${docker_args} .")
-              }
+            # Lint python files (this script uses env vars above):
+            lint
+          """
 
-              // No need to publish dev branches.
-              if (branch == 'master') {
+          if (branch == 'master') {
+            recordIssues tool: pyLint(pattern: 'pylint.log')
+          } else {
+            recordIssues tool: pyLint(pattern: 'pylint.log'), qualityGates: [[threshold: 1, type: 'TOTAL_HIGH', unstable: true]]
+          }
 
-                stage('Publish to DockerHub') {
-                  image.push()
-                }
-
-                stage('Push Git Tag') {
-                  // Add additional, unique image tag and push.
-                  // https://github.com/jenkinsci/docker-workflow-plugin/blob/50ad50bad2ee14eb73d1ae3ef1058b8ad76c9e5d/src/main/resources/org/jenkinsci/plugins/docker/workflow/Docker.groovy#L176-L179
-                  image_label = "${scm_map.GIT_COMMIT.substring(0, 7)}-${BUILD_NUMBER}"
-                  image.push(image_label)
-                }
-              }
-            }
+          // Check licenses on all python packages.
+          license_errors = sh (
+            returnStatus: true,
+            script: '''
+              set +x 
+              cat license-report.txt | grep "UNAUTHORIZED" > /dev/null
+            '''
+          ) == 0
+          if (license_errors) {
+              output = sh returnStdout: true, script: '''
+                set +x 
+                cat license-report.txt | grep "UNAUTHORIZED"
+              '''
+              echo "\nThe following python package licenses are unauthorized:\n\n$output"
+              currentBuild.result = 'UNSTABLE'
+          } else {
+            echo "No licensing issues found."
           }
         }
       }
-    }
-    container('argocd') {
-      if (branch == 'master') {
-        stage("Deploy to Kubernetes") {
-          withCredentials([usernamePassword(credentialsId: 'plaid-machine-user', usernameVariable: 'user', passwordVariable: 'pass')]) {
-            withCredentials([string(credentialsId: 'argocd-token', variable: 'ARGOCD_AUTH_TOKEN')]) {
-              sh """
-                export ARGOCD_SERVER=deploy.plaidcloud.io
 
-                # Verify, lint, check versions, package, and push helm chart, along with copying chart changes to k8s repo for argo.
-                check_helm_chart --repo-path=$env.WORKSPACE --chart-name=$chart_name
-                package_helm_chart --repo-url=https://$user:$pass@github.com/PlaidCloud/k8s.git --chart-name=$chart_name
-                
-                # Tell argo which image version to use.
-                argocd app set $argo_app -p spec.image="$image_name:$image_label"
-              """
+      if( currentBuild.result != 'Unstable') {
+        stage("Build Image") {
+          withCredentials([string(credentialsId: 'docker-server-ip', variable: 'host')]) {
+            docker.withServer("$host", "docker-server") {
+              withCredentials([dockerCert(credentialsId: 'docker-server', variable: "DOCKER_CERT_PATH")]) {
+                docker.withRegistry('https://gcr.io', 'gcr:plaidcloud-build') {
+
+                  // Params are always strings. Convert to the type we want.
+                  image_label = "${scm_map.GIT_COMMIT.substring(0, 7)}-${BUILD_NUMBER}"
+
+                  build_args = [
+                    PLAID_BUILD_TAG: image_label
+                  ]
+                  
+                  // TODO: parameterize this so invidivual builds can be given custom build args.
+                  // Concatenate build args to docker command.
+                  docker_args = ""
+                  build_args.each { entry -> docker_args += " --build-arg $entry.key=$entry.value" }
+                  
+                  if (params.no_cache) {
+                    docker_args += ' --no-cache'
+                  }
+
+                  image = docker.build("${image_name}:latest", "--pull ${docker_args} .")
+
+                  if (branch == 'master') {
+                    image.push()
+                    image.push(image_label)
+                  }
+                }
+              }
             }
           }
         }
-      } else {
-        stage('Process Helm Chart Changes') {
-          // This script will lint, check for version increment, and dry-run an install.
-          sh "check_helm_chart --repo-path=$env.WORKSPACE --chart-name=$chart_name"
+
+        if (branch == 'master') {
+          stage("Deploy to Kubernetes") {
+            withCredentials([usernamePassword(credentialsId: 'plaid-machine-user', usernameVariable: 'user', passwordVariable: 'pass')]) {
+              withCredentials([string(credentialsId: 'argocd-token', variable: 'ARGOCD_AUTH_TOKEN')]) {
+                sh """
+                  export ARGOCD_SERVER=deploy.plaidcloud.io
+
+                  # This script will package and push helm chart, copy chart changes to k8s repo for argo, and deploy newly-built image.
+                  package_helm_chart \
+                    --repo-url=https://$user:$pass@github.com/PlaidCloud/k8s.git \
+                    --chart-name=$chart_name \
+                    --argo-app=$argo_app \
+                    --image=$image_name:$image_label
+                """
+              }
+            }
+          }
         }
       }
     }
