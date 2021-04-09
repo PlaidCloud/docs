@@ -18,7 +18,7 @@ deployments:
     - kubernetes/
 dev:
   sync:
-  - imageName: gcr.io/plaidcloud-build/docs
+  - imageName: docs
     labelSelector:
       plaid: docs
       release: docs
