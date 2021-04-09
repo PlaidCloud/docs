@@ -1,24 +1,4 @@
 #!/usr/bin/env groovy
-import groovy.transform.Field
-
-@Field 
-def image_name = "gcr.io/plaidcloud-build/docs"
-
-@Field
-def image_label = ""
-
-@Field
-def branch = ""
-
-@Field
-def chart_name = "docs"
-
-@Field
-def argo_app = "io-docs"
-
-@Field
-def target_lint_dir = "docs"
-
 podTemplate(label: 'docs',
   containers: [
     containerTemplate(name: 'build', image: "gcr.io/plaidcloud-build/tools/python-build:latest", ttyEnabled: true, command: 'cat', alwaysPullImage: true, workingDir: '/home/jenkins/agent')
@@ -32,7 +12,12 @@ podTemplate(label: 'docs',
       [$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '50')),
       parameters([
         booleanParam(name: 'no_cache', defaultValue: true, description: 'Adds --no-cache flag to docker build command(s).'),
-        booleanParam(name: 'skip_lint', defaultValue: false, description: 'Do not lint.')
+        booleanParam(name: 'skip_lint', defaultValue: false, description: 'Do not lint.'),
+        booleanParam(name: 'full_lint', defaultValue: false, description: 'Lint all files.'),
+        stringParam(name: 'image_name', defaultValue: 'gcr.io/plaidcloud-build/docs', description: 'Fully-qualified image name for GCR upload.'),
+        stringParam(name: 'chart_app', defaultValue: 'docs', description: 'Name of application in plaidcloud helm chart.'),
+        stringParam(name: 'argo_app', defaultValue: 'io-plaid', description: 'Name of argo application used to deploy/manage this project.'),
+        stringParam(name: 'target_lint_dir', defaultValue: 'docs', description: 'Name of directory to run linter against.')
       ])
     ])
     container('build') {
@@ -46,13 +31,6 @@ podTemplate(label: 'docs',
       ])
 
       branch = env.CHANGE_BRANCH ?: scm_map.GIT_BRANCH.minus(~/^origin\//)
-
-      stage("Test Helm Chart") {
-        withCredentials([usernamePassword(credentialsId: 'plaid-machine-user', usernameVariable: 'user', passwordVariable: 'pass')]) {
-          // This script will lint, check for version increment, and dry-run an install.	
-          sh "check_helm_chart --repo-path=$env.WORKSPACE --chart-name=$chart_name"
-        }
-      }
 
       stage("Run Checks") {
         if (!params.skip_lint) {
@@ -132,13 +110,7 @@ podTemplate(label: 'docs',
               withCredentials([string(credentialsId: 'argocd-token', variable: 'ARGOCD_AUTH_TOKEN')]) {
                 sh """
                   export ARGOCD_SERVER=deploy.plaidcloud.io
-
-                  # This script will package and push helm chart, copy chart changes to k8s repo for argo, and deploy newly-built image.
-                  package_helm_chart \
-                    --repo-url=https://$user:$pass@github.com/PlaidCloud/k8s.git \
-                    --chart-name=$chart_name \
-                    --argo-app=$argo_app \
-                    --image=$image_name:$image_label
+                  argocd app set $params.argo_app -p ${params.chart_app}.image="$params.image_name:$image_label"
                 """
               }
             }
