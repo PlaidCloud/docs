@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plaid-docs
+  labels:
+    app: plaidcloud
+    component: docs
+    release: plaid
+spec:
+  replicas: 1
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: plaidcloud
+      component: docs
+      release: plaid
+  template:
+    metadata:
+      name: docs
+      labels:
+        app: plaidcloud
+        component: docs
+        release: plaid
+    spec:
+      containers:
+      - name: docs
+        image: gcr.io/plaidcloud-build/docs:latest
+        imagePullPolicy: Always
+        ports:
+        - name: http
+          containerPort: 8000
+        # livenessProbe:
+        #   httpGet:
+        #     path: /docs
+        #     port: 8000
+        #   initialDelaySeconds: 3
+        #   periodSeconds: 3
+        # readinessProbe:
+        #   httpGet:
+        #     path: /docs
+        #     port: 8000
+        #   initialDelaySeconds: 3
+        #   periodSeconds: 3
+      imagePullSecrets:
+      - name: gcr-key

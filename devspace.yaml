@@ -13,18 +13,9 @@ images:
         - --tag
 deployments:
 - name: docs
-  helm:
-    chart:
-      name: ./charts/docs
-    values:
-      devMode: true
-      spec:
-        pullPolicy: IfNotPresent
-      ingress:
-        annotations:
-          kubernetes.io/ingress.class: nginx
-        hostnames:
-        - ${DEV_NAMESPACE}-api.plaidcloud.io
+  kubectl:
+    manifests:
+    - kubernetes/
 dev:
   sync:
   - imageName: gcr.io/plaidcloud-build/docs
